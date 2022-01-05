@@ -1,8 +1,8 @@
 const { MessageEmbed } = require('discord.js');
 const { readdirSync } = require("fs");
 const { MessageActionRow, MessageButton } = require('discord.js');
-const prefix = require("../../direct_help/help/config.json").prefix;
-const emo = require("../../direct_help/help/emoji.json");
+const prefix = require("../../direct_help/json/config.json").prefix;
+const emo = require("../../direct_help/json/emoji.json");
 let color = "#00ccff";
 
 module.exports = {

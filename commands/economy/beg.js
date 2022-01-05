@@ -1,36 +1,51 @@
-const profileModel = require("../../models/profileSchema");
+const Discord = require('discord.js')
+const CurrencySystem = require("currency-system");
+const cs = new CurrencySystem;
 const { MessageEmbed } = require("discord.js");
-const cooldown = new Set();
 
 module.exports = {
-  name: "beg",
-  aliases: ["beg"],
-  permissions: ["SEND_MESSAGES"],
-  cooldown: 60,
-  description: "beg for coins",
-  async execute(client, message, args, Discord, profileData) {
-    if(cooldown.has(message.author.id)) {
-      message.reply('You Are On CoolDown Wait 60 Seconds')
-    } else {
-          const randomNumber = Math.floor(Math.random() * 500) + 1;
-          const response = await profileModel.findOneAndUpdate(
-            {
-              userID: message.author.id,
-            },
-            {
-              $inc: {
-                coins: randomNumber,
-              },
-            }
-          );
-          let embed = new MessageEmbed()
-          .setColor("RANDOM")
-          .setDescription(`${message.author.username}, you begged and received ${randomNumber} **¥**`)
-          message.channel.send({embeds: [embed]})
-        }
-        cooldown.add(message.author.id);
-        setTimeout(() => {
-             cooldown.delete(message.author.id)
-         }, 60000);
-  },
-};
+    name: "beg2",
+    permissions: ["SEND_MESSAGES"],
+    cooldown: 5,
+    description: "Beg command",
+
+    async execute(client, message, args, Discord) {
+
+        let result = await cs.beg({
+            user: message.author,
+            guild: { id : null },
+            minAmount: 1,
+            maxAmount: 500
+        });
+
+        const people = [
+            "Criz",
+            "Elon musk",
+            "Donald trump",
+            "Cristiano Ronaldo",
+            "Elina",
+            "DaBaby",
+            "Taiga",
+            "Lelouch Lamperouge",
+            "Levi Ackerma",
+            "Light Yagami",
+            "Hinata Hyuga",
+            "Pakunoda",
+            "Asuna"
+        ];
+
+        const randomName = people.sort(() => Math.random() - Math.random()).slice(0, 1);
+
+        const errorEmbed = new MessageEmbed()
+        .setTitle("Chill mate!")
+        .setDescription(`You have begged recently Try again in ${result.time} `)
+        .setFooter("For more economy commands do =help")
+        
+        const begEmbed = new MessageEmbed()
+        .setTitle("Imagine begging")
+        .setDescription(`${randomName} gave you __${result.amount}__ ¥.`)
+
+        if (result.error) return message.channel.send({embeds: [errorEmbed]});
+        else message.channel.send({embeds: [begEmbed]})
+    }
+}
