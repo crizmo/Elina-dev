@@ -9,7 +9,6 @@ require('dotenv').config();
 const mongoose = require("mongoose");
 const { MessageEmbed } = require("discord.js");
 
-
 const fs = require('fs');
 require('dotenv').config();
 
