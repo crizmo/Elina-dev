@@ -29,7 +29,7 @@ module.exports = {
         .setTitle("🧊 O.O !")
         .setDescription(`Monthly earnings. You earned ${result.amount} ¥.`)
         .addFields(
-            {name: '**Streak**', value: `You are on streak: **${result.rawData.streak.monthly}**`},
+            {name: '**Streak**', value: `You are on **${result.rawData.streak.monthly}** streak`},
         )
         .setColor("RANDOM")
         return message.channel.send({embeds: [monthlyEmbed]})

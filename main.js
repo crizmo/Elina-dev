@@ -23,7 +23,7 @@ cs.setMongoURL(process.env.MONGODB_SRV);
 cs.setDefaultWalletAmount('100')
 cs.setDefaultBankAmount('100')
 // cs.setMaxWalletAmount('10000')
-// cs.setMaxBankAmount('10000')
+cs.setMaxBankAmount('10000')
 cs.searchForNewUpdate(true)
 //    End    //
 
@@ -47,27 +47,10 @@ fs.readdirSync('./direct_help').forEach(dirs => {
     };
 });
 
-CurrencySystem.cs
-    .on('debug', (debug, error) => {
-        console.log(debug);
-        if (error) console.error(error);
-    })
-  
-// client.on("messageCreate", async (message)=>{
-    
-//     if(message.author.bot) return
-//     if(message.channel.name === 'chatbot') {
-//         fetch.default(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             if (data.response) message.channel.send({content: data.response}).catch(error)
-//         }).catch((error)=>{
-//             error;
-//         })
-//         .catch(() => {
-//             message.channel.send("Coundn't fetch response!");
-//         })
-//     }
+// CurrencySystem.cs
+//     .on('debug', (debug, error) => {
+//         console.log(debug);
+//         if (error) console.error(error);
 // })
 
 client.on("messageCreate", async (message)=>{
@@ -134,25 +117,6 @@ const { warn } = require('console');
 const rpc = new RPC.Client({
     transport: 'ipc'
 })
-
-// rpc.on("ready", () => {
-//     rpc.setActivity({
-//         details: "Learning cs , c.",
-//         state: "Give time",
-//         startTimestamp: new Date(),
-//         largeImageKey: "large",
-//         largeImageText: "Elina bot",
-//         smallImageKey: "small",
-//         smallImageText: "DeezNuts",
-//         buttons : [{label : "Elina Bot" , url : "https://discord.com/oauth2/authorize?client_id=842397001954230303&permissions=126054&scope=bot"},{label : "Discord" , url : "https://discord.gg/Ecy6WpEZsD"}]
-//     })
-
-//     console.log("Successfully activated the RPC")
-// })
-
-// rpc.login({
-//     clientId: '842397001954230303'
-// })
 
 // process.on('unhandledRejection' , async (reason , p , origin) => {
 //     const embed = new Discord.MessageEmbed()

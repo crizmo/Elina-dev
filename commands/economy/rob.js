@@ -58,17 +58,6 @@ module.exports = {
             .setDescription(`${message.author.username} you robbed ${result.user2.username} and got away with ${result.amount}!`)
             .setColor("#00FFFF")
 
-        // {user2.username}
-
-        // if (result.error) {
-        //     if (result.type === 'time') return message.channel.send(`You have already robbed recently Try again in ${result.time}`);
-        //     if (result.type === 'low-money') return message.channel.send(`You need atleast $${result.minAmount} to rob somebody.`);
-        //     if (result.type === 'low-wallet') return message.channel.send(`${result.user2.username} have less than $${result.minAmount} to rob.`)
-        //     if (result.type === 'caught') return message.channel.send(`${message.author.username} you robbed ${result.user2.username} and got caught and you payed ${result.amount} to ${result.user2.username}!`)
-        // } else {
-        //     if (result.type === 'success') return message.channel.send(`${message.author.username} you robbed ${result.user2.username} and got away with ${result.amount}!`)
-        // }
-
         if (result.error) {
             if (result.type === 'time') return message.channel.send({ embeds: [errorEmbedTime] });
             if (result.type === 'low-money') return message.channel.send({ embeds: [errorEmbedLowMoney] });

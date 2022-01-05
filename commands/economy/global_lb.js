@@ -4,7 +4,7 @@ const cs = new CurrencySystem;
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-    name: "globalleaderboard2",
+    name: "globalleaderboard",
     aliases: ["glb"],
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,

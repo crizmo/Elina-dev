@@ -4,8 +4,8 @@ const cs = new CurrencySystem;
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "balance2",
-    aliases: ["bal2", "bl2"],
+    name: "balance",
+    aliases: ["bal", "bl"],
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,
     description: "Balance command",

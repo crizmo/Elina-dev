@@ -20,7 +20,7 @@ module.exports = {
             
                 const embed = new MessageEmbed()
                     .setTitle('Item Shop')
-                    .setDescription('Here are the following items you can buy, to buy an item do \`=buy <item_nam>\`')
+                    .setDescription('Here are the following items you can buy, to buy an item do \`=buy <item_number>\`')
                     .setColor('RED')
                 for (let key in inv) {
                     embed.addField(`${parseInt(key) + 1} ・ **${inv[key].name}:**  \` ¥ ${inv[key].price} \` `,`> ${inv[key].description}`)

@@ -4,7 +4,7 @@ const cs = new CurrencySystem;
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "beg2",
+    name: "beg",
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,
     description: "Beg command",

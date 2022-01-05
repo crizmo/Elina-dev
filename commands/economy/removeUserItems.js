@@ -4,17 +4,17 @@ const cs = new CurrencySystem;
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "removeUserItem",
+    name: "removeItem",
     permissions: ["ADMINISTRATOR"],
     cooldown: 5,
     description: "Work command",
 
     async execute(client, message, args, Discord) {
-        if (!args[0].value) return message.reply('Which item to remove?')
+        if (!args[0]) return message.reply('Which item to remove?')
         let result = await cs.removeUserItem({
          user: message.author,
          guild: { id : null },
-         item: parseInt(args[0].value)
+         item: parseInt(args[0])
         });
        if (result.error) {
          if (result.type == 'Invalid-Item-Number') return message.reply('There was a error, Please enter item number to remove.!')

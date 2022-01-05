@@ -32,10 +32,10 @@ module.exports = {
         amount: money,
         wheretoPutMoney: 'wallet'
       });
-      await cs.removeUserItem({
+      let a = await cs.removeUserItem({
         user: message.author,
         guild: { id : null },
-        item: i
+        item: i+1
       });
       if (result.error) {
         console.log(result)

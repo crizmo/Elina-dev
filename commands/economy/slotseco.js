@@ -5,7 +5,7 @@ const { MessageEmbed } = require('discord.js')
 const cooldown = new Set();
 
 module.exports = {
-    name: "slots2",
+    name: "slotseco",
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,
     description: "Slots command",

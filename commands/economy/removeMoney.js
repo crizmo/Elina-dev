@@ -3,7 +3,7 @@ const CurrencySystem = require("currency-system");
 const cs = new CurrencySystem;
 
 module.exports = {
-    name: "removeMoney2",
+    name: "removeMoney",
     permissions: ["ADMINISTRATOR"],
     cooldown: 5,
     description: "Remove money command",

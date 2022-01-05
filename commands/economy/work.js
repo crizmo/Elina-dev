@@ -32,10 +32,8 @@ module.exports = {
         .setDescription(`You worked as a ${result.workType} and earned __${result.amount}__ ¥.`)
         .setColor("#00FFFF")
 
-        // if (result.error) return message.channel.send(`You have already worked recently Try again in ${result.time}`);
         if (result.error) return message.channel.send({embeds: [errorEmbed]});
 
-        // else message.channel.send(`You worked as a ${result.workType} and earned $${result.amount}.`)
         else message.channel.send({embeds: [workEmbed]})
     }
 }

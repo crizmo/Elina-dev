@@ -17,7 +17,7 @@ module.exports = {
             item: parseInt(args[0])
         });
         if (result.error) {
-            if (result.type == 'Invalid-Item-Number') return message.channel.send('There was a error, Please enter item number to remove.!')
+            if (result.type == 'Invalid-Item-Number') return message.channel.send('There was a error, Please enter item number to remove !')
             if (result.type == 'Unknown-Item') return message.channel.send('There was a error, The Item Does not exist!')
         } else message.channel.send('Done! Successfully removed the `' + result.inventory.name + '` from shop!')
     }

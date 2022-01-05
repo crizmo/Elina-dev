@@ -28,7 +28,7 @@ module.exports = {
         .setTitle("🧊 Daily Earnings !")
         .setDescription(`Daily earnings. You earned **${result.amount}** ¥.`)
         .addFields(
-            {name: '**Streak**', value: `You are on streak: **${result.rawData.streak.daily}**`},
+            {name: '**Streak**', value: `You are on **${result.rawData.streak.daily}** streak`},
         )
         .setColor("#00FFFF")
         return message.channel.send({embeds: [dailyEmbed]})

@@ -3,7 +3,8 @@ const CurrencySystem = require("currency-system");
 const cs = new CurrencySystem;
 
 module.exports = {
-    name: "dep2",
+    name: "dep",
+    aliases: ["deposit"],
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,
     description: "Deposit command",
@@ -20,14 +21,13 @@ module.exports = {
         });
         if (result.error) {
             if (result.type === 'money') return message.channel.send("Specify an amount to deposite");
-            if (result.type === 'negative-money') return message.channel.send("You can't deposite negative money");
-            if (result.type === 'low-money') return message.channel.send("You don't have that much money in wallet.");
-            if (result.type === 'no-money') return message.channel.send("You don't have any money to deposite");
+            if (result.type === 'negative-money') return message.channel.send("You can't deposite negative yen");
+            if (result.type === 'low-money') return message.channel.send("You don't have that much yen in wallet.");
+            if (result.type === 'no-money') return message.channel.send("You don't have any yen to deposite");
             if (result.type === 'bank-full') return message.reply("Your bank is full. It has reached it's limit.");
         } else {
-            if (result.type === 'all-success') return message.channel.send("You have deposited all your money to your bank");
-            if (result.type === 'success') return message.channel.send(`You have deposited ${result.amount} ¥ money to your bank.`);
-
+            if (result.type === 'all-success') return message.channel.send("You have deposited all your yen to your bank");
+            if (result.type === 'success') return message.channel.send(`You have deposited ${result.amount} ¥ to your bank.`);
         }
     }
 }

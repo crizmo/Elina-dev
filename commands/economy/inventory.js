@@ -5,6 +5,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "inventory",
+    aliases: ["inv"],
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,
     description: "inventoy command",
@@ -17,10 +18,10 @@ module.exports = {
         });
         let inv = result.inventory.slice(0, 10)
         const embed = new Discord.MessageEmbed()
-            .setDescription('Your Inventory in Empty!')
+            .setTitle('Your Inventory in Empty!')
         for (key of inv) {
             embed.addField(`**${key.name}:**`, `Amount: ${key.amount}`);
-            embed.setDescription('Your Inventory!')
+            embed.setTitle('Your Inventory!')
 
         }
         return message.reply({
