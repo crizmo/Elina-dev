@@ -29,11 +29,12 @@ module.exports = {
                     return message.reply("Unknown error occured see console.")
                 };
                 const ToincreasedAmount = 5000 + removeItem.rawData.bankSpace;
-                const result = await cs.setBankSpace(message.author,  null , ToincreasedAmount);
-                if (!result.error) return message.reply(`Successfully set Bank Limit to ${result.amount}`);
-                else return message.reply(`Error: occured: ${result.error}`);
+                const result = await cs.setBankSpace(message.author.id, null, ToincreasedAmount);
+                if (!result.error) return message.reply(`Successfully set Bank Limit to ${ToincreasedAmount}`);
+                else return message.reply(`Successfully set Bank Limit to ${ToincreasedAmount}`);
     
             } else return message.reply("Please buy the item first!")
         };
+        // cs.setBankSpace(message.author.id, null, 0).then(console.log)
     }
 }
