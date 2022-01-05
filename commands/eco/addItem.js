@@ -13,7 +13,7 @@ module.exports = {
                 try {
             const cookie = new MessageEmbed()
                 .setDescription('What should be item name?')
-                .setColor('RED')
+                .setColor('#00ccff')
             message.reply({
                 embeds: [cookie],
                 allowedMentions: {
@@ -31,7 +31,7 @@ module.exports = {
 
             const embed = new MessageEmbed()
                 .setDescription('What should be item price?')
-                .setColor('RED')
+                .setColor('#00ccff')
             message.reply({
                 embeds: [embed],
                 allowedMentions: {
@@ -47,7 +47,7 @@ module.exports = {
 
             const des = new MessageEmbed()
                 .setDescription('What should be item description?')
-                .setColor('RED')
+                .setColor('#00ccff')
             message.reply({
                 embeds: [des],
                 allowedMentions: {
@@ -70,23 +70,23 @@ module.exports = {
             });
             const error1 = new MessageEmbed()
                 .setDescription('There was a error')
-                .setColor('RED')
+                .setColor('#00ccff')
                 
             const error2 = new MessageEmbed()
                 .setDescription('There was a error, invalid price!')
-                .setColor('RED')
+                .setColor('#00ccff')
                 
             const error3 = new MessageEmbed()
                 .setDescription('There was a error, You didnt specify price!')
-                .setColor('RED')
+                .setColor('#00ccff')
                 
             const error4 = new MessageEmbed()
                 .setDescription('There was a error, No data recieved!')
-                .setColor('RED')
+                .setColor('#00ccff')
                 
             const Noerror = new MessageEmbed()
                 .setDescription('Done! Successfully added `' + Name.first().content + '` to the shop!')
-                .setColor('RED')
+                .setColor('#00ccff')
                 
             if (result.error) {
                 if (result.type == 'No-Inventory-Name') return message.reply({
