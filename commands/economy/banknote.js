@@ -29,7 +29,7 @@ module.exports = {
                     return message.reply("Unknown error occured see console.")
                 };
                 const ToincreasedAmount = 5000 + removeItem.rawData.bankSpace;
-                const result = await cs.setBankSpace(message.user.id, message.guild.id, ToincreasedAmount);
+                const result = await cs.setBankSpace(message.author, message.guild, ToincreasedAmount);
                 if (!result.error) return message.reply(`Successfully set Bank Limit to ${result.amount}`);
                 else return message.reply(`Error: occured: ${result.error}`);
     
