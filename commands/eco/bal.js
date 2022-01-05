@@ -30,7 +30,7 @@ module.exports = {
         let avatar = user.displayAvatarURL({dynamic: true, size: 1024})
 
         let embed = new MessageEmbed()
-        .setTitle(`${user.tag}'s Balance`, user.displayAvatarURL())
+        .setTitle(`${user.username}'s Balance`, user.displayAvatarURL())
         .setColor("RANDOM")
         .setDescription(`Your wallet bal is **${result.wallet}** ¥\nYour bank bal is **${result.bank}** ¥`)
         .setThumbnail(avatar)
