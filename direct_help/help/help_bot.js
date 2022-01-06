@@ -4,7 +4,7 @@ const { MessageActionRow, MessageButton } = require('discord.js');
 let color = "#00ccff";
 
 module.exports = {
-    name: "help-bot2",
+    name: "help-bot",
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,
     description: "Help command for all bot commands",
@@ -96,12 +96,12 @@ module.exports = {
 
         message.channel.send({embeds: [embed], components: [row]})
 
-        const filter1 = i => i.customId === 'mod' && i.user.id === message.member.user.id;
+        const filter1 = i => i.customId === 'bot' && i.user.id === message.member.user.id;
 
           const collectorHelp = message.channel.createMessageComponentCollector({ filter1, time: 50000 });
           
           collectorHelp.on('collect', async i => {
-            if (i.customId === 'mod') {
+            if (i.customId === 'bot') {
               await i.deferUpdate()
               await i.editReply({ embeds: [embed], components: [row] });
             }
