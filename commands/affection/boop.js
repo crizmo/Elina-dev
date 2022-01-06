@@ -31,7 +31,6 @@ module.exports = {
                 .setImage(boopLinks[randomNum])
                 .setFooter("Dont mind the gif cause it has 2 ppl in it :)")
             message.channel.send({embeds: [firstEmbed]});
-
         }     
     }
 }
