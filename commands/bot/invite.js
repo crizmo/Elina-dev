@@ -21,6 +21,10 @@ module.exports = {
 				new MessageButton()
 					.setURL('https://discord.gg/Ecy6WpEZsD')
 					.setLabel('Support Server')
+					.setStyle('LINK'),
+                new MessageButton()
+					.setURL('https://crizmo.github.io/elina/')
+					.setLabel("Elina's Website")
 					.setStyle('LINK')
 					);
 
