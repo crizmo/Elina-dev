@@ -35,7 +35,7 @@ module.exports = {
             {name: 'Aliases: `\ work \`', value: " > =work ", inline: true},
             { name: `\u200B`, value: `\u200B`, inline: true },
             { name: `\u200B`, value: `\u200B`, inline: true },
-            {name: 'Aliases: `\ rob \`', value: "> =rob ", inline: true},
+            {name: 'Aliases: `\ rob \`', value: "> =rob @mention", inline: true},
             { name: `\u200B`, value: `\u200B`, inline: true },
             { name: `\u200B`, value: `\u200B`, inline: true },
             {name: 'Aliases: `\ beg \`', value: "> =beg ", inline: true},
@@ -48,6 +48,12 @@ module.exports = {
             { name: `\u200B`, value: `\u200B`, inline: true },
             { name: `\u200B`, value: `\u200B`, inline: true },
             {name: 'Aliases: `\ monthly \`', value: "> =monthly ", inline: true},
+            { name: `\u200B`, value: `\u200B`, inline: true },
+            { name: `\u200B`, value: `\u200B`, inline: true },
+            {name: 'Aliases: `\ slotseco {careful} \`', value: "> =slotseco  ", inline: true},
+            { name: `\u200B`, value: `\u200B`, inline: true },
+            { name: `\u200B`, value: `\u200B`, inline: true },
+            {name: 'Aliases: `\ gamble \`', value: "> =gamble {amount} ", inline: true},
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
