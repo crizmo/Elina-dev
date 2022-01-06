@@ -4,7 +4,8 @@ const { MessageActionRow, MessageButton } = require('discord.js');
 let color = "#00ccff";
 
 module.exports = {
-    name: "help-affection2",
+    name: "help-affection",
+    aliases: ["help-aff"],
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,
     description: "Help command for all affection commands",

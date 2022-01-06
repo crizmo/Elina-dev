@@ -44,10 +44,23 @@ module.exports = {
         
         const affection = new MessageEmbed()
         .setTitle("Affection commands!")
-        .setDescription("To get info of commands `\/{command-name} info\`")
+        .setDescription("To get info of commands `\ =help-affection \`")
         .setAuthor(`${user.username}`, avatar)
         .addFields(
-          {name: `\u200B`, value: ":- `\ kiss \` , `\ horny \` , `\ dance \` , `\ match \` , `\ spank \` , :- `\ pat \` , `\ slap \`, `\ hug \`, `\ kill \`, `\ boop \`", inline: true},
+          {name: `\u200B`, value: "`\ boop \` , `\ dance \` , `\ horny \` , `\ howgay \` , `\ hug \` \n `\ kill \` , `\ kiss \` , `\ match \` , `\ pet \` , `\ simp \` , `\ slap \` \n `\ spank \` , `\ spit \` , `\ yaoi \`", inline: true},
+        )
+        .setFooter(client.user.tag , client.user.displayAvatarURL())
+        .setTimestamp()
+        .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
+        .setThumbnail(avatar)
+        .setColor(color);
+
+        const bot = new MessageEmbed()
+        .setTitle("Bot commands commands!")
+        .setDescription("To get info of commands `\ =help-bot \`")
+        .setAuthor(`${user.username}`, avatar)
+        .addFields(
+          {name: `\u200B`, value: "`\ invite \` , `\ ping \` , `\ stats \` , `\ suggest \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -57,24 +70,8 @@ module.exports = {
 
         const economy = new MessageEmbed()
         .setTitle("Economy commands!")
-        .setDescription("To get info of commands `\/{command-name} info\`")
+        .setDescription("Elina economy commands \n To get more information about elina's economy commands do `\ =help-eco \` then click the respective buttons to get per command information")
         .setAuthor(`${user.username}`, avatar)
-        .addFields(
-          {name: `\u200B`, value: ":- `\ balance \` , `\ withdraw \` , `\ deposit \` , `\ search \` , :- `\ give \` , `\ beg \` , `\ work \`", inline: true},
-        )
-        .setFooter(client.user.tag , client.user.displayAvatarURL())
-        .setTimestamp()
-        .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(avatar)
-        .setColor(color);
-
-        const extra = new MessageEmbed()
-        .setTitle("Extra fun commands!")
-        .setDescription("To get info of commands `\/{command-name} info\`")
-        .setAuthor(`${user.username}`, avatar)
-        .addFields(
-          {name: `\u200B`, value: ":- `\ bee \` , `\ chatbot \`, `\ embed \`, `\ horny \`, `\ howgay \`, :- `\ straight \` , `\ whoasked \`, `\ yaoi \`", inline: true},
-        )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
@@ -83,10 +80,10 @@ module.exports = {
 
         const fun = new MessageEmbed()
         .setTitle("Fun commands!")
-        .setDescription("To get info of commands `\/{command-name} info\`")
+        .setDescription("To get info of commands `\ =help-fun \`")
         .setAuthor(`${user.username}`, avatar)
         .addFields(
-          {name: `\u200B`, value: ":- `\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` :- `\ trivia \` , `\ ttt \` , `\ pokemon \`, `\ snake \`, `\ slots \`:- `\ rps \`, `\ dice \`, `\ em \`, `\ wyr \`", inline: true},
+          {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ whoasked \` , `\ wyr \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -96,10 +93,10 @@ module.exports = {
 
         const info = new MessageEmbed()
         .setTitle("Info command!")
-        .setDescription("To get info of commands `\/{command-name} info\`")
+        .setDescription("To get info of commands `\ =help-info \`")
         .setAuthor(`${message.author.tag}`, avatar )
         .addFields(
-          {name: `\u200B`, value: ":- `\ anime \` , `\ bug report \`, `\ weather \`,`\ worldclock \`:- `\ emoji \`, `\ math \`, `\ covid \`, `\ credits \` , `\ github \`", inline: true},
+          {name: `\u200B`, value: "`\ anime \` , `\ bug report \` , `\ chatbot \` , `\ covid \` \n `\ credits \` , `\ github \`, `\ math \`, `\ poll \` , `\ weather \` \n `\ whois \` , `\ worldclock \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -111,10 +108,10 @@ module.exports = {
 
         const moderation = new MessageEmbed()
         .setTitle("Moderation command!")
-        .setDescription("To get info of commands `\/{command-name} info\`")
+        .setDescription("To get info of commands `\ =help-mod \`")
         .setAuthor(`${message.author.tag}`, avatar )
         .addFields(
-          {name: `\u200B`, value: ":- `\ whois \` , `\ clear \` , `\ rules \` , `\ roles \` , `\ kick \`  :- `\ ban \`", inline: true},
+          {name: `\u200B`, value: "`\ ban \` , `\ clear \` , `\ kick \` , `\ roles \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -126,10 +123,10 @@ module.exports = {
 
         const profile = new MessageEmbed()
         .setTitle("Profile command!")
-        .setDescription("To get info of commands `\/{command-name} info\`")
+        .setDescription("To get info of commands `\ =help-info \`")
         .setAuthor(`${message.author.tag}`, avatar )
         .addFields(
-          {name: `\u200B`, value: ":-`\ avatar \` , `\ deepfry \` , `\ image \` , `\ tweet \`", inline: true},
+          {name: `\u200B`, value: "`\ avatar \` , `\ deepfry \` , `\ tweet \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -169,12 +166,12 @@ module.exports = {
                 .setLabel('Affection')
                 .setStyle('SECONDARY'),
             new MessageButton()
-                .setCustomId('economy')
-                .setLabel('Economy')
+                .setCustomId('bot')
+                .setLabel('Bot')
                 .setStyle('SECONDARY'),
             new MessageButton()
-                .setCustomId('extra')
-                .setLabel('Extra')
+                .setCustomId('economy')
+                .setLabel('Economy')
                 .setStyle('SECONDARY'),
             new MessageButton()
                 .setCustomId('fun')
@@ -221,25 +218,25 @@ module.exports = {
             }
           });
 
-          const filter2 = i => i.customId === 'economy' && i.user.id === message.member.user.id;
+          const filter2 = i => i.customId === 'bot' && i.user.id === message.member.user.id;
 
-          const collectorEco = message.channel.createMessageComponentCollector({ filter2, time: 50000 });
+          const collectorBot = message.channel.createMessageComponentCollector({ filter2, time: 50000 });
+          
+          collectorBot.on('collect', async i => {
+            if (i.customId === 'bot') {
+              await i.deferUpdate()
+              await i.editReply({ embeds: [bot], components: [row, row2] });
+            }
+          });
+
+          const filter3 = i => i.customId === 'economy' && i.user.id === message.member.user.id;
+
+          const collectorEco = message.channel.createMessageComponentCollector({ filter3, time: 50000 });
           
           collectorEco.on('collect', async i => {
             if (i.customId === 'economy') {
               await i.deferUpdate()
               await i.editReply({ embeds: [economy], components: [row, row2] });
-            }
-          });
-
-          const filter3 = i => i.customId === 'extra' && i.user.id === message.member.user.id;
-
-          const collectorExt = message.channel.createMessageComponentCollector({ filter3, time: 50000 });
-          
-          collectorExt.on('collect', async i => {
-            if (i.customId === 'extra') {
-              await i.deferUpdate()
-              await i.editReply({ embeds: [extra], components: [row, row2] });
             }
           });
 

@@ -1,5 +1,6 @@
 module.exports = {
     name: "avatar",
+    aliases: ["av"],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     description: "Brodcast someone's avatar",
