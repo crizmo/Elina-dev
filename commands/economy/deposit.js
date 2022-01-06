@@ -26,7 +26,7 @@ module.exports = {
             if (result.type === 'no-money') return message.channel.send("You don't have any yen to deposite");
             if (result.type === 'bank-full') return message.reply("Your bank is full. It has reached it's limit.");
         } else {
-            if (result.type === 'all-success') return message.channel.send("You have deposited all your yen to your bank");
+            if (result.type === 'all-success') return message.channel.send("You have deposited all your yen to your bank or your bank is __full__");
             if (result.type === 'success') return message.channel.send(`You have deposited ${result.amount} ¥ to your bank.`);
         }
     }

@@ -29,7 +29,7 @@ module.exports = {
         const earningsEmbed = new Discord.MessageEmbed()
         .setColor('#FFDBE9')
         .setAuthor(`Earnings commands `, user.displayAvatarURL())
-        .setTitle('Earning command & usage')
+        .setTitle('Earning commands & usage')
         .setURL('https://crizmo.github.io/elina/')
         .addFields(
             {name: 'Aliases: `\ work \`', value: " > =work ", inline: true},
@@ -50,10 +50,63 @@ module.exports = {
             {name: 'Aliases: `\ monthly \`', value: "> =monthly ", inline: true},
             { name: `\u200B`, value: `\u200B`, inline: true },
             { name: `\u200B`, value: `\u200B`, inline: true },
-            {name: 'Aliases: `\ slotseco {careful} \`', value: "> =slotseco  ", inline: true},
+            {name: 'Aliases: `\ slotseco \`', value: "> =slotseco  ", inline: true},
             { name: `\u200B`, value: `\u200B`, inline: true },
             { name: `\u200B`, value: `\u200B`, inline: true },
             {name: 'Aliases: `\ gamble \`', value: "> =gamble {amount} ", inline: true},
+        )
+        .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
+
+        const shopEmbed = new Discord.MessageEmbed()
+        .setColor('#FFDBE9')
+        .setAuthor(`Shop related commands `, user.displayAvatarURL())
+        .setTitle('Shop related commands & usage')
+        .setURL('https://crizmo.github.io/elina/')
+        .addFields(
+          {name: 'Usage: `\ =shop \`', value: " > To check shop items which users can buy", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =additem \`', value: "> Admin command to add items in the shop ", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =removeitem \`', value: "> Admin command to remove items from the shop ", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =inv || =inventory \`', value: "> To check user inventory ", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =banknote \`', value: "> Use banknote to increase bank space by 5000 ", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =buy \`', value: "> To buy item from shop :- __=buy {item_number}__ ", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =use \`', value: "> To use items and get yen through using them :- __=use {item_name}__ ", inline: true},
+        )
+        .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
+
+        const balanceEmbed = new Discord.MessageEmbed()
+        .setColor('#FFDBE9')
+        .setAuthor(`User balance commands `, user.displayAvatarURL())
+        .setTitle('User balance commands & usage')
+        .setURL('https://crizmo.github.io/elina/')
+        .addFields(
+          {name: 'Usage: `\ =bal || =balance || =bl \`', value: " > To check user balance", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =deposit || =dep \`', value: "> To deposit yen in the bank. ", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =withdraw || =with \`', value: "> To withdraw yen from your bank", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =give \`', value: "> To give yen to another user ", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =glb || =globalleaderboard \`', value: "> To check global yen leaderboard ", inline: true},
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          { name: `\u200B`, value: `\u200B`, inline: true },
+          {name: 'Usage: `\ =lb || =leaderboard \`', value: "> To check server only leaderboard", inline: true},
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
@@ -65,6 +118,14 @@ module.exports = {
             new MessageButton()
                 .setCustomId('earning')
                 .setLabel('Earnings')
+                .setStyle('SECONDARY'),
+            new MessageButton()
+                .setCustomId('shop')
+                .setLabel('Shop')
+                .setStyle('SECONDARY'),
+            new MessageButton()
+                .setCustomId('balance')
+                .setLabel('Balance')
                 .setStyle('SECONDARY')
             );
 
@@ -89,6 +150,28 @@ module.exports = {
             if (i.customId === 'earning') {
               await i.deferUpdate()
               await i.editReply({ embeds: [earningsEmbed], components: [row] });
+            }
+          });
+
+        const filter3 = i => i.customId === 'shop' && i.user.id === message.member.user.id;
+
+          const collectorShop = message.channel.createMessageComponentCollector({ filter3, time: 50000 });
+          
+          collectorShop.on('collect', async i => {
+            if (i.customId === 'shop') {
+              await i.deferUpdate()
+              await i.editReply({ embeds: [shopEmbed], components: [row] });
+            }
+          });
+
+        const filter4 = i => i.customId === 'balance' && i.user.id === message.member.user.id;
+
+          const collectorBalance = message.channel.createMessageComponentCollector({ filter4, time: 50000 });
+          
+          collectorBalance.on('collect', async i => {
+            if (i.customId === 'balance') {
+              await i.deferUpdate()
+              await i.editReply({ embeds: [balanceEmbed], components: [row] });
             }
           });
 }
