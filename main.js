@@ -111,13 +111,6 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-const RPC = require('discord-rpc');
-const { strict } = require('assert');
-const { warn } = require('console');
-const rpc = new RPC.Client({
-    transport: 'ipc'
-})
-
 // process.on('unhandledRejection' , async (reason , p , origin) => {
 //     const embed = new Discord.MessageEmbed()
 //     .setTitle('Error Occured')
