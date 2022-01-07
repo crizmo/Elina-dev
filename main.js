@@ -39,6 +39,14 @@ fs.readdirSync('./commands').forEach(dirs => {
     };
 });
 
+// fs.readdirSync('./commands/genshin').forEach(dirs => {
+//     const commands = fs.readdirSync(`./commands/genshin/${dirs}`).filter(files => files.endsWith('.js'));
+//     for (const file of commands) {
+//       const command = require(`./commands/genshin/${dirs}/${file}`);
+//       client.commands.set(command.name.toLowerCase(), command);
+//     };
+// });
+
 fs.readdirSync('./direct_help').forEach(dirs => {
     const direct_helps = fs.readdirSync(`./direct_help/${dirs}`).filter(files => files.endsWith('.js'));
     for (const file of direct_helps) {
@@ -46,12 +54,6 @@ fs.readdirSync('./direct_help').forEach(dirs => {
       client.commands.set(direct_help.name.toLowerCase(), direct_help);
     };
 });
-
-// CurrencySystem.cs
-//     .on('debug', (debug, error) => {
-//         console.log(debug);
-//         if (error) console.error(error);
-// })
 
 client.on("messageCreate", async (message)=>{
     
