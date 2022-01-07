@@ -13,7 +13,7 @@ module.exports = {
 
         try{
             let result = await cs.getShopItems({
-                id: { id : null }
+                id: message.guild
             });
             
                 let inv = result.inventory;

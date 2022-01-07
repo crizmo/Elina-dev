@@ -10,6 +10,7 @@ module.exports = {
     description: "add item command",
 
     async execute(client, message, args, Discord) {
+        if(message.author.id !== '784141856426033233') return message.channel.send("U aint criz lol");
                 try {
             const cookie = new MessageEmbed()
                 .setDescription('What should be item name?')
@@ -61,7 +62,7 @@ module.exports = {
                 errors: ['time']
             })
             let result = await cs.addItem({
-                guild: { id: null },
+                guild: message.guild,
                 inventory: {
                     name: Name.first().content,
                     price: parseInt(Price.first().content),

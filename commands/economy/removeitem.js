@@ -10,10 +10,11 @@ module.exports = {
     description: "add item command",
 
     async execute(client, message, args, Discord) {
+        if(message.author.id !== '784141856426033233') return message.channel.send("U aint criz lol");
 
         if (!args[0]) return message.channel.send('Which item to remove?')
         let result = await cs.removeItem({
-            guild: { id : null },
+            guild: message.guild,
             item: parseInt(args[0])
         });
         if (result.error) {
