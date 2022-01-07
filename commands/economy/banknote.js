@@ -13,7 +13,7 @@ module.exports = {
 
         const arr = await cs.getUserItems({
             user: message.author,
-            guild: { id : null }
+            guild: message.guild
         });
         if (!arr.inventory.length) return message.reply("You don't have any banknotes!");
         for (i in arr.inventory) {
@@ -22,7 +22,7 @@ module.exports = {
                 const removeItem = await cs.removeUserItem({
                     user: message.author,
                     item: i,
-                    guild: { id : null }
+                    guild: message.guild
                 });
                 if (removeItem.error) {
                     console.log('Bot tried to remove item number ' + i)

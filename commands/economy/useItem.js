@@ -17,7 +17,7 @@ module.exports = {
     let haveItem = false;
     const arr = await cs.getUserItems({
       user: message.author,
-      guild: { id : null },
+      guild: message.guild,
     });
     let i;
     for (key in arr.inventory) {
@@ -34,7 +34,7 @@ module.exports = {
       });
       let a = await cs.removeUserItem({
         user: message.author,
-        guild: { id : null },
+        guild: message.guild,
         item: i+1
       });
       if (result.error) {

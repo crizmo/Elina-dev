@@ -1,5 +1,3 @@
-const { MessageEmbed } = require('discord.js');
-const { MessageButton } = require('discord.js');
 const fetch = require('node-fetch');
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 

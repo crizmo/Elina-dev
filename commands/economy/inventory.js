@@ -14,7 +14,7 @@ module.exports = {
         const user = message.author;
         let result = await cs.getUserItems({
             user: user,
-            guild: { id : null },
+            guild: message.guild,
         });
         let inv = result.inventory.slice(0, 10)
         const embed = new Discord.MessageEmbed()

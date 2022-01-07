@@ -15,7 +15,7 @@ module.exports = {
         if (isNaN(thing)) return message.channel.send('Please provide valid item number')
         let result = await cs.buy({
             user: message.author,
-            guild: { id: null },
+            guild: message.guild,
             item: parseInt(args[0])
         });
         if (result.error) {
