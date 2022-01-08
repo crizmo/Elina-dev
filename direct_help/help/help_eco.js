@@ -32,28 +32,14 @@ module.exports = {
         .setTitle('Earning commands & usage')
         .setURL('https://crizmo.github.io/elina/')
         .addFields(
-            {name: 'Aliases: `\ work \`', value: " > =work ", inline: true},
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            {name: 'Aliases: `\ rob \`', value: "> =rob @mention", inline: true},
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            {name: 'Aliases: `\ beg \`', value: "> =beg ", inline: true},
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            {name: 'Aliases: `\ daily \`', value: "> =daily ", inline: true},
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            {name: 'Aliases: `\ weekly \`', value: "> =weekly ", inline: true},
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            {name: 'Aliases: `\ monthly \`', value: "> =monthly ", inline: true},
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            {name: 'Aliases: `\ slotseco \`', value: "> =slotseco  ", inline: true},
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            { name: `\u200B`, value: `\u200B`, inline: true },
-            {name: 'Aliases: `\ gamble \`', value: "> =gamble {amount} ", inline: true},
+            {name: 'Aliases: `\ work \`', value: " > =work "},
+            {name: 'Aliases: `\ rob \`', value: "> =rob @mention"},
+            {name: 'Aliases: `\ beg \`', value: "> =beg "},
+            {name: 'Aliases: `\ daily \`', value: "> =daily "},
+            {name: 'Aliases: `\ weekly \`', value: "> =weekly "},
+            {name: 'Aliases: `\ monthly \`', value: "> =monthly "},
+            {name: 'Aliases: `\ slotseco \`', value: "> =slotseco  "},
+            {name: 'Aliases: `\ gamble \`', value: "> =gamble {amount} "},
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
@@ -63,25 +49,13 @@ module.exports = {
         .setTitle('Shop related commands & usage')
         .setURL('https://crizmo.github.io/elina/')
         .addFields(
-          {name: 'Usage: `\ =shop \`', value: " > To check shop items which users can buy", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =additem \`', value: "> Admin command to add items in the shop ", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =removeitem \`', value: "> Admin command to remove items from the shop ", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =inv || =inventory \`', value: "> To check user inventory ", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =banknote \`', value: "> Use banknote to increase bank space by 5000 ", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =buy \`', value: "> To buy item from shop :- __=buy {item_number}__ ", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =use \`', value: "> To use items and get yen through using them :- __=use {item_name}__ ", inline: true},
+          {name: 'Usage: `\ =shop \`', value: " > To check shop items which users can buy"},
+          {name: 'Usage: `\ =additem \`', value: "> Admin command to add items in the shop "},
+          {name: 'Usage: `\ =removeitem \`', value: "> Admin command to remove items from the shop "},
+          {name: 'Usage: `\ =inv || =inventory \`', value: "> To check user inventory "},
+          {name: 'Usage: `\ =banknote \`', value: "> Use banknote to increase bank space by 5000 "},
+          {name: 'Usage: `\ =buy \`', value: "> To buy item from shop :- __=buy {item_number}__ "},
+          {name: 'Usage: `\ =use \`', value: "> To use items and get yen through using them :- __=use {item_name}__ "},
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
@@ -91,22 +65,12 @@ module.exports = {
         .setTitle('User balance commands & usage')
         .setURL('https://crizmo.github.io/elina/')
         .addFields(
-          {name: 'Usage: `\ =bal || =balance || =bl \`', value: " > To check user balance", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =deposit || =dep \`', value: "> To deposit yen in the bank. ", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =withdraw || =with \`', value: "> To withdraw yen from your bank", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =give \`', value: "> To give yen to another user ", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =glb || =globalleaderboard \`', value: "> To check global yen leaderboard ", inline: true},
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          { name: `\u200B`, value: `\u200B`, inline: true },
-          {name: 'Usage: `\ =lb || =leaderboard \`', value: "> To check server only leaderboard", inline: true},
+          {name: 'Usage: `\ =bal || =balance || =bl \`', value: " > To check user balance"},
+          {name: 'Usage: `\ =deposit || =dep \`', value: "> To deposit yen in the bank. "},
+          {name: 'Usage: `\ =withdraw || =with \`', value: "> To withdraw yen from your bank"},
+          {name: 'Usage: `\ =give \`', value: "> To give yen to another user "},
+          {name: 'Usage: `\ =glb || =globalleaderboard \`', value: "> To check global yen leaderboard "},
+          {name: 'Usage: `\ =lb || =leaderboard \`', value: "> To check server only leaderboard"},
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
