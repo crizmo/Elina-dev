@@ -16,6 +16,10 @@ module.exports = {
         .setTitle('Incorrect Usage <:paimon:927534293515911178>')
         .setURL('https://crizmo.github.io/elina/')
         .setDescription('To use the command correctly do \n `\ =gen-char {character_name} \`')
+        .addFields(
+            {name: 'Characters: ', value: "`\ albedo \` - `\ aloy \` - `\ amber \` - `\ arataki-itto \` - `\ ayaka \` - `\ barbara \` - `\ beidou \` - `\ bennett \` - `\ chongyun \` - `\ diluc \` - `\ diona \` -`\ eula \` - `\ fischl \` - `\ ganyu \` - `\ hu-tao \` - `\ jean \` - `\ kaeya \` - `\ kazuha \` - `\ keqing \` - `\ klee \` - `\ kokomi \` - `\ lisa \` - `\ mona \` - `\ ningguang \` - `\ noelle \` - `\ qiqi \` - `\ raiden \` - `\ razor \` - `\ rosaria \` - `\ sara \` - `\ sayu \` - `\ sucrose \` - `\ tartaglia \` - `\ thoma \` - `\ traveler-anemo `\ - \` traveler-electro \` - `\ traveler-geo `\ - \` venti `\ - \` xiangling \` -`\ xiao \` - `\ xingqiu \` - `\ xinyan \` - `\ yanfei \` - `\ yoimiya \` - `\ zhongli \`"},
+            {name: 'Usage: ', value: "`\ =gen-char {character_name} \`"},
+        )
         .setThumbnail("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU1VIMxlog-aJsdR3Vk770oxvJx7baqzfS0vzp3Ujcr_KWMHj4gKc9Vh9jWojnp8WrwcU&usqp=CAU")
         .setImage("https://mmos.com/wp-content/uploads/2021/04/genshin-impact-ps5-announce-key-art-banner.jpg")
         .setTimestamp();
