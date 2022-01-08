@@ -31,7 +31,7 @@ module.exports = {
         let result = await cs.transferMoney({
             user: message.author,
             user2: user,
-            guild: { id : null },
+            guild: message.guild,
             amount: money
         });
         if (result.error) return message.channel.send(`You don't have enough yen in your wallet.`);

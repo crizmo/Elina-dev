@@ -13,7 +13,7 @@ module.exports = {
 
         let result = await cs.beg({
             user: message.author,
-            guild: { id : null },
+            guild: message.guild,
             minAmount: 1,
             maxAmount: 500
         });

@@ -13,7 +13,7 @@ module.exports = {
 
         let result = await cs.monthly({
             user: message.author,
-            guild: { id : null },
+            guild: message.guild,
             amount: 5000,
     
         });

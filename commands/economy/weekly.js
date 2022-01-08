@@ -13,7 +13,7 @@ module.exports = {
 
         let result = await cs.weekly({
             user: message.author,
-            guild: { id : null },
+            guild: message.guild,
             amount: 1000,
         });
 

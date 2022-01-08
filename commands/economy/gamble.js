@@ -14,7 +14,7 @@ module.exports = {
 
         let result = await cs.gamble({
             user: message.author,
-            guild: { id : null },
+            guild: message.guild,
             amount: money,
             minAmount: 1,
             cooldown: 60 //60 seconds

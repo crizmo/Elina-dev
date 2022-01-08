@@ -28,7 +28,7 @@ module.exports = {
       let money = Math.floor((Math.random() * 10) + 1) * 100 // 100 - 1000
       let result = await cs.addMoney({
         user: message.author,
-        guild: { id : null },
+        guild: message.guild,
         amount: money,
         wheretoPutMoney: 'wallet'
       });

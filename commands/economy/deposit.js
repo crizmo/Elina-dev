@@ -16,7 +16,7 @@ module.exports = {
     
         let result = await cs.deposite({
             user: message.author,
-            guild: { id : null },
+            guild: message.guild,
             amount: money
         });
         if (result.error) {

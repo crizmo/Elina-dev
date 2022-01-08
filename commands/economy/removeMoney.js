@@ -28,7 +28,7 @@ module.exports = {
         let money = (amount);
         let result = await cs.removeMoney({
             user: user,
-            guild: { id : null },
+            guild: message.guild,
             amount: amount,
             wheretoPutMoney: wheretoPutMoney
         });

@@ -24,7 +24,7 @@ module.exports = {
 
         let result = await cs.balance({
             user: user,
-            guild: { id : null }
+            guild: message.guild
         });
 
         let avatar = user.displayAvatarURL({dynamic: true, size: 1024})

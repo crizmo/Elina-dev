@@ -68,7 +68,7 @@ module.exports = {
                     const money = 5000;
                     let result = await cs.removeMoney({
                         user: message.author,
-                        guild: { id : null }, // { id: null }
+                        guild: message.guild, // { id: null }
                         amount: money,
                     });
                     message.channel.send(`Shit, ${message.author.tag} you lost ${money} ¥! You now have ${result.rawData.wallet} ¥ in your wallet!`);
@@ -79,7 +79,7 @@ module.exports = {
                     const money = 10000;
                     let result = await cs.addMoney({
                         user: message.author,
-                        guild: { id : null }, // { id: null }
+                        guild: message.guild, // { id: null }
                         amount: money,
                     });
                     message.channel.send(`Congrats, ${message.author.tag} you won ${money} ¥! You now have ${result.rawData.wallet} ¥ in your wallet!`);

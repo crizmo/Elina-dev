@@ -15,7 +15,7 @@ module.exports = {
         if (!args[0]) return message.reply('Which item to remove?')
         let result = await cs.removeUserItem({
          user: message.author,
-         guild: { id : null },
+         guild: message.guild,
          item: parseInt(args[0])
         });
        if (result.error) {

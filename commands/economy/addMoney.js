@@ -25,7 +25,7 @@ module.exports = {
         
     let result = await cs.addMoney({
       user: user,
-      guild: { id : null },
+      guild: message.guild,
       amount: money,
       wheretoPutMoney: wheretoPutMoney
     });

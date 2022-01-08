@@ -25,7 +25,7 @@ module.exports = {
         let result = await cs.rob({
             user: message.author,
             user2: user,
-            guild: { id : null },
+            guild: message.guild,
             minAmount: 100,
             successPercentage: 5,
             cooldown: 25, //25 seconds,
