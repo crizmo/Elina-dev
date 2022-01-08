@@ -23,39 +23,49 @@ module.exports = {
 
         if (!name) return message.channel.send({ embeds: [errorEmbed]})
 
-        fetch(`https://api.genshin.dev/characters/${name}`)
-            .then(response => response.json())
-            .then(data => {
-                let charname = data.name.toLocaleString()
-                let vision = data.vision.toLocaleString()
-                let weapon = data.weapon.toLocaleString()
-                let nation = data.nation.toLocaleString()
-                let affiliation = data.affiliation.toLocaleString()
-                let rarity = data.rarity.toLocaleString()
-                let constellation = data.constellation.toLocaleString()
-                let birthday = data.birthday.toLocaleString()
-                let description = data.description.toLocaleString()
+            let Chars_Data = []
+            let D_character = await fetch(`https://api.genshin.dev/characters/${name}/`)
+            let I_character = `https://api.genshin.dev/characters/${name}/icon.png`
+            let Pic_character = `https://api.genshin.dev/characters/${name}/gacha-splash.png`
+            let data = await D_character.json();
 
-                const charEmbed = new MessageEmbed()
-                    .setTitle(`Genshin Impact - ${charname}`)
-                    .setDescription(`${description}`)
-                    .addFields(
-                        { name: `Username`, value: `${charname}` },
-                        { name: `Vision`, value: `${vision}` },
-                    )
-                    // .setThumbnail()
-                    .setFooter(`Isn't ${charname} just perfect !`)
-                    .setTimestamp()
+            Chars_Data.push({
+                charname : data.name.toLocaleString(),
+                vision : data.vision.toLocaleString(),
+                nation : data.nation.toLocaleString(),
+                weapon : data.weapon.toLocaleString(),
+                affiliation : data.affiliation.toLocaleString(),
+                rarity : data.rarity.toLocaleString(),
+                constellation : data.constellation.toLocaleString(),
+                birthday : data.birthday.toLocaleString(),
+                description : data.description.toLocaleString(),
+                icon: I_character.toString(),
+                pic: Pic_character.toLocaleString()
+            });
 
-                const row = new MessageActionRow().addComponents(
-                    new MessageButton()
-                        .setURL(`https://github-readme-stats.vercel.app/api?username=${charname}&theme=radical&show_icons=true&hide_border=true.gif`)
-                        .setLabel('Stats')
-                        .setStyle('LINK'),
-                );
+            const charEmbed = new MessageEmbed()
+                .setTitle(`Genshin Impact - ${Chars_Data[0].charname}`) 
+                .setDescription(`${Chars_Data[0].description}`)
+                .addFields(
+                    { name: `Rarity`, value: `${Chars_Data[0].rarity} ⭐`, inline: true},
+                    { name: `Vision`, value: `${Chars_Data[0].vision}`, inline: true},
+                    { name: `Nation`, value: `${Chars_Data[0].nation}`, inline: true},
+                    { name: `Constellation`, value: `${Chars_Data[0].constellation}`, inline: true},
+                    { name: `Weapon`, value: `${Chars_Data[0].weapon}`, inline: true},
+                    { name: `Affiliation`, value: `${Chars_Data[0].affiliation}`, inline: true},
+                )
+                .setImage(`${Chars_Data[0].pic}`)
+                .setThumbnail(`${Chars_Data[0].icon}`)
+                .setFooter(`Isn't ${Chars_Data[0].charname} just perfect !`)
+                .setTimestamp()
 
-                message.channel.send({ embeds: [charEmbed], components: [row] });
-            }
-            )
+            const row = new MessageActionRow().addComponents(
+                new MessageButton()
+                    .setCustomId('yeet')
+                    .setLabel('Yeet')
+                    .setStyle('SECONDARY'),
+            );
+
+            message.channel.send({ embeds: [charEmbed], components: [row] });
+        }
     }
-}
