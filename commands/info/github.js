@@ -74,14 +74,7 @@ module.exports = {
                     )
                     .setThumbnail(avatar)
                     .setFooter("For more commands do =help")
-                    .setTimestamp()
-
-                //   const embed = new MessageEmbed()
-                //   .setTitle("Github profile/stats")
-                //   .setDescription("Click on the buttons below to check their github profile or stats!")
-                //   .setImage("https://giffiles.alphacoders.com/121/12113.gif")
-                //   .setFooter(message.author.username, message.author.displayAvatarURL({ format: "png", dynamic: true, size: 64 }))
-                //   .setColor("#FFDBE9");
+                    // .setTimestamp()
 
                 message.channel.send({ embeds: [userEmbed], components: [row] });
             }

@@ -18,7 +18,6 @@ module.exports = {
         .setDescription('To use the command correctly do \n `\ =gen-char {character_name} \`')
         .setThumbnail("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU1VIMxlog-aJsdR3Vk770oxvJx7baqzfS0vzp3Ujcr_KWMHj4gKc9Vh9jWojnp8WrwcU&usqp=CAU")
         .setImage("https://mmos.com/wp-content/uploads/2021/04/genshin-impact-ps5-announce-key-art-banner.jpg")
-        .setFooter('Enjoy !')
         .setTimestamp();
 
         if (!name) return message.channel.send({ embeds: [errorEmbed]})
@@ -56,16 +55,8 @@ module.exports = {
                 )
                 .setImage(`${Chars_Data[0].pic}`)
                 .setThumbnail(`${Chars_Data[0].icon}`)
-                .setFooter(`Isn't ${Chars_Data[0].charname} just perfect !`)
                 .setTimestamp()
 
-            const row = new MessageActionRow().addComponents(
-                new MessageButton()
-                    .setCustomId('yeet')
-                    .setLabel('Yeet')
-                    .setStyle('SECONDARY'),
-            );
-
-            message.channel.send({ embeds: [charEmbed], components: [row] });
+            message.channel.send({ embeds: [charEmbed] });
         }
     }
