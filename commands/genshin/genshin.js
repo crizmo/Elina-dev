@@ -18,6 +18,47 @@ module.exports = {
         .setThumbnail(`${thumb}`)
         .setTimestamp()
 
-        message.channel.send({ embeds: [genEmbed] })
+        const cmdEmbed = new MessageEmbed()
+        .setTitle(`Genshin Impact- Commands`) 
+        .setDescription("Genshin impact commands - Character - Artifacts")
+        // .setImage(`${image}`)
+        // .setThumbnail(`${thumb}`)
+        .setTimestamp()
+
+        const row = new MessageActionRow().addComponents(
+            new MessageButton()
+                .setCustomId('main')
+                .setLabel('Genshin')
+                .setStyle('PRIMARY'),
+            new MessageButton()
+                .setCustomId('cmd')
+                .setLabel('Commands')
+                .setStyle('SECONDARY'),
+            );
+
+        message.channel.send({ embeds: [genEmbed], components: [row] })
+
+        const filter1 = i => i.customId === 'main' && i.user.id === message.member.user.id;
+
+        const collectorGen = message.channel.createMessageComponentCollector({ filter1, time: 50000 });
+        
+        collectorGen.on('collect', async i => {
+          if (i.customId === 'main') {
+            await i.deferUpdate()
+            await i.editReply({ embeds: [genEmbed], components: [row] });
+          }
+        });
+
+        const filter2 = i => i.customId === 'cmd' && i.user.id === message.member.user.id;
+
+        const collectorCmd = message.channel.createMessageComponentCollector({ filter2, time: 50000 });
+        
+        collectorCmd.on('collect', async i => {
+          if (i.customId === 'cmd') {
+            await i.deferUpdate()
+            await i.editReply({ embeds: [cmdEmbed], components: [row] });
+          }
+        });
+
     }
 }

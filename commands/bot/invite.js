@@ -12,7 +12,6 @@ module.exports = {
         
     const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
-
         const row = new MessageActionRow().addComponents(
 				new MessageButton()
                     .setURL('https://discord.com/oauth2/authorize?client_id=842397001954230303&permissions=126054&scope=bot')
