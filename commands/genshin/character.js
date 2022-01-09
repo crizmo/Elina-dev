@@ -3,7 +3,7 @@ const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: "genshin-character",
-    aliases: ["gen-char", "genshin-character", "gen-character", "genshin-char"],
+    aliases: ["gen-char", "gen-character", "genshin-char"],
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     description: "Genshin info & stats command",
