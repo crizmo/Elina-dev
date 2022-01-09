@@ -23,7 +23,6 @@ module.exports = {
         if (!name) return message.channel.send({ embeds: [errorEmbed]})
 
         let Chars_Data = []
-        let skillTalents = []
         let D_character = await fetch(`https://api.genshin.dev/characters/${name}/`)
         let I_character = `https://api.genshin.dev/characters/${name}/icon.png`
         let Pic_character = `https://api.genshin.dev/characters/${name}/gacha-splash.png`
@@ -46,24 +45,44 @@ module.exports = {
 
             // skilltalent
                 //  skill 1
-                    name1 : data.skillTalents[0].name.toLocaleString(),
-                    unlock1 : data.skillTalents[0].unlock.toLocaleString(),
-                    description1 : data.skillTalents[0].description.toLocaleString(),
-                    type1 : data.skillTalents[0].type.toLocaleString(),
+                    skillname1 : data.skillTalents[0].name.toLocaleString(),
+                    skillunlock1 : data.skillTalents[0].unlock.toLocaleString(),
+                    skilldescription1 : data.skillTalents[0].description.toLocaleString(),
+                    skilltype1 : data.skillTalents[0].type.toLocaleString(),
                 // --------------------
                 //  skill 2
-                    name2 : data.skillTalents[1].name.toLocaleString(),
-                    unlock2 : data.skillTalents[1].unlock.toLocaleString(),
-                    description2 : data.skillTalents[1].description.toLocaleString(),
-                    type2 : data.skillTalents[1].type.toLocaleString(),
+                    skillname2 : data.skillTalents[1].name.toLocaleString(),
+                    skillunlock2 : data.skillTalents[1].unlock.toLocaleString(),
+                    skilldescription2 : data.skillTalents[1].description.toLocaleString(),
+                    skilltype2 : data.skillTalents[1].type.toLocaleString(),
                 // --------------------
                 //  skill 3
-                    name3 : data.skillTalents[2].name.toLocaleString(),
-                    unlock3 : data.skillTalents[2].unlock.toLocaleString(),
-                    description3 : data.skillTalents[2].description.toLocaleString(),
-                    type3 : data.skillTalents[2].type.toLocaleString(),
+                    skillname3 : data.skillTalents[2].name.toLocaleString(),
+                    skillunlock3 : data.skillTalents[2].unlock.toLocaleString(),
+                    skilldescription3 : data.skillTalents[2].description.toLocaleString(),
+                    skilltype3 : data.skillTalents[2].type.toLocaleString(),
                 // --------------------
-            // the end
+            // skill end
+
+            // PassiveTalents
+                //  passive 1
+                    passiveName1 : data.passiveTalents[0].name.toLocaleString(),
+                    passiveUnlock1 : data.passiveTalents[0].unlock.toLocaleString(),
+                    passiveDescription1 : data.passiveTalents[0].description.toLocaleString(),
+                    passiveLevel1 : data.passiveTalents[0].level.toLocaleString(),
+                // --------------------
+                //  passive 2
+                    passiveName2 : data.passiveTalents[1].name.toLocaleString(),
+                    passiveUnlock2 : data.passiveTalents[1].unlock.toLocaleString(),
+                    passiveDescription2 : data.passiveTalents[1].description.toLocaleString(),
+                    passiveLevel2 : data.passiveTalents[1].level.toLocaleString(),
+                // --------------------
+                //  passive 3
+                    passiveName3 : data.passiveTalents[2].name.toLocaleString(),
+                    passiveUnlock3 : data.passiveTalents[2].unlock.toLocaleString(),
+                    passiveDescription3 : data.passiveTalents[2].description.toLocaleString(),
+                // --------------------
+            // passive end
         })
 
             const charEmbed = new MessageEmbed()
@@ -82,13 +101,15 @@ module.exports = {
             .setThumbnail(`${Chars_Data[0].icon}`)
             .setTimestamp()
 
+            // SKILLS START
+
             const skill1Embed = new MessageEmbed()
             .setTitle(`${Chars_Data[0].charname}'s Talent skills`) 
             .setDescription(`${Chars_Data[0].description}`)
             .addFields(
-                { name: `Skill`, value: `${Chars_Data[0].name1}`, inline: true}, 
-                { name: `Type`, value: `${Chars_Data[0].type1}`, inline: true},
-                { name: `Description`, value: `${Chars_Data[0].description1}`},
+                { name: `Skill`, value: `${Chars_Data[0].skillname1}`, inline: true}, 
+                { name: `Type`, value: `${Chars_Data[0].skilltype1}`, inline: true},
+                { name: `Description`, value: `${Chars_Data[0].skilldescription1}`},
             )
             .setImage(`${Chars_Data[0].pic}`)
             .setColor("44E2F8")
@@ -99,9 +120,9 @@ module.exports = {
             .setTitle(`${Chars_Data[0].charname}'s Talent skills`) 
             .setDescription(`${Chars_Data[0].description}`)
             .addFields(
-                { name: `Skill`, value: `${Chars_Data[0].name2}`, inline: true}, 
-                { name: `Type`, value: `${Chars_Data[0].type2}`, inline: true},
-                { name: `Description`, value: `${Chars_Data[0].description2}`},
+                { name: `Skill`, value: `${Chars_Data[0].skillname2}`, inline: true}, 
+                { name: `Type`, value: `${Chars_Data[0].skilltype2}`, inline: true},
+                { name: `Description`, value: `${Chars_Data[0].skilldescription2}`},
             )
             .setImage(`${Chars_Data[0].pic}`)
             .setColor("44E2F8")
@@ -112,14 +133,53 @@ module.exports = {
             .setTitle(`${Chars_Data[0].charname}'s Talent skills`) 
             .setDescription(`${Chars_Data[0].description}`)
             .addFields(
-                { name: `Skill`, value: `${Chars_Data[0].name3}`, inline: true}, 
-                { name: `Type`, value: `${Chars_Data[0].type3}`, inline: true},
-                { name: `Description`, value: `${Chars_Data[0].description3}`},
+                { name: `Skill`, value: `${Chars_Data[0].skillname3}`, inline: true}, 
+                { name: `Type`, value: `${Chars_Data[0].skilltype3}`, inline: true},
+                { name: `Description`, value: `${Chars_Data[0].skilldescription3}`},
             )
             .setImage(`${Chars_Data[0].pic}`)
             .setColor("44E2F8")
             .setThumbnail(`${Chars_Data[0].card}`)
             .setTimestamp()
+
+            // SKILLS END
+
+            // PASSIVE START
+
+            const passiveEmbed = new MessageEmbed()
+            .setTitle(`${Chars_Data[0].charname}'s Passive skills`) 
+            .setDescription(`${Chars_Data[0].description}`)
+            .addFields(
+                // Passive 1
+                { name: `\u200B`, value: `\u200B`, inline: true}, 
+                { name: `\u200B`, value: `**Passive 1**`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Name`, value: `${Chars_Data[0].passiveName1}`, inline: true},  
+                { name: `Level`, value: `${Chars_Data[0].passiveLevel1}`, inline: true},
+                { name: `Unlock`, value: `${Chars_Data[0].passiveUnlock1}`, inline: true},
+                { name: `Info`, value: `${Chars_Data[0].passiveDescription1}`},
+                // Passive 2
+                { name: `\u200B`, value: `\u200B`, inline: true}, 
+                { name: `\u200B`, value: `**Passive 2**`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Name`, value: `${Chars_Data[0].passiveName2}`, inline: true}, 
+                { name: `Level`, value: `${Chars_Data[0].passiveLevel2}`, inline: true},
+                { name: `Unlock`, value: `${Chars_Data[0].passiveUnlock2}`, inline: true}, 
+                { name: `Info`, value: `${Chars_Data[0].passiveDescription2}`},
+                // Passive 3
+                { name: `\u200B`, value: `\u200B`, inline: true}, 
+                { name: `\u200B`, value: `**Passive 3**`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Name`, value: `${Chars_Data[0].passiveName3}`, inline: true}, 
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Unlock`, value: `${Chars_Data[0].passiveUnlock3}`, inline: true}, 
+                { name: `Info`, value: `${Chars_Data[0].passiveDescription3}`},
+            )
+            .setColor("44E2F8")
+            .setThumbnail(`${Chars_Data[0].icon}`)
+            .setTimestamp()
+
+            // PASSIVE END
 
             const row = new MessageActionRow().addComponents(
                 new MessageButton()
@@ -140,7 +200,14 @@ module.exports = {
                     .setStyle('SECONDARY'),
                 );
 
-            message.channel.send({ embeds: [charEmbed], components: [row] })
+            const row2 = new MessageActionRow().addComponents(
+                new MessageButton()
+                    .setCustomId('passive')
+                    .setLabel('Passives')
+                    .setStyle('SECONDARY'),
+                );
+
+            message.channel.send({ embeds: [charEmbed], components: [row, row2] })
 
             const filter1 = i => i.customId === 'main' && i.user.id === message.member.user.id;
 
@@ -149,9 +216,11 @@ module.exports = {
                 collectorMain.on('collect', async i => {
                 if (i.customId === 'main') {
                     await i.deferUpdate()
-                    await i.editReply({ embeds: [charEmbed], components: [row] });
+                    await i.editReply({ embeds: [charEmbed], components: [row, row2] });
                 }
                 });
+
+            // SKILLS
   
             const filter2 = i => i.customId === 'skill1' && i.user.id === message.member.user.id;
     
@@ -160,7 +229,7 @@ module.exports = {
                 collectorSkill1.on('collect', async i => {
                 if (i.customId === 'skill1') {
                     await i.deferUpdate()
-                    await i.editReply({ embeds: [skill1Embed], components: [row] });
+                    await i.editReply({ embeds: [skill1Embed], components: [row, row2] });
                 }
                 });
 
@@ -171,7 +240,7 @@ module.exports = {
                 collectorSkill2.on('collect', async i => {
                 if (i.customId === 'skill2') {
                     await i.deferUpdate()
-                    await i.editReply({ embeds: [skill2Embed], components: [row] });
+                    await i.editReply({ embeds: [skill2Embed], components: [row, row2] });
                 }
                 });
 
@@ -182,7 +251,20 @@ module.exports = {
                 collectorSkill3.on('collect', async i => {
                 if (i.customId === 'skill3') {
                     await i.deferUpdate()
-                    await i.editReply({ embeds: [skill3Embed], components: [row] });
+                    await i.editReply({ embeds: [skill3Embed], components: [row, row2] });
+                }
+                });
+
+            // PASSIVE 
+
+            const filter5 = i => i.customId === 'passive' && i.user.id === message.member.user.id;
+    
+                const collectorPassive = message.channel.createMessageComponentCollector({ filter5, time: 50000 });
+                
+                collectorPassive.on('collect', async i => {
+                if (i.customId === 'passive') {
+                    await i.deferUpdate()
+                    await i.editReply({ embeds: [passiveEmbed], components: [row, row2] });
                 }
                 });
     }
