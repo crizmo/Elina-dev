@@ -37,7 +37,7 @@ module.exports = {
 
         const artiEmbed = new MessageEmbed()
             .setTitle(`Genshin Impact - ${Arti_Data[0].artiname}`) 
-            .setDescription("Genshin inpact artifact info")
+            .setDescription("Genshin impact artifact info")
             .addFields(
                 { name: `Rarity`, value: `${Arti_Data[0].rarity} ⭐`, inline: true},
                 { name: `2 Piece Bonus`, value: `${Arti_Data[0].bonus2}`, inline: true},

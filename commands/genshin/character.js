@@ -23,9 +23,11 @@ module.exports = {
         if (!name) return message.channel.send({ embeds: [errorEmbed]})
 
         let Chars_Data = []
+        let skillTalents = []
         let D_character = await fetch(`https://api.genshin.dev/characters/${name}/`)
         let I_character = `https://api.genshin.dev/characters/${name}/icon.png`
         let Pic_character = `https://api.genshin.dev/characters/${name}/gacha-splash.png`
+        let Card_character = `https://api.genshin.dev/characters/${name}/card.png`
         let data = await D_character.json();
 
         Chars_Data.push({
@@ -38,11 +40,33 @@ module.exports = {
             constellation : data.constellation.toLocaleString(),
             birthday : data.birthday.toLocaleString(),
             description : data.description.toLocaleString(),
-            icon: I_character.toString(),
-            pic: Pic_character.toLocaleString()
+            icon : I_character.toString(),
+            pic : Pic_character.toLocaleString(),
+            card : Card_character.toLocaleString(),
+
+            // skilltalent
+                //  skill 1
+                    name1 : data.skillTalents[0].name.toLocaleString(),
+                    unlock1 : data.skillTalents[0].unlock.toLocaleString(),
+                    description1 : data.skillTalents[0].description.toLocaleString(),
+                    type1 : data.skillTalents[0].type.toLocaleString(),
+                // --------------------
+                //  skill 2
+                    name2 : data.skillTalents[1].name.toLocaleString(),
+                    unlock2 : data.skillTalents[1].unlock.toLocaleString(),
+                    description2 : data.skillTalents[1].description.toLocaleString(),
+                    type2 : data.skillTalents[1].type.toLocaleString(),
+                // --------------------
+                //  skill 3
+                    name3 : data.skillTalents[2].name.toLocaleString(),
+                    unlock3 : data.skillTalents[2].unlock.toLocaleString(),
+                    description3 : data.skillTalents[2].description.toLocaleString(),
+                    type3 : data.skillTalents[2].type.toLocaleString(),
+                // --------------------
+            // the end
         })
 
-        const charEmbed = new MessageEmbed()
+            const charEmbed = new MessageEmbed()
             .setTitle(`Genshin Impact - ${Chars_Data[0].charname}`) 
             .setDescription(`${Chars_Data[0].description}`)
             .addFields(
@@ -51,12 +75,115 @@ module.exports = {
                 { name: `Nation`, value: `${Chars_Data[0].nation}`, inline: true},
                 { name: `Constellation`, value: `${Chars_Data[0].constellation}`, inline: true},
                 { name: `Weapon`, value: `${Chars_Data[0].weapon}`, inline: true},
-                { name: `Affiliation`, value: `${Chars_Data[0].affiliation}`, inline: true},
+                { name: `Affiliation`, value: `${Chars_Data[0].affiliation}`, inline: true},     
             )
             .setImage(`${Chars_Data[0].pic}`)
+            .setColor("44E2F8")
             .setThumbnail(`${Chars_Data[0].icon}`)
             .setTimestamp()
 
-        message.channel.send({ embeds: [charEmbed] })
+            const skill1Embed = new MessageEmbed()
+            .setTitle(`${Chars_Data[0].charname}'s Talent skills`) 
+            .setDescription(`${Chars_Data[0].description}`)
+            .addFields(
+                { name: `Skill`, value: `${Chars_Data[0].name1}`, inline: true}, 
+                { name: `Type`, value: `${Chars_Data[0].type1}`, inline: true},
+                { name: `Description`, value: `${Chars_Data[0].description1}`},
+            )
+            .setImage(`${Chars_Data[0].pic}`)
+            .setColor("44E2F8")
+            .setThumbnail(`${Chars_Data[0].card}`)
+            .setTimestamp()
+
+            const skill2Embed = new MessageEmbed()
+            .setTitle(`${Chars_Data[0].charname}'s Talent skills`) 
+            .setDescription(`${Chars_Data[0].description}`)
+            .addFields(
+                { name: `Skill`, value: `${Chars_Data[0].name2}`, inline: true}, 
+                { name: `Type`, value: `${Chars_Data[0].type2}`, inline: true},
+                { name: `Description`, value: `${Chars_Data[0].description2}`},
+            )
+            .setImage(`${Chars_Data[0].pic}`)
+            .setColor("44E2F8")
+            .setThumbnail(`${Chars_Data[0].card}`)
+            .setTimestamp()
+
+            const skill3Embed = new MessageEmbed()
+            .setTitle(`${Chars_Data[0].charname}'s Talent skills`) 
+            .setDescription(`${Chars_Data[0].description}`)
+            .addFields(
+                { name: `Skill`, value: `${Chars_Data[0].name3}`, inline: true}, 
+                { name: `Type`, value: `${Chars_Data[0].type3}`, inline: true},
+                { name: `Description`, value: `${Chars_Data[0].description3}`},
+            )
+            .setImage(`${Chars_Data[0].pic}`)
+            .setColor("44E2F8")
+            .setThumbnail(`${Chars_Data[0].card}`)
+            .setTimestamp()
+
+            const row = new MessageActionRow().addComponents(
+                new MessageButton()
+                    .setCustomId('main')
+                    .setLabel('Character')
+                    .setStyle('PRIMARY'),
+                new MessageButton()
+                    .setCustomId('skill1')
+                    .setLabel('Skill-1')
+                    .setStyle('SECONDARY'),
+                new MessageButton()
+                    .setCustomId('skill2')
+                    .setLabel('Skill-2')
+                    .setStyle('SECONDARY'),
+                new MessageButton()
+                    .setCustomId('skill3')
+                    .setLabel('Skill-3')
+                    .setStyle('SECONDARY'),
+                );
+
+            message.channel.send({ embeds: [charEmbed], components: [row] })
+
+            const filter1 = i => i.customId === 'main' && i.user.id === message.member.user.id;
+
+                const collectorMain = message.channel.createMessageComponentCollector({ filter1, time: 50000 });
+                
+                collectorMain.on('collect', async i => {
+                if (i.customId === 'main') {
+                    await i.deferUpdate()
+                    await i.editReply({ embeds: [charEmbed], components: [row] });
+                }
+                });
+  
+            const filter2 = i => i.customId === 'skill1' && i.user.id === message.member.user.id;
+    
+                const collectorSkill1 = message.channel.createMessageComponentCollector({ filter2, time: 50000 });
+                
+                collectorSkill1.on('collect', async i => {
+                if (i.customId === 'skill1') {
+                    await i.deferUpdate()
+                    await i.editReply({ embeds: [skill1Embed], components: [row] });
+                }
+                });
+
+            const filter3 = i => i.customId === 'skill2' && i.user.id === message.member.user.id;
+    
+                const collectorSkill2 = message.channel.createMessageComponentCollector({ filter3, time: 50000 });
+                
+                collectorSkill2.on('collect', async i => {
+                if (i.customId === 'skill2') {
+                    await i.deferUpdate()
+                    await i.editReply({ embeds: [skill2Embed], components: [row] });
+                }
+                });
+
+            const filter4 = i => i.customId === 'skill3' && i.user.id === message.member.user.id;
+    
+                const collectorSkill3 = message.channel.createMessageComponentCollector({ filter4, time: 50000 });
+                
+                collectorSkill3.on('collect', async i => {
+                if (i.customId === 'skill3') {
+                    await i.deferUpdate()
+                    await i.editReply({ embeds: [skill3Embed], components: [row] });
+                }
+                });
     }
 }
