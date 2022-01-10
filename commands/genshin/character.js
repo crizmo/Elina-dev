@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const cooldown = new Set();
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 module.exports = {
@@ -8,6 +9,10 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     description: "Genshin info & stats command",
     async execute(client, message, args, Discord) {
+
+        if (cooldown.has(message.author.id)) {
+            message.reply('Please use the command after __20__ seconds\nThis is to reduce the pressure on the api.')
+        } else {
 
         let name = args[0]
 
@@ -27,6 +32,7 @@ module.exports = {
         let I_character = `https://api.genshin.dev/characters/${name}/icon.png`
         let Pic_character = `https://api.genshin.dev/characters/${name}/gacha-splash.png`
         let Card_character = `https://api.genshin.dev/characters/${name}/card.png`
+        let Con_character = `https://api.genshin.dev/characters/${name}/constellation.png`
         let data = await D_character.json();
 
         Chars_Data.push({
@@ -42,6 +48,7 @@ module.exports = {
             icon : I_character.toString(),
             pic : Pic_character.toLocaleString(),
             card : Card_character.toLocaleString(),
+            conimg : Con_character.toLocaleString(),
 
             // skilltalent
                 //  skill 1
@@ -83,6 +90,45 @@ module.exports = {
                     passiveDescription3 : data.passiveTalents[2].description.toLocaleString(),
                 // --------------------
             // passive end
+
+            // constellations
+                //constellation 1
+                    conName1 : data.constellations[0].name.toLocaleString(),
+                    conUnlock1 : data.constellations[0].unlock.toLocaleString(),
+                    conDescription1 : data.constellations[0].description.toLocaleString(),
+                    conLevel1 : data.constellations[0].level.toLocaleString(),
+                // --------------------
+                //constellation 2
+                    conName2 : data.constellations[1].name.toLocaleString(),
+                    conUnlock2 : data.constellations[1].unlock.toLocaleString(),
+                    conDescription2 : data.constellations[1].description.toLocaleString(),
+                    conLevel2 : data.constellations[1].level.toLocaleString(),
+                // --------------------
+                //constellation 3
+                    conName3 : data.constellations[2].name.toLocaleString(),
+                    conUnlock3 : data.constellations[2].unlock.toLocaleString(),
+                    conDescription3 : data.constellations[2].description.toLocaleString(),
+                    conLevel3 : data.constellations[2].level.toLocaleString(),
+                // --------------------
+                //constellation 4
+                    conName4 : data.constellations[3].name.toLocaleString(),
+                    conUnlock4 : data.constellations[3].unlock.toLocaleString(),
+                    conDescription4 : data.constellations[3].description.toLocaleString(),
+                    conLevel4 : data.constellations[3].level.toLocaleString(),
+                // --------------------
+                //constellation 5
+                    conName5 : data.constellations[4].name.toLocaleString(),
+                    conUnlock5 : data.constellations[4].unlock.toLocaleString(),
+                    conDescription5 : data.constellations[4].description.toLocaleString(),
+                    conLevel5 : data.constellations[4].level.toLocaleString(),
+                // --------------------
+                //constellation 6
+                    conName6 : data.constellations[5].name.toLocaleString(),
+                    conUnlock6 : data.constellations[5].unlock.toLocaleString(),
+                    conDescription6 : data.constellations[5].description.toLocaleString(),
+                    conLevel6 : data.constellations[5].level.toLocaleString(),
+                // --------------------
+            // constellations end
         })
 
             const charEmbed = new MessageEmbed()
@@ -181,6 +227,85 @@ module.exports = {
 
             // PASSIVE END
 
+            // Constellation 1 & 2 Start
+
+            const con12Embed = new MessageEmbed()
+            .setTitle(`${Chars_Data[0].charname}'s Constellation 1 & 2`) 
+            .setDescription(`${Chars_Data[0].description}`)
+            .addFields(
+                // Con 1
+                { name: `\u200B`, value: `\u200B`, inline: true}, 
+                { name: `\u200B`, value: `**Constellation 1**`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Name`, value: `${Chars_Data[0].conName1}`, inline: true}, 
+                { name: `Level`, value: `${Chars_Data[0].conLevel1}`, inline: true},
+                { name: `Unlock`, value: `${Chars_Data[0].conUnlock1}`, inline: true}, 
+                { name: `Info`, value: `${Chars_Data[0].conDescription1}`},
+                // Con 2
+                { name: `\u200B`, value: `\u200B`, inline: true}, 
+                { name: `\u200B`, value: `**Constellation 2**`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Name`, value: `${Chars_Data[0].conName2}`, inline: true}, 
+                { name: `Level`, value: `${Chars_Data[0].conLevel2}`, inline: true},
+                { name: `Unlock`, value: `${Chars_Data[0].conUnlock2}`, inline: true}, 
+                { name: `Info`, value: `${Chars_Data[0].conDescription2}`},
+            )
+            .setColor("44E2F8")
+            .setThumbnail(`${Chars_Data[0].conimg}`)
+            .setTimestamp()
+
+            const con34Embed = new MessageEmbed()
+            .setTitle(`${Chars_Data[0].charname}'s Constellation 3 & 4`) 
+            .setDescription(`${Chars_Data[0].description}`)
+            .addFields(
+                // Con 3
+                { name: `\u200B`, value: `\u200B`, inline: true}, 
+                { name: `\u200B`, value: `**Constellation 3**`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Name`, value: `${Chars_Data[0].conName3}`, inline: true}, 
+                { name: `Level`, value: `${Chars_Data[0].conLevel3}`, inline: true},
+                { name: `Unlock`, value: `${Chars_Data[0].conUnlock3}`, inline: true}, 
+                { name: `Info`, value: `${Chars_Data[0].conDescription3}`},
+                // Con 4
+                { name: `\u200B`, value: `\u200B`, inline: true}, 
+                { name: `\u200B`, value: `**Constellation 4**`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Name`, value: `${Chars_Data[0].conName4}`, inline: true}, 
+                { name: `Level`, value: `${Chars_Data[0].conLevel4}`, inline: true},
+                { name: `Unlock`, value: `${Chars_Data[0].conUnlock4}`, inline: true}, 
+                { name: `Info`, value: `${Chars_Data[0].conDescription4}`},
+            )
+            .setColor("44E2F8")
+            .setThumbnail(`${Chars_Data[0].conimg}`)
+            .setTimestamp()
+
+            const con56Embed = new MessageEmbed()
+            .setTitle(`${Chars_Data[0].charname}'s Constellation 3 & 4`) 
+            .setDescription(`${Chars_Data[0].description}`)
+            .addFields(
+                // Con 5
+                { name: `\u200B`, value: `\u200B`, inline: true}, 
+                { name: `\u200B`, value: `**Constellation 5**`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Name`, value: `${Chars_Data[0].conName5}`, inline: true}, 
+                { name: `Level`, value: `${Chars_Data[0].conLevel5}`, inline: true},
+                { name: `Unlock`, value: `${Chars_Data[0].conUnlock5}`, inline: true}, 
+                { name: `Info`, value: `${Chars_Data[0].conDescription5}`},
+                // Con 6
+                { name: `\u200B`, value: `\u200B`, inline: true}, 
+                { name: `\u200B`, value: `**Constellation 6**`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
+                { name: `Name`, value: `${Chars_Data[0].conName6}`, inline: true}, 
+                { name: `Level`, value: `${Chars_Data[0].conLevel6}`, inline: true},
+                { name: `Unlock`, value: `${Chars_Data[0].conUnlock6}`, inline: true}, 
+                { name: `Info`, value: `${Chars_Data[0].conDescription6}`},
+            )
+            .setColor("44E2F8")
+            .setThumbnail(`${Chars_Data[0].conimg}`)
+            .setTimestamp()
+
+            // Constellation Embed End
+
             const row = new MessageActionRow().addComponents(
                 new MessageButton()
                     .setCustomId('main')
@@ -198,12 +323,24 @@ module.exports = {
                     .setCustomId('skill3')
                     .setLabel('Skill-3')
                     .setStyle('SECONDARY'),
+                new MessageButton()
+                    .setCustomId('passive')
+                    .setLabel('Passive-Talent')
+                    .setStyle('SECONDARY'),
                 );
 
             const row2 = new MessageActionRow().addComponents(
                 new MessageButton()
-                    .setCustomId('passive')
-                    .setLabel('Passives')
+                    .setCustomId('con12')
+                    .setLabel('Constellation:>1-2')
+                    .setStyle('SECONDARY'),
+                new MessageButton()
+                    .setCustomId('con34')
+                    .setLabel('Constellation:>3-4')
+                    .setStyle('SECONDARY'),
+                new MessageButton()
+                    .setCustomId('con56')
+                    .setLabel('Constellation:>5-6')
                     .setStyle('SECONDARY'),
                 );
 
@@ -211,7 +348,7 @@ module.exports = {
 
             const filter1 = i => i.customId === 'main' && i.user.id === message.member.user.id;
 
-                const collectorMain = message.channel.createMessageComponentCollector({ filter1, time: 50000 });
+                const collectorMain = message.channel.createMessageComponentCollector({ filter1, time: 20000 });
                 
                 collectorMain.on('collect', async i => {
                 if (i.customId === 'main') {
@@ -224,7 +361,7 @@ module.exports = {
   
             const filter2 = i => i.customId === 'skill1' && i.user.id === message.member.user.id;
     
-                const collectorSkill1 = message.channel.createMessageComponentCollector({ filter2, time: 50000 });
+                const collectorSkill1 = message.channel.createMessageComponentCollector({ filter2, time: 20000 });
                 
                 collectorSkill1.on('collect', async i => {
                 if (i.customId === 'skill1') {
@@ -235,7 +372,7 @@ module.exports = {
 
             const filter3 = i => i.customId === 'skill2' && i.user.id === message.member.user.id;
     
-                const collectorSkill2 = message.channel.createMessageComponentCollector({ filter3, time: 50000 });
+                const collectorSkill2 = message.channel.createMessageComponentCollector({ filter3, time: 20000 });
                 
                 collectorSkill2.on('collect', async i => {
                 if (i.customId === 'skill2') {
@@ -246,7 +383,7 @@ module.exports = {
 
             const filter4 = i => i.customId === 'skill3' && i.user.id === message.member.user.id;
     
-                const collectorSkill3 = message.channel.createMessageComponentCollector({ filter4, time: 50000 });
+                const collectorSkill3 = message.channel.createMessageComponentCollector({ filter4, time: 20000 });
                 
                 collectorSkill3.on('collect', async i => {
                 if (i.customId === 'skill3') {
@@ -259,7 +396,7 @@ module.exports = {
 
             const filter5 = i => i.customId === 'passive' && i.user.id === message.member.user.id;
     
-                const collectorPassive = message.channel.createMessageComponentCollector({ filter5, time: 50000 });
+                const collectorPassive = message.channel.createMessageComponentCollector({ filter5, time: 20000 });
                 
                 collectorPassive.on('collect', async i => {
                 if (i.customId === 'passive') {
@@ -267,5 +404,46 @@ module.exports = {
                     await i.editReply({ embeds: [passiveEmbed], components: [row, row2] });
                 }
                 });
+
+            // Constellation 1 - 6
+
+            const filter6 = i => i.customId === 'con12' && i.user.id === message.member.user.id;
+    
+                const collectorCon12 = message.channel.createMessageComponentCollector({ filter6, time: 20000 });
+                
+                collectorCon12.on('collect', async i => {
+                if (i.customId === 'con12') {
+                    await i.deferUpdate()
+                    await i.editReply({ embeds: [con12Embed], components: [row, row2] });
+                }
+                });
+
+            const filter7 = i => i.customId === 'con34' && i.user.id === message.member.user.id;
+    
+                const collectorCon34 = message.channel.createMessageComponentCollector({ filter7, time: 20000 });
+                
+                collectorCon34.on('collect', async i => {
+                if (i.customId === 'con34') {
+                    await i.deferUpdate()
+                    await i.editReply({ embeds: [con34Embed], components: [row, row2] });
+                }
+                });
+
+            const filter8 = i => i.customId === 'con12' && i.user.id === message.member.user.id;
+    
+                const collectorCon56 = message.channel.createMessageComponentCollector({ filter8, time: 20000 });
+                
+                collectorCon56.on('collect', async i => {
+                if (i.customId === 'con56') {
+                    await i.deferUpdate()
+                    await i.editReply({ embeds: [con56Embed], components: [row, row2] });
+                }
+                });
+
+            cooldown.add(message.author.id);
+            setTimeout(() => {
+                cooldown.delete(message.author.id)
+            }, 20000);
+        }
     }
 }
