@@ -139,7 +139,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
         .setTitle("Our full help menu!")
         .setDescription(
-          `\`\`\`js\nPrefix: ${prefix}\nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://discord.com/oauth2/authorize?client_id=842397001954230303&permissions=126054&scope=bot)\n\n> To check out a category, use command \`${prefix}help-[category-name]\`\n> To check out a commands, use command \`${prefix}help-[command-name]\``
+          `\`\`\`js\nPrefix: ${prefix}\nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://discord.com/oauth2/authorize?client_id=842397001954230303&permissions=126054&scope=bot)\n\n> To check out a category, use \`${prefix}help-[category-name]\``
         )
         .addFields(categories)
         .setFooter(
