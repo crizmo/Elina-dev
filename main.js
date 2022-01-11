@@ -113,20 +113,20 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-process.on('unhandledRejection' , async (reason , p , origin) => {
-    const embed = new Discord.MessageEmbed()
-    .setTitle('Error Occured')
-    .setColor('RANDOM')
-    .setDescription('```js\n' + reason.stack + '```');
-    client.channels.cache.get('917389482532159528').send({embeds: [embed]})
-});
+// process.on('unhandledRejection' , async (reason , p , origin) => {
+//     const embed = new Discord.MessageEmbed()
+//     .setTitle('Error Occured')
+//     .setColor('RANDOM')
+//     .setDescription('```js\n' + reason.stack + '```');
+//     client.channels.cache.get('917389482532159528').send({embeds: [embed]})
+// });
   
-process.on('uncaughtExceptionMonitor' , async (err,origin) => {
-    const embed = new Discord.MessageEmbed()
-    .setTitle('Error Occured')
-    .setColor('RANDOM')
-    .setDescription('```js\n' + err.stack + '```');
-    client.channels.cache.get('917389482532159528').send({embeds: [embed]})
-});
+// process.on('uncaughtExceptionMonitor' , async (err,origin) => {
+//     const embed = new Discord.MessageEmbed()
+//     .setTitle('Error Occured')
+//     .setColor('RANDOM')
+//     .setDescription('```js\n' + err.stack + '```');
+//     client.channels.cache.get('917389482532159528').send({embeds: [embed]})
+// });
 
 client.login(process.env.DISCORD_TOKEN);
