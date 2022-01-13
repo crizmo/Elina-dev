@@ -31,7 +31,8 @@ module.exports = {
 		.setTitle("Elina Bot")
 		.setDescription("Hi~ I am Elina! Nice to meet you. I have many fun commands which can bring a new twist to your server , I am new on Discord but i am sure you will enjoy my presence <3 . Hope you have a great day~ " )
 		.setThumbnail("https://images-ext-1.discordapp.net/external/xI8qpaUqhLswLVhFkX334qg-x766Uti_uBQJP7FY0As/%3Fsize%3D256/https/cdn.discordapp.com/avatars/842397001954230303/557d99168d42b845750241d8d7cd0f5b.png")
-		.setColor("#FFDBE9");
+		.setImage("https://media.discordapp.net/attachments/912537423160942593/931157260049211443/IMG_8072.png?width=1440&height=540")
+        .setColor("#FFDBE9");
 
         await message.reply({ embeds: [embed], components: [row] });
 }
