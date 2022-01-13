@@ -27,10 +27,47 @@ module.exports = {
         let I_elements = `https://api.genshin.dev/elements/${name}/icon.png`
         let data = await D_elements.json();
 
-        Elem_Data.push({
-            elname : data.name.toLocaleString(),
-            // reaction 
-                // rec 1
+        if(data.reactions[0] && !data.reactions[1] && !data.reactions[2] && !data.reactions[3]){
+            Elem_Data.push({
+                elname : data.name.toLocaleString(),
+                // reaction 
+                    // rec 1
+                        reacname1 : data.reactions[0].name.toLocaleString(),
+                        reacelem1 : data.reactions[0].elements.toLocaleString(),
+                        reacdesc1 : data.reactions[0].description.toLocaleString(),
+                    // rec 1 end 
+                // reaction end
+                icon : I_elements.toString(),
+            })
+        }
+        else if(data.reactions[0] && data.reactions[1] && data.reactions[2] && !data.reactions[3]){
+            Elem_Data.push({
+                elname : data.name.toLocaleString(),
+                // reaction 
+                    // rec 1
+                    reacname1 : data.reactions[0].name.toLocaleString(),
+                    reacelem1 : data.reactions[0].elements.toLocaleString(),
+                    reacdesc1 : data.reactions[0].description.toLocaleString(),
+                // rec 1 end 
+                // rec 2
+                    reacname2 : data.reactions[1].name.toLocaleString(),
+                    reacelem2 : data.reactions[1].elements.toLocaleString(),
+                    reacdesc2 : data.reactions[1].description.toLocaleString(),
+                // // rec 2 end 
+                // // rec 3
+                    reacname3 : data.reactions[2].name.toLocaleString(),
+                    reacelem3 : data.reactions[2].elements.toLocaleString(),
+                    reacdesc3 : data.reactions[2].description.toLocaleString(),
+                // rec 3 end            
+                // reaction end
+                icon : I_elements.toString(),
+            })
+        }
+        else if(data.reactions[0] && data.reactions[1] && data.reactions[2] && data.reactions[3]){
+            Elem_Data.push({
+                elname : data.name.toLocaleString(),
+                // reaction 
+                    // rec 1
                     reacname1 : data.reactions[0].name.toLocaleString(),
                     reacelem1 : data.reactions[0].elements.toLocaleString(),
                     reacdesc1 : data.reactions[0].description.toLocaleString(),
@@ -49,14 +86,13 @@ module.exports = {
                     reacname4 : data.reactions[3].name.toLocaleString(),
                     reacelem4 : data.reactions[3].elements.toLocaleString(),
                     reacdesc4 : data.reactions[3].description.toLocaleString(),
-                // rec 3 end
-            // reaction end
-            icon : I_elements.toString(),
-        }).catch((err) => {
-            message,channel.send("hi");
-        });
+                // rec 3 end 
+                // reaction end
+                icon : I_elements.toString(),
+            })
+        }
 
-        if(data.reactions[0] && !data.reactions[1] && !data.reactions[2] && !data.reactions[3]){
+            if(data.reactions[0] && !data.reactions[1] && !data.reactions[2] && !data.reactions[3]){
             const elEmbed = new MessageEmbed()
                 .setTitle(`Element info - ${Elem_Data[0].elname}`) 
                 .setDescription("Genshin impact element info")
@@ -69,10 +105,10 @@ module.exports = {
                 .setThumbnail(`${Elem_Data[0].icon}`)
                 .setTimestamp()
     
-            message.channel.send({ embeds: [elEmbed] }) 
+                message.channel.send({ embeds: [elEmbed] }) 
                 }
 
-        else if(data.reactions[0] && data.reactions[1] && data.reactions[2] && !data.reactions[3]){
+            else if(data.reactions[0] && data.reactions[1] && data.reactions[2] && !data.reactions[3]){
             const elEmbed = new MessageEmbed()
                 .setTitle(`Element info - ${Elem_Data[0].elname}`) 
                 .setDescription("Genshin impact element info")
@@ -128,7 +164,7 @@ module.exports = {
                 message.channel.send({ embeds: [elEmbed] })
             }
             else {
-                message.channel.send("hi")
+                message.channel.send("hi, lol how did u get this!")
             }
     }
 }
