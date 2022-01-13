@@ -52,7 +52,9 @@ module.exports = {
                 // rec 3 end
             // reaction end
             icon : I_elements.toString(),
-        })
+        }).catch((err) => {
+            message,channel.send("hi");
+        });
 
         if(data.reactions[0] && !data.reactions[1] && !data.reactions[2] && !data.reactions[3]){
             const elEmbed = new MessageEmbed()
@@ -79,10 +81,12 @@ module.exports = {
                     { name: `Reaction 1`, value: `${Elem_Data[0].reacname1}`, inline: true},
                     { name: `Element combo`, value: `${Elem_Data[0].reacelem1}`, inline: true},
                     { name: `Description`, value: `${Elem_Data[0].reacdesc1}`},
+                    { name: `\u200B`, value: `--------------------------------------------------------`}, 
                     // rec 2
                     { name: `Reaction 2`, value: `${Elem_Data[0].reacname2}`, inline: true},
                     { name: `Element combo`, value: `${Elem_Data[0].reacelem2}`, inline: true},
                     { name: `Description`, value: `${Elem_Data[0].reacdesc2}`},
+                    { name: `\u200B`, value: `--------------------------------------------------------`}, 
                     // rec 3
                     { name: `Reaction 3`, value: `${Elem_Data[0].reacname3}`, inline: true},
                     { name: `Element combo`, value: `${Elem_Data[0].reacelem3}`, inline: true},
@@ -102,14 +106,17 @@ module.exports = {
                     { name: `Reaction 1`, value: `${Elem_Data[0].reacname1}`, inline: true},
                     { name: `Element combo`, value: `${Elem_Data[0].reacelem1}`, inline: true},
                     { name: `Description`, value: `${Elem_Data[0].reacdesc1}`},
+                    { name: `\u200B`, value: `--------------------------------------------------------`}, 
                     // rec 2
                     { name: `Reaction 2`, value: `${Elem_Data[0].reacname2}`, inline: true},
                     { name: `Element combo`, value: `${Elem_Data[0].reacelem2}`, inline: true},
                     { name: `Description`, value: `${Elem_Data[0].reacdesc2}`},
+                    { name: `\u200B`, value: `--------------------------------------------------------`}, 
                     // rec 3
                     { name: `Reaction 3`, value: `${Elem_Data[0].reacname3}`, inline: true},
                     { name: `Element combo`, value: `${Elem_Data[0].reacelem3}`, inline: true},
                     { name: `Description`, value: `${Elem_Data[0].reacdesc3}`},
+                    { name: `\u200B`, value: `--------------------------------------------------------`}, 
                     // rec 3
                     { name: `Reaction 4`, value: `${Elem_Data[0].reacname4}`, inline: true},
                     { name: `Element combo`, value: `${Elem_Data[0].reacelem4}`, inline: true},
