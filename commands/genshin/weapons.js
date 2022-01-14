@@ -43,7 +43,7 @@ module.exports = {
 
         const wpEmbed = new MessageEmbed()
             .setTitle(`Genshin Impact - ${Wp_Data[0].wpname}`) 
-            .setDescription("Genshin impact nation info")
+            .setDescription("Genshin impact weapon info")
             .addFields(
                 { name: `Type`, value: `${Wp_Data[0].type}`, inline: true},
                 { name: `Rarity`, value: `${Wp_Data[0].rarity} ⭐`, inline: true},
