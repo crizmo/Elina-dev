@@ -35,6 +35,8 @@ module.exports = {
         let Con_character = `https://api.genshin.dev/characters/${name}/constellation.png`
         let data = await D_character.json();
 
+        if(!data.name) return message.channel.send("wrong name");
+
         Chars_Data.push({
             charname : data.name.toLocaleString(),
             vision : data.vision.toLocaleString(),
