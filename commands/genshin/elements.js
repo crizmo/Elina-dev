@@ -27,7 +27,10 @@ module.exports = {
         let I_elements = `https://api.genshin.dev/elements/${name}/icon.png`
         let data = await D_elements.json();
 
-        if(name == data.name){
+        if(!data.name){
+            message.channel.send("wrong name");
+        }
+        else if(name.toLowerCase() === data.name.toLowerCase()){
 
             if(data.reactions[0] && !data.reactions[1] && !data.reactions[2] && !data.reactions[3]){
                 Elem_Data.push({
@@ -171,7 +174,7 @@ module.exports = {
                     message.channel.send("hi, lol how did u get this!")
                 }
         }
-        else if(name != data.name){
+        else if(name.toLowerCase() !== data.name.toLowerCase()){
             message.channel.send("wrong name");
         }
     }
