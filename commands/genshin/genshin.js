@@ -19,10 +19,16 @@ module.exports = {
         .setTimestamp()
 
         const cmdEmbed = new MessageEmbed()
-        .setTitle(`Genshin Impact- Commands`) 
-        .setDescription("Genshin impact commands - Character - Artifacts")
-        // .setImage(`${image}`)
-        // .setThumbnail(`${thumb}`)
+        .setTitle(`Genshin Impact - Commands`) 
+        .setDescription("Genshin impact commands")
+        .addFields(
+          { name: `Artifacts`, value: "`\ =gen-arti {artifact_name} \` || `\ =genshin-artifact \`"},
+          { name: `Characters`, value: "`\ =gen-char {character_name} \` || `\ =genshin-character \`"},
+          { name: `Elements`, value: "`\ =gen-el {element_name} \` || `\ =genshin-elements \`"}, 
+          { name: `Nations`, value: "`\ =gen-nat {nation_name} \` || `\ =genshin-nations \`"},
+          { name: `Weapons`, value: "`\ =gen-wp {weapon_name} \` || `\ =genshin-weapons \`"},
+        )
+        .setThumbnail(`${thumb}`)
         .setTimestamp()
 
         const row = new MessageActionRow().addComponents(
