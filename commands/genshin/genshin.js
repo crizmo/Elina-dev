@@ -3,6 +3,7 @@ const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'genshin',
+    aliases: ["gen"],
     permissions: ["SEND_MESSAGES"],
     description: "Embeds!",
     execute(client, message, args, Discord){
