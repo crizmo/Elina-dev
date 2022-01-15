@@ -282,7 +282,7 @@ module.exports = {
             .setTimestamp()
 
             const con56Embed = new MessageEmbed()
-            .setTitle(`${Chars_Data[0].charname}'s Constellation 3 & 4`) 
+            .setTitle(`${Chars_Data[0].charname}'s Constellation 5 & 6`) 
             .setDescription(`${Chars_Data[0].description}`)
             .addFields(
                 // Con 5
@@ -334,19 +334,20 @@ module.exports = {
             const row2 = new MessageActionRow().addComponents(
                 new MessageButton()
                     .setCustomId('con12')
-                    .setLabel('Constellation:>1-2')
+                    .setLabel('Constellation:-1~2')
                     .setStyle('SECONDARY'),
                 new MessageButton()
                     .setCustomId('con34')
-                    .setLabel('Constellation:>3-4')
+                    .setLabel('Constellation:-3~4')
                     .setStyle('SECONDARY'),
                 new MessageButton()
                     .setCustomId('con56')
-                    .setLabel('Constellation:>5-6')
+                    .setLabel('Constellation:-5~6')
                     .setStyle('SECONDARY'),
                 );
 
-            message.channel.send({ embeds: [charEmbed], components: [row, row2] })
+            // message.channel.send({ embeds: [charEmbed], components: [row, row2] })
+            const sentMessage = await message.channel.send({ embeds: [charEmbed], components: [row, row2] })
 
             const filter1 = i => i.customId === 'main' && i.user.id === message.member.user.id;
 
@@ -443,6 +444,19 @@ module.exports = {
                 });
 
             cooldown.add(message.author.id);
+            
+            setTimeout(function () {
+                row.components[0].setDisabled(true);
+                row.components[1].setDisabled(true);
+                row.components[2].setDisabled(true);
+                row.components[3].setDisabled(true);
+                row.components[4].setDisabled(true);
+
+                row2.components[0].setDisabled(true);
+                row2.components[1].setDisabled(true);
+                row2.components[2].setDisabled(true);
+                sentMessage.edit({ embeds: [charEmbed], components: [row, row2] })
+              }, 20000);
             setTimeout(() => {
                 cooldown.delete(message.author.id)
             }, 20000);

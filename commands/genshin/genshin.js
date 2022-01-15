@@ -6,7 +6,7 @@ module.exports = {
     aliases: ["gen"],
     permissions: ["SEND_MESSAGES"],
     description: "Embeds!",
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
 
         let description = "Genshin Impact is an open-world action RPG with “gacha” (we wll go over that later on) mechanics. It is developed and published by Chinese studio miHoYo. In it, players control a number of party members, each with different abilities, weapons, gear, and personalities. The combat plays out in real time, allowing players to utilize ranged, melee, and elemental attacks against a wide array of enemies across the game(s) open world and dungeons."
         let image = "https://thumbs.gfycat.com/AltruisticAggressiveAddax-size_restricted.gif"
@@ -43,7 +43,7 @@ module.exports = {
                 .setStyle('SECONDARY'),
             );
 
-        message.channel.send({ embeds: [genEmbed], components: [row] })
+        const sentMessage = await message.channel.send({ embeds: [genEmbed], components: [row] })
 
         const filter1 = i => i.customId === 'main' && i.user.id === message.member.user.id;
 
@@ -66,6 +66,10 @@ module.exports = {
             await i.editReply({ embeds: [cmdEmbed], components: [row] });
           }
         });
-
+        setTimeout(function () {
+          row.components[0].setDisabled(true);
+          row.components[1].setDisabled(true);
+          sentMessage.edit({ embeds: [genEmbed], components: [row] })
+        }, 20000);
     }
 }
