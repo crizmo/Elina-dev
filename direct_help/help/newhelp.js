@@ -60,7 +60,7 @@ module.exports = {
         .setDescription("To get info of commands `\ =help-bot \`")
         .setAuthor(`${user.username}`, avatar)
         .addFields(
-          {name: `\u200B`, value: "`\ invite \` , `\ ping \` , `\ stats \` , `\ suggest \`", inline: true},
+          {name: `\u200B`, value: "`\ invite \` , `\ ping \` , `\ stats \` , `\ suggest \` , `\ bug \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
