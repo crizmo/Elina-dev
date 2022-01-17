@@ -83,7 +83,7 @@ module.exports = {
         .setDescription("To get info of commands `\ =help-fun \`")
         .setAuthor(`${user.username}`, avatar)
         .addFields(
-          {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ whoasked \` , `\ wyr \`", inline: true},
+          {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -96,7 +96,7 @@ module.exports = {
         .setDescription("To get info of commands `\ =help-info \`")
         .setAuthor(`${message.author.tag}`, avatar )
         .addFields(
-          {name: `\u200B`, value: "`\ anime \` , `\ bug report \` , `\ chatbot \` , `\ covid \` \n `\ credits \` , `\ github \`, `\ math \`, `\ poll \` , `\ weather \` \n `\ whois \` , `\ worldclock \`", inline: true},
+          {name: `\u200B`, value: "`\ anime \` , `\ bug report \` , `\ chatbot \` , `\ covid \` \n `\ credits \` , `\ github \`, `\ math \`, `\ poll \` , `\ weather \` \n `\ whois \` , `\ worldclock \` , `\ djs || docs \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()

@@ -59,15 +59,14 @@ module.exports = {
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
-        const topmemberEmbed = new Discord.MessageEmbed()
+        const bugEmbed = new Discord.MessageEmbed()
         .setColor('#FFDBE9')
-        .setAuthor(`Roles help command `, user.displayAvatarURL())
-        .setTitle('Roles command & usage')
-        .setDescription("To check top 5 servers the bot is in !")
+        .setAuthor(`Bug report help command `, user.displayAvatarURL())
+        .setTitle('Bug report command & usage')
         .setURL('https://crizmo.github.io/elina/')
         .addFields(
-            {name: 'Aliases: ', value: "`\ top-ser \`"},
-            {name: 'Usage: ', value: "`\ =top-ser \`"},
+            {name: 'Aliases: ', value: "`\ bugreport || bug || reportbug \`"},
+            {name: 'Usage: ', value: "`\ =bug {bug} \`"},
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
@@ -89,8 +88,8 @@ module.exports = {
                 .setLabel('Suggest')
                 .setStyle('SECONDARY'),
             new MessageButton()
-                .setCustomId('topser')
-                .setLabel('Top-ser')
+                .setCustomId('bug')
+                .setLabel('Bug-report')
                 .setStyle('SECONDARY'),
             );
 
@@ -140,14 +139,14 @@ module.exports = {
             }
           });
 
-        const filter5 = i => i.customId === 'topser' && i.user.id === message.member.user.id;
+        const filter5 = i => i.customId === 'bug' && i.user.id === message.member.user.id;
 
-          const collectorTopser = message.channel.createMessageComponentCollector({ filter5, time: 50000 });
+          const collectorBug = message.channel.createMessageComponentCollector({ filter5, time: 50000 });
           
-          collectorTopser.on('collect', async i => {
-            if (i.customId === 'topser') {
+          collectorBug.on('collect', async i => {
+            if (i.customId === 'bug') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [topmemberEmbed], components: [row] });
+              await i.editReply({ embeds: [bugEmbed], components: [row] });
             }
           });
 }

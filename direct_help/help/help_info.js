@@ -104,14 +104,13 @@ module.exports = {
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
-        const bugreportEmbed = new Discord.MessageEmbed()
-        .setColor('#FFDBE9')
-        .setAuthor(`Bug report help command `, user.displayAvatarURL())
-        .setTitle('Bug report command & usage')
+        const docsEmbed = new Discord.MessageEmbed()
+        .setColor(`discord.js docs help command `, user.displayAvatarURL())
+        .setTitle('Discord.js docs command & usage')
         .setURL('https://crizmo.github.io/elina/')
         .addFields(
-            {name: 'Aliases: ', value: "`\ bugreport || bug || reportbug \`"},
-            {name: 'Usage: ', value: "`\ =bug {bug} \`"},
+            {name: 'Aliases: ', value: "`\ djs || docs \`"},
+            {name: 'Usage: ', value: "`\ =djs {stuff} \`"},
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
@@ -163,8 +162,8 @@ module.exports = {
                 .setLabel('Worldclock')
                 .setStyle('SECONDARY'),
             new MessageButton()
-                .setCustomId('bug')
-                .setLabel('Bugreport')
+                .setCustomId('docs')
+                .setLabel('Docs')
                 .setStyle('SECONDARY'),
             new MessageButton()
                 .setCustomId('whois')
@@ -262,14 +261,14 @@ module.exports = {
             }
           });
 
-        const filter9 = i => i.customId === 'bug' && i.user.id === message.member.user.id;
+        const filter9 = i => i.customId === 'docs' && i.user.id === message.member.user.id;
 
-          const collectorBug = message.channel.createMessageComponentCollector({ filter9, time: 50000 });
+          const collectorDocs = message.channel.createMessageComponentCollector({ filter9, time: 50000 });
           
-          collectorBug.on('collect', async i => {
-            if (i.customId === 'bug') {
+          collectorDocs.on('collect', async i => {
+            if (i.customId === 'docs') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [bugreportEmbed], components: [row, row2] });
+              await i.editReply({ embeds: [docsEmbed], components: [row, row2] });
             }
           });
 

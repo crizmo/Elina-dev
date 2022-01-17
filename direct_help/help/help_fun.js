@@ -15,11 +15,10 @@ module.exports = {
         let avatar = user.displayAvatarURL()
         
         const embed = new MessageEmbed()
+        .setAuthor(`${user.username}`, avatar)
         .setTitle("Fun commands & usage !")
         .setURL('https://crizmo.github.io/elina/')
         .setDescription("To get info of commands `\ click \` on the respective buttons")
-        .setAuthor(`${user.username}`, avatar)
-        .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
         .setThumbnail(avatar)
@@ -157,14 +156,14 @@ module.exports = {
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
-        const whoaskedEmbed = new Discord.MessageEmbed()
+        const akiEmbed = new Discord.MessageEmbed()
         .setColor('#FFDBE9')
-        .setAuthor(`Whoasked help command `, user.displayAvatarURL())
-        .setTitle('whoasked command & usage')
+        .setAuthor(`Aki help command `, user.displayAvatarURL())
+        .setTitle('Aki command & usage')
         .setURL('https://crizmo.github.io/elina/')
         .addFields(
-            {name: 'Aliases: ', value: "`\ whoasked \`"},
-            {name: 'Usage: ', value: "`\ =whoasked \` || `\ =whoasked @mention \`"},
+            {name: 'Aliases: ', value: "`\ aki \` || `\ akinator \`"},
+            {name: 'Usage: ', value: "`\ =aki \`"},
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
@@ -228,8 +227,8 @@ module.exports = {
                 .setLabel('Slots-co')
                 .setStyle('SECONDARY'),
             new MessageButton()
-                .setCustomId('whoasked')
-                .setLabel('Who-asked')
+                .setCustomId('aki')
+                .setLabel('Akinator')
                 .setStyle('SECONDARY'),
               );
 
@@ -378,14 +377,14 @@ module.exports = {
             }
           });
 
-        const filter13 = i => i.customId === 'whoasked' && i.user.id === message.member.user.id;
+        const filter13 = i => i.customId === 'aki' && i.user.id === message.member.user.id;
 
-          const collectorWhoasked = message.channel.createMessageComponentCollector({ filter13, time: 50000 });
+          const collectorAki = message.channel.createMessageComponentCollector({ filter13, time: 50000 });
           
-          collectorWhoasked.on('collect', async i => {
-            if (i.customId === 'whoasked') {
+          collectorAki.on('collect', async i => {
+            if (i.customId === 'aki') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [whoaskedEmbed], components: [row, row2 , row3] });
+              await i.editReply({ embeds: [akiEmbed], components: [row, row2 , row3] });
             }
           });
 }
