@@ -96,7 +96,7 @@ module.exports = {
         .setDescription("To get info of commands `\ =help-info \`")
         .setAuthor(`${message.author.tag}`, avatar )
         .addFields(
-          {name: `\u200B`, value: "`\ anime \` , `\ bug report \` , `\ chatbot \` , `\ covid \` \n `\ credits \` , `\ github \`, `\ math \`, `\ poll \` , `\ weather \` \n `\ whois \` , `\ worldclock \` , `\ djs || docs \`", inline: true},
+          {name: `\u200B`, value: "`\ anime \` , `\ djs || docs \` , `\ chatbot \` , `\ covid \` \n `\ credits \` , `\ github \`, `\ math \`, `\ poll \` , `\ weather \` \n `\ whois \` , `\ worldclock \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
