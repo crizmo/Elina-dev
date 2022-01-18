@@ -74,7 +74,6 @@ module.exports = {
                     )
                     .setThumbnail(avatar)
                     .setFooter("For more commands do =help")
-                    // .setTimestamp()
 
                 message.channel.send({ embeds: [userEmbed], components: [row] });
             }

@@ -5,7 +5,7 @@ module.exports = {
     aliases: ["docs"],
     cooldown: 2,
     permissions: ["SEND_MESSAGES"],
-    description: "qr code encoder command!",
+    description: "discord js docs command!",
     execute(client, message, args, Discord, cmd){
 
         const uri = `https://djsdocs.sorta.moe/v2/embed?src=stable&q=${encodeURIComponent(
