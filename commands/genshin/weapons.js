@@ -27,7 +27,7 @@ module.exports = {
         let I_weapon = `https://api.genshin.dev/weapons/${name}/icon.png`
         let data = await D_weapon.json();
 
-        if(!data.name) return message.channel.send("wrong name");
+        if(!data.name) return message.channel.send("Incorrect weapon name");
 
         Wp_Data.push({
             wpname : data.name.toLocaleString(),

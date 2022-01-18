@@ -27,6 +27,8 @@ module.exports = {
         let I_artifact = `https://api.genshin.dev/artifacts/${name}/flower-of-life.png`
         let data = await D_artifact.json();
 
+        if(!data.name) return message.channel.send("Incorrect artifact name");
+
         Arti_Data.push({
             artiname : data.name.toLocaleString(),
             rarity : data.max_rarity.toLocaleString(),

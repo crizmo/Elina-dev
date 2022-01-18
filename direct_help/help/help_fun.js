@@ -167,6 +167,17 @@ module.exports = {
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
+        const qrEmbed = new Discord.MessageEmbed()
+        .setColor('#FFDBE9')
+        .setAuthor(`Qr Code help command `, user.displayAvatarURL())
+        .setTitle('Qr code command & usage')
+        .setURL('https://crizmo.github.io/elina/')
+        .addFields(
+            {name: 'Aliases: ', value: "`\ qr \` || `\ qr-code \`"},
+            {name: 'Usage: ', value: "`\ =qr hi \`"},
+        )
+        .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
+
         const row = new MessageActionRow().addComponents(
             new MessageButton()
                 .setCustomId('fun')
@@ -216,7 +227,7 @@ module.exports = {
         const row3 = new MessageActionRow().addComponents(
             new MessageButton()
                 .setCustomId('wyr')
-                .setLabel('Would-you-rather')
+                .setLabel('Wyr')
                 .setStyle('SECONDARY'),
             new MessageButton()
                 .setCustomId('ball')
@@ -224,11 +235,15 @@ module.exports = {
                 .setStyle('SECONDARY'),
             new MessageButton()
                 .setCustomId('slots')
-                .setLabel('Slots-co')
+                .setLabel('Slots')
                 .setStyle('SECONDARY'),
             new MessageButton()
                 .setCustomId('aki')
                 .setLabel('Akinator')
+                .setStyle('SECONDARY'),
+            new MessageButton()
+                .setCustomId('qr')
+                .setLabel('Qr-Code')
                 .setStyle('SECONDARY'),
               );
 
@@ -385,6 +400,17 @@ module.exports = {
             if (i.customId === 'aki') {
               await i.deferUpdate()
               await i.editReply({ embeds: [akiEmbed], components: [row, row2 , row3] });
+            }
+          });
+
+        const filter14 = i => i.customId === 'qr' && i.user.id === message.member.user.id;
+
+          const collectorQr = message.channel.createMessageComponentCollector({ filter14, time: 50000 });
+          
+          collectorQr.on('collect', async i => {
+            if (i.customId === 'qr') {
+              await i.deferUpdate()
+              await i.editReply({ embeds: [qrEmbed], components: [row, row2 , row3] });
             }
           });
 }

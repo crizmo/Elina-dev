@@ -27,7 +27,7 @@ module.exports = {
         let I_nation = `https://api.genshin.dev/nations/${name}/icon.png`
         let data = await D_nation.json();
 
-        if(!data.name) return message.channel.send("wrong name");
+        if(!data.name) return message.channel.send("Incorrect nation name");
 
         Nat_Data.push({
             natname : data.name.toLocaleString(),

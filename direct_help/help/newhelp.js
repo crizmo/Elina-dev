@@ -83,7 +83,7 @@ module.exports = {
         .setDescription("To get info of commands `\ =help-fun \`")
         .setAuthor(`${user.username}`, avatar)
         .addFields(
-          {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \`", inline: true},
+          {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \` , `\ qr \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -123,7 +123,7 @@ module.exports = {
 
         const profile = new MessageEmbed()
         .setTitle("Profile command!")
-        .setDescription("To get info of commands `\ =help-info \`")
+        .setDescription("To get info of commands `\ =help-profile \`")
         .setAuthor(`${message.author.tag}`, avatar )
         .addFields(
           {name: `\u200B`, value: "`\ avatar \` , `\ deepfry \` , `\ tweet \`", inline: true},
