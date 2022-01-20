@@ -1,3 +1,14 @@
+<p align="center">
+            <h1>Elina</h1> </center>
+
+<img src="https://img.shields.io/uptimerobot/ratio/m790268525-a6294aaefe1fcd18b726574e?style=flat-square"
+            alt="Uptime">
+<img alt="Discord" src="https://img.shields.io/discord/782646778347388959?label=Discord">
+<a href="https://top.gg/bot/711937599975063584">
+<img src="https://top.gg/api/widget/status/711937599975063584.svg" alt="Draconian" />
+</a>
+</p>
+
 Elina bot src codes
 
 This is a open-source discord bot for everyone to use! Dont forget to star and fork :D
