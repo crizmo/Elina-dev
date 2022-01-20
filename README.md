@@ -5,7 +5,7 @@
             alt="Uptime">
 <img alt="Discord" src="https://img.shields.io/discord/782646778347388959?label=Discord">
 <a href="https://top.gg/bot/711937599975063584">
-<img src="https://top.gg/api/widget/status/711937599975063584.svg" alt="Draconian" />
+<img src="https://top.gg/api/widget/status/711937599975063584.svg" alt="Elina" />
 </a>
 </p>
 
