@@ -3,7 +3,9 @@
 
 <img src="https://img.shields.io/uptimerobot/ratio/m790268525-a6294aaefe1fcd18b726574e?style=flat-square"
             alt="Uptime">
+<a href="https://discord.gg/Ecy6WpEZsD">
 <img alt="Discord" src="https://img.shields.io/discord/782646778347388959?label=Discord">
+</a>     
 </p>
 
 Elina bot src codes
