@@ -136,6 +136,21 @@ module.exports = {
           }))
         .setColor(color);
 
+        const genEmbed = new MessageEmbed()
+        .setTitle(`Genshin Impact - Commands`) 
+        .setDescription("Genshin impact commands")
+        .addFields(
+          { name: `Artifacts`, value: "`\ =gen-arti {artifact_name} \` || `\ =genshin-artifact \`"},
+          { name: `Characters`, value: "`\ =gen-char {character_name} \` || `\ =genshin-character \`"},
+          { name: `Elements`, value: "`\ =gen-el {element_name} \` || `\ =genshin-elements \`"}, 
+          { name: `Nations`, value: "`\ =gen-nat {nation_name} \` || `\ =genshin-nations \`"},
+          { name: `Weapons`, value: "`\ =gen-wp {weapon_name} \` || `\ =genshin-weapons \`"},
+        )
+        .setThumbnail(client.user.displayAvatarURL({
+          dynamic: true,
+        }))
+        .setFooter("For more info do =genshin")
+
         const embed = new Discord.MessageEmbed()
         .setTitle("Our full help menu!")
         .setDescription(
@@ -192,6 +207,10 @@ module.exports = {
                 .setCustomId('profile')
                 .setLabel('Profile')
                 .setStyle('SECONDARY'),
+            new MessageButton()
+                .setCustomId('genshin')
+                .setLabel('Genshin')
+                .setStyle('SECONDARY'),
             );
 
         message.channel.send({embeds: [embed], components: [row , row2]})
@@ -207,7 +226,7 @@ module.exports = {
             }
           });
 
-          const filter1 = i => i.customId === 'affection' && i.user.id === message.member.user.id;
+        const filter1 = i => i.customId === 'affection' && i.user.id === message.member.user.id;
 
           const collectorAff = message.channel.createMessageComponentCollector({ filter1, time: 50000 });
           
@@ -218,7 +237,7 @@ module.exports = {
             }
           });
 
-          const filter2 = i => i.customId === 'bot' && i.user.id === message.member.user.id;
+        const filter2 = i => i.customId === 'bot' && i.user.id === message.member.user.id;
 
           const collectorBot = message.channel.createMessageComponentCollector({ filter2, time: 50000 });
           
@@ -229,7 +248,7 @@ module.exports = {
             }
           });
 
-          const filter3 = i => i.customId === 'economy' && i.user.id === message.member.user.id;
+        const filter3 = i => i.customId === 'economy' && i.user.id === message.member.user.id;
 
           const collectorEco = message.channel.createMessageComponentCollector({ filter3, time: 50000 });
           
@@ -240,7 +259,7 @@ module.exports = {
             }
           });
 
-          const filter4 = i => i.customId === 'fun' && i.user.id === message.member.user.id;
+        const filter4 = i => i.customId === 'fun' && i.user.id === message.member.user.id;
 
           const collectorFun = message.channel.createMessageComponentCollector({ filter4, time: 50000 });
           
@@ -251,7 +270,7 @@ module.exports = {
             }
           });
 
-          const filter5 = i => i.customId === 'info' && i.user.id === message.member.user.id;
+        const filter5 = i => i.customId === 'info' && i.user.id === message.member.user.id;
 
           const collectorInfo = message.channel.createMessageComponentCollector({ filter5, time: 50000 });
           
@@ -262,7 +281,7 @@ module.exports = {
             }
           });
 
-          const filter6 = i => i.customId === 'moderation' && i.user.id === message.member.user.id;
+        const filter6 = i => i.customId === 'moderation' && i.user.id === message.member.user.id;
 
           const collectorMod = message.channel.createMessageComponentCollector({ filter6, time: 50000 });
           
@@ -273,7 +292,7 @@ module.exports = {
             }
           });
 
-          const filter7 = i => i.customId === 'profile' && i.user.id === message.member.user.id;
+        const filter7 = i => i.customId === 'profile' && i.user.id === message.member.user.id;
 
           const collectorPro = message.channel.createMessageComponentCollector({ filter7, time: 50000 });
           
@@ -283,6 +302,18 @@ module.exports = {
               await i.editReply({ embeds: [profile], components: [row, row2] });
             }
           });
+
+          const filter8 = i => i.customId === 'genshin' && i.user.id === message.member.user.id;
+
+          const collectorGen = message.channel.createMessageComponentCollector({ filter8, time: 50000 });
+          
+          collectorGen.on('collect', async i => {
+            if (i.customId === 'genshin') {
+              await i.deferUpdate()
+              await i.editReply({ embeds: [genEmbed], components: [row, row2] });
+            }
+          });
+
     }
 }
 }
