@@ -1,4 +1,4 @@
-const { Client, Intents } = require('discord.js');
+const { Client, Intents} = require('discord.js');
 
 const Discord = require('discord.js');
 
@@ -27,9 +27,17 @@ cs.setDefaultBankAmount('100')
 cs.searchForNewUpdate(true)
 //    End    //
 
+// Teyvat start
+
+const Tey = require("@teyvatdev/node-sdk");
+const tey = new Tey.default(process.env.TEYTOKEN);
+
+// Teyvat end
+
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 const { Snake } = require('discord-gamecord');
+const { default: Teyvat } = require('@teyvatdev/node-sdk');
 
 fs.readdirSync('./commands').forEach(dirs => {
     const commands = fs.readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
@@ -92,6 +100,8 @@ client.on('ready', () => {
 })
 //If you are hosting your bot anywhere just remove code from line 53 -> 70 
 
+tey.on('ready', (ret) => { if(ret) console.log('Finished startup!'); })
+
 require(`./handlers/command_handler.js`)(client, Discord);
 require(`./handlers/event_handler.js`)(client, Discord);
 
@@ -128,7 +138,5 @@ for(const file of commandFiles){
 //     .setDescription('```js\n' + err.stack + '```');
 //     client.channels.cache.get('917389482532159528').send({embeds: [embed]})
 // });
-
-console.log(response.data);
 
 client.login(process.env.DISCORD_TOKEN);
