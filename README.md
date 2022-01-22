@@ -10,7 +10,7 @@
 </a>     
 </p>
 
-Elina bot src codes
+## Elina bot src codes
 
 - This is a open-source discord bot for everyone to use! Dont forget to star and fork :D
 - Elina is a discord bot , made using discord.js . 
