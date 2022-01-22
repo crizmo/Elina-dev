@@ -66,6 +66,7 @@ module.exports = {
             await i.editReply({ embeds: [cmdEmbed], components: [row] });
           }
         });
+
         setTimeout(function () {
           row.components[0].setDisabled(true);
           row.components[1].setDisabled(true);

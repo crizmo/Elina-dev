@@ -11,7 +11,7 @@ module.exports = {
     cooldown: 5,
     description: "The help command, what do you expect?",
 
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
         
         if (!args[0]) {
             let categories = [];
@@ -213,7 +213,7 @@ module.exports = {
                 .setStyle('SECONDARY'),
             );
 
-        message.channel.send({embeds: [embed], components: [row , row2]})
+        const sentMessage = await message.channel.send({embeds: [embed], components: [row , row2]})
 
         const filter = i => i.customId === 'base' && i.user.id === message.member.user.id;
 
@@ -313,6 +313,20 @@ module.exports = {
               await i.editReply({ embeds: [genEmbed], components: [row, row2] });
             }
           });
+
+          setTimeout(function () {
+            row.components[0].setDisabled(true);
+            row.components[1].setDisabled(true);
+            row.components[2].setDisabled(true);
+            row.components[3].setDisabled(true);
+            row.components[4].setDisabled(true);
+
+            row2.components[0].setDisabled(true);
+            row2.components[1].setDisabled(true);
+            row2.components[2].setDisabled(true);
+            row2.components[3].setDisabled(true);
+            sentMessage.edit({ embeds: [embed], components: [row] })
+          }, 20000);
 
     }
 }
