@@ -4,14 +4,24 @@ const tey = new Tey.default(process.env.TEYTOKEN);
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 module.exports = {
-    name: "ambertest",
+    name: "tc",
     cooldown: 5,
     permissions: ["SEND_MESSAGES"],
     description: "Genshin info & stats command",
     async execute(client, message, args, Discord) {
-        tey.getCharacter('Amber').then((data) => {
-            console.log(data);
+
+        let name = args[0]
+
+        let data = await tey.getCharacter(`${name}`);
+
+        // tey.getCharacter(`${name}`)
+            // console.log(data);
+
+            const embed = new MessageEmbed()
+            .setTitle(data.name)
+
+            message.channel.send({embeds: [embed]})
             //Expected, Amber stats
-          });
+
     }
 }
