@@ -129,4 +129,6 @@ for(const file of commandFiles){
 //     client.channels.cache.get('917389482532159528').send({embeds: [embed]})
 // });
 
+console.log(response.data);
+
 client.login(process.env.DISCORD_TOKEN);
