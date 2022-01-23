@@ -353,7 +353,7 @@ module.exports = {
 
             const filter1 = i => i.customId === 'main' && i.user.id === message.member.user.id;
 
-                const collectorMain = message.channel.createMessageComponentCollector({ filter1, time: 20000 });
+                const collectorMain = message.channel.createMessageComponentCollector({ filter1, time: 50000 });
                 
                 collectorMain.on('collect', async i => {
                 if (i.customId === 'main') {
@@ -366,7 +366,7 @@ module.exports = {
   
             const filter2 = i => i.customId === 'skill1' && i.user.id === message.member.user.id;
     
-                const collectorSkill1 = message.channel.createMessageComponentCollector({ filter2, time: 20000 });
+                const collectorSkill1 = message.channel.createMessageComponentCollector({ filter2, time: 50000 });
                 
                 collectorSkill1.on('collect', async i => {
                 if (i.customId === 'skill1') {
@@ -377,7 +377,7 @@ module.exports = {
 
             const filter3 = i => i.customId === 'skill2' && i.user.id === message.member.user.id;
     
-                const collectorSkill2 = message.channel.createMessageComponentCollector({ filter3, time: 20000 });
+                const collectorSkill2 = message.channel.createMessageComponentCollector({ filter3, time: 50000 });
                 
                 collectorSkill2.on('collect', async i => {
                 if (i.customId === 'skill2') {
@@ -388,7 +388,7 @@ module.exports = {
 
             const filter4 = i => i.customId === 'skill3' && i.user.id === message.member.user.id;
     
-                const collectorSkill3 = message.channel.createMessageComponentCollector({ filter4, time: 20000 });
+                const collectorSkill3 = message.channel.createMessageComponentCollector({ filter4, time: 50000 });
                 
                 collectorSkill3.on('collect', async i => {
                 if (i.customId === 'skill3') {
@@ -401,7 +401,7 @@ module.exports = {
 
             const filter5 = i => i.customId === 'passive' && i.user.id === message.member.user.id;
     
-                const collectorPassive = message.channel.createMessageComponentCollector({ filter5, time: 20000 });
+                const collectorPassive = message.channel.createMessageComponentCollector({ filter5, time: 50000 });
                 
                 collectorPassive.on('collect', async i => {
                 if (i.customId === 'passive') {
@@ -414,7 +414,7 @@ module.exports = {
 
             const filter6 = i => i.customId === 'con12' && i.user.id === message.member.user.id;
     
-                const collectorCon12 = message.channel.createMessageComponentCollector({ filter6, time: 20000 });
+                const collectorCon12 = message.channel.createMessageComponentCollector({ filter6, time: 50000 });
                 
                 collectorCon12.on('collect', async i => {
                 if (i.customId === 'con12') {
@@ -425,7 +425,7 @@ module.exports = {
 
             const filter7 = i => i.customId === 'con34' && i.user.id === message.member.user.id;
     
-                const collectorCon34 = message.channel.createMessageComponentCollector({ filter7, time: 20000 });
+                const collectorCon34 = message.channel.createMessageComponentCollector({ filter7, time: 50000 });
                 
                 collectorCon34.on('collect', async i => {
                 if (i.customId === 'con34') {
@@ -436,7 +436,7 @@ module.exports = {
 
             const filter8 = i => i.customId === 'con12' && i.user.id === message.member.user.id;
     
-                const collectorCon56 = message.channel.createMessageComponentCollector({ filter8, time: 20000 });
+                const collectorCon56 = message.channel.createMessageComponentCollector({ filter8, time: 50000 });
                 
                 collectorCon56.on('collect', async i => {
                 if (i.customId === 'con56') {
@@ -458,7 +458,7 @@ module.exports = {
                 row2.components[1].setDisabled(true);
                 row2.components[2].setDisabled(true);
                 sentMessage.edit({ embeds: [charEmbed], components: [row, row2] })
-              }, 20000);
+              }, 50000);
             setTimeout(() => {
                 cooldown.delete(message.author.id)
             }, 20000);

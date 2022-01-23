@@ -71,6 +71,6 @@ module.exports = {
           row.components[0].setDisabled(true);
           row.components[1].setDisabled(true);
           sentMessage.edit({ embeds: [genEmbed], components: [row] })
-        }, 20000);
+        }, 50000);
     }
 }
