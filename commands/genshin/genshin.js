@@ -2,8 +2,8 @@ const fetch = require('node-fetch');
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 
 module.exports = {
-    name: 'genshin',
-    aliases: ["gen"],
+    name: 'help-genshin',
+    aliases: ["genshin"],
     permissions: ["SEND_MESSAGES"],
     description: "Embeds!",
     async execute(client, message, args, Discord){

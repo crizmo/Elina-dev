@@ -149,7 +149,7 @@ module.exports = {
         .setThumbnail(client.user.displayAvatarURL({
           dynamic: true,
         }))
-        .setFooter("For more info do =genshin")
+        .setFooter("For more info do =genshin || =help-genshin")
 
         const embed = new Discord.MessageEmbed()
         .setTitle("Our full help menu!")
