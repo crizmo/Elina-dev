@@ -16,12 +16,13 @@ module.exports = {
         } else if (args[0]) {
             user = message.guild.members.cache.get(args[0]);
             if (user) user = user.user;;
-        } else {
-            user.id = "1"
-        }
+        } // else {
+        //     user.id = "1"
+        // }
 
+        if (!user) return message.channel.send('Sorry, you forgot to mention somebody.');
         if (user.bot || user === client.user) return message.channel.send("This user is a bot.");
-        if (!client.users.cache.get(user.id) || !user) return message.channel.send('Sorry, you forgot to mention somebody.');
+        // if (!client.users.cache.get(user.id) || !user) return message.channel.send('Sorry, you forgot to mention somebody.');
 
         let amount = args[1];
         if (!amount) return message.channel.send("Enter amount of yen to add.");

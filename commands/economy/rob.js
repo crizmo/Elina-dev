@@ -19,8 +19,8 @@ module.exports = {
             if (user) user = user.user;;
         }
 
-        if (user.bot || user === client.user) return message.channel.send("This user is a bot.");
         if (!user) return message.channel.send('Sorry, you forgot to mention somebody.');
+        if (user.bot || user === client.user) return message.channel.send("This user is a bot.");
 
         let result = await cs.rob({
             user: message.author,
