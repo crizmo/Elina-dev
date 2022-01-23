@@ -1,4 +1,4 @@
-const { Client, Intents} = require('discord.js');
+const { Client, Intents, Collection} = require('discord.js');
 
 const Discord = require('discord.js');
 
@@ -13,6 +13,8 @@ const fs = require('fs');
 require('dotenv').config();
 
 const fetch = require('node-fetch')
+
+const music = require('@koenie06/discord.js-music');
 
 const CurrencySystem = require("currency-system");
 const cs = new CurrencySystem;
@@ -46,14 +48,6 @@ fs.readdirSync('./commands').forEach(dirs => {
       client.commands.set(command.name.toLowerCase(), command);
     };
 });
-
-// fs.readdirSync('./commands/genshin').forEach(dirs => {
-//     const commands = fs.readdirSync(`./commands/genshin/${dirs}`).filter(files => files.endsWith('.js'));
-//     for (const file of commands) {
-//       const command = require(`./commands/genshin/${dirs}/${file}`);
-//       client.commands.set(command.name.toLowerCase(), command);
-//     };
-// });
 
 fs.readdirSync('./direct_help').forEach(dirs => {
     const direct_helps = fs.readdirSync(`./direct_help/${dirs}`).filter(files => files.endsWith('.js'));
@@ -123,20 +117,18 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-// process.on('unhandledRejection' , async (reason , p , origin) => {
-//     const embed = new Discord.MessageEmbed()
-//     .setTitle('Error Occured')
-//     .setColor('RANDOM')
-//     .setDescription('```js\n' + reason.stack + '```');
-//     client.channels.cache.get('917389482532159528').send({embeds: [embed]})
-// });
-  
-// process.on('uncaughtExceptionMonitor' , async (err,origin) => {
-//     const embed = new Discord.MessageEmbed()
-//     .setTitle('Error Occured')
-//     .setColor('RANDOM')
-//     .setDescription('```js\n' + err.stack + '```');
-//     client.channels.cache.get('917389482532159528').send({embeds: [embed]})
-// });
+const functions = fs.readdirSync("./src/functions").filter(file => file.endsWith(".js"));
+const eventFiles = fs.readdirSync("./src/events").filter(file => file.endsWith(".js"));
+const commandFolder = fs.readdirSync("./src/commands");
+module.exports.client = client;
+    
+(async () => {
+    for (file of functions) {
+        require(`./src/functions/${file}`)(client);
+    }
+
+    client.handleEvents(eventFiles, "./src/events");
+    client.handleCommands(commandFolder, "./src/commands");
+})();
 
 client.login(process.env.DISCORD_TOKEN);
