@@ -3,7 +3,7 @@ const { MessageEmbed , MessageAttachment } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('pat')
+		.setName('pet')
 		.setDescription('pat command usage and information!')
         .addSubcommand(subcommand => 
             subcommand
