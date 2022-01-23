@@ -117,18 +117,38 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-const functions = fs.readdirSync("./src/functions").filter(file => file.endsWith(".js"));
-const eventFiles = fs.readdirSync("./src/events").filter(file => file.endsWith(".js"));
-const commandFolder = fs.readdirSync("./src/commands");
+// Slash command handler
+
+client.slashcommands = new Discord.Collection();
+
+const slashfunctions = fs.readdirSync("./src/functions").filter(file => file.endsWith(".js"));
+const slasheventFiles = fs.readdirSync("./src/slash_events").filter(file => file.endsWith(".js"));
+const slashcommandFolder = fs.readdirSync("./src/slash");
 module.exports.client = client;
     
 (async () => {
-    for (file of functions) {
+    for (file of slashfunctions) {
         require(`./src/functions/${file}`)(client);
     }
 
-    client.handleEvents(eventFiles, "./src/events");
-    client.handleCommands(commandFolder, "./src/commands");
+    client.handleEvents(slasheventFiles, "./src/slash_events");
+    client.handleCommands(slashcommandFolder, "./src/slash");
 })();
+
+/* This will run when a song started playing from a playlist */
+music.event.on('playList', async (channel, playlist, songInfo, requester) => {
+    channel.send({
+        content: `Started playing the song [${songInfo.title}](${songInfo.url}) by \`${songInfo.author}\` of the playlist ${playlist.title}.
+        This was requested by ${requester.tag} (${requester.id})`
+    });
+});
+
+/* This will run when a new playlist has been added to the queue */
+music.event.on('addList', async (channel, playlist, requester) => {
+    channel.send({
+        content: `Added the playlist [${playlist.title}](${playlist.url}) with ${playlist.videos.length} amount of videos to the queue.
+        Added by ${requester.tag} (${requester.id})`
+    });
+});
 
 client.login(process.env.DISCORD_TOKEN);

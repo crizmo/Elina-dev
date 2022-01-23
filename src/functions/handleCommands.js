@@ -6,16 +6,16 @@ const clientId = '919629566186770482';
 const guildId = '912028400154206288';
 
 module.exports = (client) => {
-    client.handleCommands = async (commandFolders, path) => {
+    client.handleCommands = async (slashcommandFolders, path) => {
         client.commandArray = [];
-        for (folder of commandFolders) {
-            const commandFiles = fs.readdirSync(`${path}/${folder}`).filter(file => file.endsWith('.js'));
-            for (const file of commandFiles) {
-                const command = require(`../commands/${folder}/${file}`);
+        for (folder of slashcommandFolders) {
+            const slashcommandFiles = fs.readdirSync(`${path}/${folder}`).filter(file => file.endsWith('.js'));
+            for (const file of slashcommandFiles) {
+                const slashcommand = require(`../slash/${folder}/${file}`);
                 // Set a new item in the Collection
                 // With the key as the command name and the value as the exported module
-                client.commands.set(command.data.name, command);
-                client.commandArray.push(command.data.toJSON());
+                client.slashcommands.set(slashcommand.data.name, slashcommand);
+                client.commandArray.push(slashcommand.data.toJSON());
             }
         }
 

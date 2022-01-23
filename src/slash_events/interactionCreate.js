@@ -3,12 +3,12 @@ module.exports = {
 	async execute(interaction, client) {
 		if (!interaction.isCommand()) return;
 
-		const command = client.commands.get(interaction.commandName);
+		const slashcommand = client.slashcommands.get(interaction.commandName);
 
-		if (!command) return;
+		if (!slashcommand) return;
 
 		try {
-			await command.execute(interaction, client);
+			await slashcommand.execute(interaction, client);
 		} catch (error) {
 			console.error(error);
 			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });

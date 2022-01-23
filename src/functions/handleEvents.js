@@ -1,11 +1,11 @@
 module.exports = (client) => {
-    client.handleEvents = async (eventFiles, path) => {
-        for (const file of eventFiles) {
-            const event = require(`../events/${file}`);
-            if (event.once) {
-                client.once(event.name, (...args) => event.execute(...args, client));
+    client.handleEvents = async (slasheventFiles, path) => {
+        for (const file of slasheventFiles) {
+            const slashevent = require(`../slash_events/${file}`);
+            if (slashevent.once) {
+                client.once(slashevent.name, (...args) => slashevent.execute(...args, client));
             } else {
-                client.on(event.name, (...args) => event.execute(...args, client));
+                client.on(slashevent.name, (...args) => slashevent.execute(...args, client));
             }
         }
     };
