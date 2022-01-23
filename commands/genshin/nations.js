@@ -22,9 +22,11 @@ module.exports = {
 
         if (!name) return message.channel.send({ embeds: [errorEmbed]})
 
+        const rlname = name.toLowerCase()
+
         let Nat_Data = []
         let D_nation = await fetch(`https://api.genshin.dev/nations/${name}/`)
-        let I_nation = `https://api.genshin.dev/nations/${name}/icon.png`
+        let I_nation = `https://api.genshin.dev/nations/${rlname}/icon.png`
         let data = await D_nation.json();
 
         if(!data.name) return message.channel.send("Incorrect nation name");

@@ -22,9 +22,11 @@ module.exports = {
 
         if (!name) return message.channel.send({ embeds: [errorEmbed]})
 
+        const rlname = name.toLowerCase()
+
         let Elem_Data = []
         let D_elements = await fetch(`https://api.genshin.dev/elements/${name}/`)
-        let I_elements = `https://api.genshin.dev/elements/${name}/icon.png`
+        let I_elements = `https://api.genshin.dev/elements/${rlname}/icon.png`
         let data = await D_elements.json();
 
         if(!data.name){

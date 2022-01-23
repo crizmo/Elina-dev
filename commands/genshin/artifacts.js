@@ -22,9 +22,11 @@ module.exports = {
 
         if (!name) return message.channel.send({ embeds: [errorEmbed]})
 
+        const rlname = name.toLowerCase()
+
         let Arti_Data = []
         let D_artifact = await fetch(`https://api.genshin.dev/artifacts/${name}/`)
-        let I_artifact = `https://api.genshin.dev/artifacts/${name}/flower-of-life.png`
+        let I_artifact = `https://api.genshin.dev/artifacts/${rlname}/flower-of-life.png`
         let data = await D_artifact.json();
 
         if(!data.name) return message.channel.send("Incorrect artifact name");

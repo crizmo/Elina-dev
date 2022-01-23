@@ -11,10 +11,12 @@ module.exports = {
     async execute(client, message, args, Discord) {
 
         if (cooldown.has(message.author.id)) {
-            message.reply('Please use the command after __20__ seconds\nThis is to reduce the pressure on the api.')
+            message.reply('Please use the command after __20__ seconds')
         } else {
 
         let name = args[0]
+
+        const rlname = name.toLowerCase()
 
         const errorEmbed = new Discord.MessageEmbed()
         .setColor('#00FFFF')
@@ -29,10 +31,10 @@ module.exports = {
 
         let Chars_Data = []
         let D_character = await fetch(`https://api.genshin.dev/characters/${name}/`)
-        let I_character = `https://api.genshin.dev/characters/${name}/icon.png`
-        let Pic_character = `https://api.genshin.dev/characters/${name}/gacha-splash.png`
-        let Card_character = `https://api.genshin.dev/characters/${name}/card.png`
-        let Con_character = `https://api.genshin.dev/characters/${name}/constellation.png`
+        let I_character = `https://api.genshin.dev/characters/${rlname}/icon.png`
+        let Pic_character = `https://api.genshin.dev/characters/${rlname}/gacha-splash.png`
+        let Card_character = `https://api.genshin.dev/characters/${rlname}/card.png`
+        let Con_character = `https://api.genshin.dev/characters/${rlname}/constellation.png`
         let data = await D_character.json();
 
         if(!data.name) return message.channel.send("Incorrect character name");

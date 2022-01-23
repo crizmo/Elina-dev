@@ -11,6 +11,8 @@ module.exports = {
 
         let name = args.join(' ');
 
+        const rlname = name.toLowerCase()
+
         const errorEmbed = new Discord.MessageEmbed()
         .setColor('#00FFFF')
         .setTitle('Incorrect Usage <:paimon:927534293515911178>')
@@ -24,7 +26,7 @@ module.exports = {
 
         let Wp_Data = []
         let D_weapon = await fetch(`https://api.genshin.dev/weapons/${name}/`)
-        let I_weapon = `https://api.genshin.dev/weapons/${name}/icon.png`
+        let I_weapon = `https://api.genshin.dev/weapons/${rlname}/icon.png`
         let data = await D_weapon.json();
 
         if(!data.name) return message.channel.send("Incorrect weapon name");
