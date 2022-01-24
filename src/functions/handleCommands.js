@@ -12,8 +12,6 @@ module.exports = (client) => {
             const slashcommandFiles = fs.readdirSync(`${path}/${folder}`).filter(file => file.endsWith('.js'));
             for (const file of slashcommandFiles) {
                 const slashcommand = require(`../slash/${folder}/${file}`);
-                // Set a new item in the Collection
-                // With the key as the command name and the value as the exported module
                 client.slashcommands.set(slashcommand.data.name, slashcommand);
                 client.commandArray.push(slashcommand.data.toJSON());
             }
