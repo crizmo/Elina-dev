@@ -6,8 +6,8 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('suggest')
 		.setDescription('Suggest command usage and information!')
-        .addChannelOption(option => option.setName('channel').setDescription('The input to echo back').setRequired(true))
-        .addStringOption(option => option.setName('details').setDescription('The input back').setRequired(true)),
+        .addChannelOption(option => option.setName('channel').setDescription('Suggestion channel').setRequired(true))
+        .addStringOption(option => option.setName('details').setDescription('Suggestion details').setRequired(true)),
         
 	async execute(interaction, client) {
 
