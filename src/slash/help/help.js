@@ -21,7 +21,7 @@ module.exports = {
             "reportadd",
           ];
     
-          readdirSync("./src/slash/" && "./commands/").forEach((dir) => {
+          readdirSync("./src/slash/").forEach((dir) => {                         // && ./commands/ to add commands dir to slash help
             if (ignored.includes(dir.toLowerCase())) return;
             const name = `${emo[dir.toLowerCase()]} ${dir.toUpperCase()}`;
             let cats = new Object();

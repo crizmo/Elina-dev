@@ -23,8 +23,8 @@ module.exports = {
         .addField('Report', query)
         .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
         .setTimestamp()
-        message.channel.send({embeds: [reportEmbed]})
-        //send the embed to the channel
+        let msgEmbed = await channel.send({embeds: [reportEmbed]});
+        await msgEmbed.react('👍')
         message.channel.send("**Bug report has been sent!**")
     }
 }
