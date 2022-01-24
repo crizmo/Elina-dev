@@ -8,10 +8,9 @@ module.exports = {
 		.setName('suggest')
 		.setDescription('Suggest command usage and information!')
         .addSubcommand(subcommand => subcommand
-            .setName("channel")
-            .setDescription("Suggestion channel")
             .addChannelOption(option => option.setName('channel').setDescription('Select a channel')))
-
+            
+            
         .addSubcommand(subcommand => 
             subcommand
             .setName("info")
@@ -26,6 +25,7 @@ module.exports = {
 
         if(interaction.options.getSubcommand() === "channel"){
             const query = interaction.options.getString('details');
+            if(interaction.options.getSubcommand() === "details")
             interaction.reply("hi")
         } else if (interaction.options.getSubcommand() === "info"){
             const covidinfo = new MessageEmbed()
