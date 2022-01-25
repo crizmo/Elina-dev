@@ -5,7 +5,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('aki')
 		.setDescription('To start akinator!'),
-	async execute(message, interaction, client) {
-        akinator(interaction, client);
+	async execute(CommandInteraction, client) {
+        akinator(CommandInteraction, client);
 	},
 };
