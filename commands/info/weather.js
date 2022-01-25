@@ -15,8 +15,8 @@ module.exports = {
 
         if(result === undefined || result.length === 0) return message.channel.send('**Invalid** location');
 
-        var current = result[0].current;
-        var location = result[0].location;
+        const current = result[0].current;
+        const location = result[0].location;
 
         const weatherinfo = new Discord.MessageEmbed()
         .setDescription(`**${current.skytext}**`)
@@ -29,9 +29,6 @@ module.exports = {
         .addField('Wind', current.winddisplay, true)
         .addField('Feels like', `${current.feelslike}°`, true)
         .addField('Humidity', `${current.humidity}%`, true)
-
-
-        message.channel.send(weatherinfo)
         message.channel.send({embeds: [weatherinfo]})
         })     
     }
