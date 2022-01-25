@@ -31,15 +31,16 @@ cs.searchForNewUpdate(true)
 
 // Teyvat start
 
-const Tey = require("@teyvatdev/node-sdk");
-const tey = new Tey.default(process.env.TEYTOKEN);
+// const Tey = require("@teyvatdev/node-sdk");
+// const tey = new Tey.default(process.env.TEYTOKEN);
+// const { default: Teyvat } = require('@teyvatdev/node-sdk');
+// tey.on('ready', (ret) => { if(ret) console.log('Finished startup!'); })
 
 // Teyvat end
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 const { Snake } = require('discord-gamecord');
-const { default: Teyvat } = require('@teyvatdev/node-sdk');
 
 fs.readdirSync('./commands').forEach(dirs => {
     const commands = fs.readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
@@ -93,8 +94,6 @@ client.on('ready', () => {
     }, 5000);
 })
 //If you are hosting your bot anywhere just remove code from line 53 -> 70 
-
-tey.on('ready', (ret) => { if(ret) console.log('Finished startup!'); })
 
 require(`./handlers/command_handler.js`)(client, Discord);
 require(`./handlers/event_handler.js`)(client, Discord);
