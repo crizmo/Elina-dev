@@ -8,6 +8,11 @@ module.exports = {
 		if (!slashcommand) return;
 
 		try {
+
+			if(slashcommand.permissions && slashcommand.permissions.length > 0){
+				if(!interaction.member.permissions.has(slashcommand.permissions)) return await interaction.reply({ content: "You do not have permission to use this command."});
+			}
+
 			await slashcommand.execute(interaction, client);
 		} catch (error) {
 			console.error(error);

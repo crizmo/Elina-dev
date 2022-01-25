@@ -20,7 +20,7 @@ module.exports = {
         if (!message.member.permissions.has('ADMINISTRATOR')) return message.channel.send("You do not have requied permissions.")
         let wheretoPutMoney = args[2] || "wallet"; //or bank
         let amount = args[1];
-        if (!amount) return message.channel.send("Enter amount of money to Remove.");
+        if (!amount) return message.channel.send("Enter amount of money to Add.");
         let money = (amount);
         
     let result = await cs.addMoney({
@@ -30,6 +30,6 @@ module.exports = {
       wheretoPutMoney: wheretoPutMoney
     });
     if (result.error) return message.reply("You cant add negitive money");
-    else message.reply(`Successfully added $${money} to ${user.username}, ( in ${wheretoPutMoney} )`)
+    else message.reply(`Successfully added ${money} ¥ to ${user.username}, ( in ${wheretoPutMoney} )`)
   }
 };
