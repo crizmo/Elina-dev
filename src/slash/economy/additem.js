@@ -16,7 +16,7 @@ module.exports = {
 	async execute(interaction, client) {
 
 		await interaction.deferReply();
-		if (interaction.options.getInteger('price') < 1) return interaction.editReply("You can't add an item for less than 1$!");
+		if (interaction.options.getInteger('price') < 1) return interaction.editReply("You can't add an item for less than 1 ¥!");
 		let result = await cs.addItem({
 			guild: interaction.guild,
 			inventory: {

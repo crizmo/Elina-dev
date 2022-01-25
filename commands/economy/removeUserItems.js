@@ -4,10 +4,10 @@ const cs = new CurrencySystem;
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "removeItem",
+    name: "removeUserItem",
     permissions: ["ADMINISTRATOR"],
     cooldown: 5,
-    description: "Work command",
+    description: "Remove user item command",
 
     async execute(client, message, args, Discord) {
       if(message.author.id !== '784141856426033233') return message.channel.send("U aint criz lol");
