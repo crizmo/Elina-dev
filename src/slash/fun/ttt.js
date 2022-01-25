@@ -27,6 +27,7 @@ module.exports = {
             waitMessage: 'Waiting for the opponent...',
             turnMessage: '{emoji} | Its now **{player}** turn!',
             askMessage: 'Hey {opponent}, {challenger} challenged you for a game of Tic Tac Toe!',
+            othersMessage: 'You are not allowed to use buttons for this message!',
             cancelMessage: 'Looks like they refused to have a game of Tic Tac Toe. \:(',
             timeEndMessage: 'Since the opponent didnt answer, i dropped the game!',
             drawMessage: 'It was a draw!',

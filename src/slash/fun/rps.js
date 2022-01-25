@@ -34,6 +34,7 @@ module.exports = {
             chooseMessage: 'You choose {emoji}!',
             noChangeMessage: 'You cannot change your selection!',
             askMessage: 'Hey {opponent}, {challenger} challenged you for a game of Rock Paper Scissors!',
+            othersMessage: 'You are not allowed to use buttons for this message!',
             cancelMessage: 'Looks like they refused to have a game of Rock Paper Scissors. \:(',
             timeEndMessage: 'Since the opponent didnt answer, i dropped the game!',
             drawMessage: 'It was a draw!',
