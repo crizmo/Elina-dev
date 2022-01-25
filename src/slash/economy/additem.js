@@ -31,10 +31,6 @@ module.exports = {
 			if (result.type == 'No-Inventory-Price') return interaction.editReply('There was a error, You didnt specify price!')
 			if (result.type == 'No-Inventory') return interaction.editReply('There was a error, No data recieved!')
 		} else return interaction.editReply('Done! Successfully added `' + interaction.options.getString('name') + '` to the shop!')
-
-		// const name = interaction.options.getString('name');
-		// const price = interaction.options.getInteger('int');
-		// const description = interaction.options.getString('description');
                 
 	},
 };
