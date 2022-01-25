@@ -18,14 +18,14 @@ module.exports = {
         let member = message.mentions.members.first();
 
         if(member){
-            var firstEmbed = new Discord.MessageEmbed()
+            const firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setTitle(`${message.author.username} ejected ${member.displayName} !`)
                 .setDescription(susmessage[randomNum])
                 .setImage(suslinks[randomNum])
             message.channel.send({embeds: [firstEmbed]})
         }else{
-            var firstEmbed = new Discord.MessageEmbed()
+            const firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setDescription(`Who do you want to eject`)
             message.channel.send({embeds: [firstEmbed]})
