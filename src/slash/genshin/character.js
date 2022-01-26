@@ -11,7 +11,7 @@ module.exports = {
         
 	async execute(interaction, client) {
 
-        if (cooldown.has(interaction.user.username)) {
+        if (cooldown.has(interaction.user.id)) {
             await interaction.reply('Please use the command after __20__ seconds')
         } else {
             const name = interaction.options.getString('name');
@@ -449,7 +449,7 @@ module.exports = {
                 }, 50000);
             
             setTimeout(() => {
-                cooldown.delete(interaction.user.username)
+                cooldown.delete(interaction.user.id)
             }, 20000);
         }
 	}
