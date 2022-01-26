@@ -15,12 +15,6 @@ module.exports = {
         if (data.length < 1) return message.channel.send("Nobody's in Global leaderboard yet.");
         const msg = new MessageEmbed();
         let pos = 0;
-        // To make global leaderboard show members
-        // of current guild only, un comment the next line.
-    
-        // data = data.filter(e => message.guild.members.cache.has(e.userID));
-
-        // This is to get First 10 Users )
         data.slice(0, 10).map(e => {
             pos++
             if (!client.users.cache.get(e.userID)) return;
