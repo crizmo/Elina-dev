@@ -1,51 +1,48 @@
-const { MessageEmbed } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const fetch = require('node-fetch');
+const cooldown = new Set();
 const { readdirSync } = require("fs");
-const { MessageActionRow, MessageButton } = require('discord.js');
-const prefix = require("../../direct_help/json/config.json").prefix;
-const emo = require("../../direct_help/json/emoji.json");
+const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+const { Discord } = require('discord.js');
+const emo = require("./emoji.json");
 let color = "#00ccff";
 
 module.exports = {
-    name: "help",
-    permissions: ["SEND_MESSAGES"],
-    cooldown: 5,
-    description: "The help command, what do you expect?",
-
-    async execute(client, message, args, Discord){
+	data: new SlashCommandBuilder()
+		.setName('newhelp')
+		.setDescription('Help command!'),
         
-        if (!args[0]) {
-            let categories = [];
-      
-            //categories to ignore
-            let ignored = [
-              "dev",
-              "configuration",
-              "utils",
-              "reportadd",
-            ];
-    
-            readdirSync("./commands/").forEach((dir) => {
-              if (ignored.includes(dir.toLowerCase())) return;
-              const name = `${emo[dir.toLowerCase()]} ${dir.toUpperCase()}`;
-              let cats = new Object();
-      
-              cats = {
-                name: name,
-                value: `\`${prefix}help-${dir.toLowerCase()}\``,
-                inline: true,
-              };
-      
-              categories.push(cats);
-              //cots.push(dir.toLowerCase());
-            });
+	async execute(interaction, client) {
 
-        const user = message.mentions.users.first() || message.member.user
+        const user = interaction.user
         let avatar = user.displayAvatarURL()
-        
+        let categories = [];
+    
+        let ignored = [
+          "dev",
+          "configuration",
+          "utils",
+          "reportadd",
+        ];
+  
+        readdirSync("./src/slash/").forEach((dir) => {                         // && ./commands/ to add commands dir to slash help
+          if (ignored.includes(dir.toLowerCase())) return;
+          const name = `${emo[dir.toLowerCase()]} ${dir.toUpperCase()}`;
+          let cats = new Object();
+  
+          cats = {
+            name: name,
+            value: `\`${dir.toLowerCase()}\``,
+            inline: true,
+          };
+  
+          categories.push(cats);
+        });
+
         const affection = new MessageEmbed()
         .setTitle("Affection commands!")
         .setDescription("To get info of commands `\ =help-affection \`")
-        .setAuthor(`${user.username}`, avatar)
+        .setAuthor(`${interaction.user.username}`, avatar)
         .addFields(
           {name: `\u200B`, value: "`\ boop \` , `\ dance \` , `\ horny \` , `\ howgay \` , `\ hug \` \n `\ kill \` , `\ kiss \` , `\ match \` , `\ pet \` , `\ simp \` , `\ slap \` \n `\ spank \` , `\ spit \` , `\ yaoi \`", inline: true},
         )
@@ -58,7 +55,7 @@ module.exports = {
         const bot = new MessageEmbed()
         .setTitle("Bot commands commands!")
         .setDescription("To get info of commands `\ =help-bot \`")
-        .setAuthor(`${user.username}`, avatar)
+        .setAuthor(`${interaction.user.username}`, avatar)
         .addFields(
           {name: `\u200B`, value: "`\ invite \` , `\ ping \` , `\ stats \` , `\ suggest \` , `\ bug \`", inline: true},
         )
@@ -71,7 +68,7 @@ module.exports = {
         const economy = new MessageEmbed()
         .setTitle("Economy commands!")
         .setDescription("Elina economy commands \n To get more information about elina's economy commands do `\ =help-eco \` then click the respective buttons to get per command information")
-        .setAuthor(`${user.username}`, avatar)
+        .setAuthor(`${interaction.user.username}`, avatar)
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
@@ -81,7 +78,7 @@ module.exports = {
         const fun = new MessageEmbed()
         .setTitle("Fun commands!")
         .setDescription("To get info of commands `\ =help-fun \`")
-        .setAuthor(`${user.username}`, avatar)
+        .setAuthor(`${interaction.user.username}`, avatar)
         .addFields(
           {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \` , `\ qr \`", inline: true},
         )
@@ -94,7 +91,7 @@ module.exports = {
         const info = new MessageEmbed()
         .setTitle("Info command!")
         .setDescription("To get info of commands `\ =help-info \`")
-        .setAuthor(`${message.author.tag}`, avatar )
+        .setAuthor(`${interaction.user.tag}`, avatar )
         .addFields(
           {name: `\u200B`, value: "`\ anime \` , `\ djs || docs \` , `\ chatbot \` , `\ covid \` \n `\ credits \` , `\ github \`, `\ math \`, `\ poll \` , `\ weather \` \n `\ whois \` , `\ worldclock \`", inline: true},
         )
@@ -109,7 +106,7 @@ module.exports = {
         const moderation = new MessageEmbed()
         .setTitle("Moderation command!")
         .setDescription("To get info of commands `\ =help-mod \`")
-        .setAuthor(`${message.author.tag}`, avatar )
+        .setAuthor(`${interaction.user.tag}`, avatar )
         .addFields(
           {name: `\u200B`, value: "`\ ban \` , `\ clear \` , `\ kick \` , `\ roles \`", inline: true},
         )
@@ -124,7 +121,7 @@ module.exports = {
         const profile = new MessageEmbed()
         .setTitle("Profile command!")
         .setDescription("To get info of commands `\ =help-profile \`")
-        .setAuthor(`${message.author.tag}`, avatar )
+        .setAuthor(`${interaction.user.tag}`, avatar )
         .addFields(
           {name: `\u200B`, value: "`\ avatar \` , `\ deepfry \` , `\ tweet \`", inline: true},
         )
@@ -151,25 +148,18 @@ module.exports = {
         }))
         .setFooter("For more info do =genshin || =help-genshin")
 
-        const embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed()
         .setTitle("Our full help menu!")
         .setDescription(
-          `\`\`\`js\nPrefix: ${prefix}\nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://discord.com/oauth2/authorize?client_id=842397001954230303&permissions=1642828528711&scope=bot)\n\n> To check out a category, use \`${prefix}help-[category-name]\``
+          `\`\`\`js\nPrefix: \nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://discord.com/oauth2/authorize?client_id=842397001954230303&permissions=1642828528711&scope=bot)\n\n> To check out a category, use \`help-[category-name]\``
         )
         .addFields(categories)
-        .setFooter(
-          `Requested by ${message.author.tag}`,
-          message.author.displayAvatarURL({
-            dynamic: true,
-          })
-        )
+        .setFooter(`Requested by ${interaction.user.tag}`,interaction.user.displayAvatarURL({dynamic: true,}))
         .setTimestamp()
-        .setThumbnail(
-          client.user.displayAvatarURL({
-            dynamic: true,
-          })
-        )
+        .setThumbnail(client.user.displayAvatarURL({dynamic: true,}))
         .setColor(color);
+
+        // Constellation Embed End
 
         const row = new MessageActionRow().addComponents(
             new MessageButton()
@@ -213,22 +203,23 @@ module.exports = {
                 .setStyle('SECONDARY'),
             );
 
-        const sentMessage = await message.channel.send({embeds: [embed], components: [row , row2]})
+        // interaction.reply({ embeds: [charEmbed], components: [row, row2] })
+        await interaction.reply({ embeds: [embed], components: [row, row2] })
 
-        const filter = i => i.customId === 'base' && i.user.id === message.member.user.id;
+        const filter = i => i.customId === 'base' && i.user.id === interaction.user.username.id;
 
-          const collectorHelp = message.channel.createMessageComponentCollector({ filter, time: 50000 });
-          
-          collectorHelp.on('collect', async i => {
+            const collectorMain = interaction.channel.createMessageComponentCollector({ filter, time: 50000 });
+            
+            collectorMain.on('collect', async i => {
             if (i.customId === 'base') {
-              await i.deferUpdate()
-              await i.editReply({ embeds: [embed], components: [row, row2] });
+                await i.deferUpdate()
+                await i.editReply({ embeds: [embed], components: [row, row2] });
             }
-          });
+            });
 
-        const filter1 = i => i.customId === 'affection' && i.user.id === message.member.user.id;
+        const filter1 = i => i.customId === 'affection' && i.user.id === interaction.user.username.id;
 
-          const collectorAff = message.channel.createMessageComponentCollector({ filter1, time: 50000 });
+          const collectorAff = interaction.channel.createMessageComponentCollector({ filter1, time: 50000 });
           
           collectorAff.on('collect', async i => {
             if (i.customId === 'affection') {
@@ -237,9 +228,9 @@ module.exports = {
             }
           });
 
-        const filter2 = i => i.customId === 'bot' && i.user.id === message.member.user.id;
+        const filter2 = i => i.customId === 'bot' && i.user.id === interaction.user.username.id;
 
-          const collectorBot = message.channel.createMessageComponentCollector({ filter2, time: 50000 });
+          const collectorBot = interaction.channel.createMessageComponentCollector({ filter2, time: 50000 });
           
           collectorBot.on('collect', async i => {
             if (i.customId === 'bot') {
@@ -248,9 +239,9 @@ module.exports = {
             }
           });
 
-        const filter3 = i => i.customId === 'economy' && i.user.id === message.member.user.id;
+        const filter3 = i => i.customId === 'economy' && i.user.id === interaction.user.username.id;
 
-          const collectorEco = message.channel.createMessageComponentCollector({ filter3, time: 50000 });
+          const collectorEco = interaction.channel.createMessageComponentCollector({ filter3, time: 50000 });
           
           collectorEco.on('collect', async i => {
             if (i.customId === 'economy') {
@@ -259,9 +250,9 @@ module.exports = {
             }
           });
 
-        const filter4 = i => i.customId === 'fun' && i.user.id === message.member.user.id;
+        const filter4 = i => i.customId === 'fun' && i.user.id === interaction.user.username.id;
 
-          const collectorFun = message.channel.createMessageComponentCollector({ filter4, time: 50000 });
+          const collectorFun = interaction.channel.createMessageComponentCollector({ filter4, time: 50000 });
           
           collectorFun.on('collect', async i => {
             if (i.customId === 'fun') {
@@ -270,9 +261,9 @@ module.exports = {
             }
           });
 
-        const filter5 = i => i.customId === 'info' && i.user.id === message.member.user.id;
+        const filter5 = i => i.customId === 'info' && i.user.id === interaction.user.username.id;
 
-          const collectorInfo = message.channel.createMessageComponentCollector({ filter5, time: 50000 });
+          const collectorInfo = interaction.channel.createMessageComponentCollector({ filter5, time: 50000 });
           
           collectorInfo.on('collect', async i => {
             if (i.customId === 'info') {
@@ -281,9 +272,9 @@ module.exports = {
             }
           });
 
-        const filter6 = i => i.customId === 'moderation' && i.user.id === message.member.user.id;
+        const filter6 = i => i.customId === 'moderation' && i.user.id === interaction.user.username.id;
 
-          const collectorMod = message.channel.createMessageComponentCollector({ filter6, time: 50000 });
+          const collectorMod = interaction.channel.createMessageComponentCollector({ filter6, time: 50000 });
           
           collectorMod.on('collect', async i => {
             if (i.customId === 'moderation') {
@@ -292,9 +283,9 @@ module.exports = {
             }
           });
 
-        const filter7 = i => i.customId === 'profile' && i.user.id === message.member.user.id;
+        const filter7 = i => i.customId === 'profile' && i.user.id === interaction.user.username.id;
 
-          const collectorPro = message.channel.createMessageComponentCollector({ filter7, time: 50000 });
+          const collectorPro = interaction.channel.createMessageComponentCollector({ filter7, time: 50000 });
           
           collectorPro.on('collect', async i => {
             if (i.customId === 'profile') {
@@ -303,9 +294,9 @@ module.exports = {
             }
           });
 
-          const filter8 = i => i.customId === 'genshin' && i.user.id === message.member.user.id;
+          const filter8 = i => i.customId === 'genshin' && i.user.id === interaction.user.username.id;
 
-          const collectorGen = message.channel.createMessageComponentCollector({ filter8, time: 50000 });
+          const collectorGen = interaction.channel.createMessageComponentCollector({ filter8, time: 50000 });
           
           collectorGen.on('collect', async i => {
             if (i.customId === 'genshin') {
@@ -313,8 +304,8 @@ module.exports = {
               await i.editReply({ embeds: [genEmbed], components: [row, row2] });
             }
           });
-
-          setTimeout(function () {
+        
+        setTimeout(function () {
             row.components[0].setDisabled(true);
             row.components[1].setDisabled(true);
             row.components[2].setDisabled(true);
@@ -325,9 +316,8 @@ module.exports = {
             row2.components[1].setDisabled(true);
             row2.components[2].setDisabled(true);
             row2.components[3].setDisabled(true);
-            sentMessage.edit({ embeds: [embed], components: [row, row2] })
-          }, 20000);
-
-    }
-}
-}
+            interaction.editReply({ embeds: [embed], components: [row, row2] })
+            }, 50000);
+        
+	}
+};
