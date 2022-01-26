@@ -15,7 +15,7 @@ module.exports = {
             user = message.mentions.users.first();
         } else if (args[0]) {
             user = message.guild.members.cache.get(args[0]);
-            if (user) user = user.user;;
+            if (user) user = user.user;
         } // else {
         //     user.id = "1"
         // }
