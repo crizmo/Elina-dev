@@ -27,7 +27,6 @@ module.exports = {
         } else {
             if (result.type === 'all-success') return message.channel.send("You have withdraw'd all your yen from your bank")
             if (result.type === 'success') return message.channel.send(`You have withdraw ${result.amount} ¥ from your bank.`)
-
         }
     }
 }

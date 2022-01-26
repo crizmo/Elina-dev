@@ -4,7 +4,7 @@ const cs = new CurrencySystem;
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "rob2",
+    name: "rob",
     permissions: ["SEND_MESSAGES"],
     cooldown: 5,
     description: "Rob command",
@@ -21,6 +21,7 @@ module.exports = {
 
         if (!user) return message.channel.send('Sorry, you forgot to mention somebody.');
         if (user.bot || user === client.user) return message.channel.send("This user is a bot.");
+        if (user === message.author) return message.channel.send("You cannot rob yourself");
 
         let result = await cs.rob({
             user: message.author,

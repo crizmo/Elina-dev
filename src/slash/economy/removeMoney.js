@@ -6,8 +6,8 @@ const { Permissions } = require('discord.js')
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('addmoney')
-		.setDescription('Add Money to a user!')
+		.setName('removemoney')
+		.setDescription('Remove Money from a user!')
 		.addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
 		.addIntegerOption(option => option.setName('amount').setDescription('Enter amount').setRequired(true)),
 
@@ -16,20 +16,20 @@ module.exports = {
 
         if(interaction.user.id !== '784141856426033233') return interaction.reply("U aint criz lol");
 
-		if (interaction.options.getInteger('amount') < 1) return interaction.reply("You can't add money less than 1 ¥!");
+		if (interaction.options.getInteger('amount') < 1) return interaction.reply("You can't remove money less than 1 ¥!");
         let wheretoPutMoney = "wallet"; //or bank
         let amount = interaction.options.getInteger('amount');
-        if (!amount) return interaction.reply("Enter amount of money to Add.");
+        if (!amount) return interaction.reply("Enter amount of money to remove.");
         let money = (amount);
         
-        let result = await cs.addMoney({
-        user: interaction.options.getUser('user'),
-        guild: interaction.guild,
-        amount: money,
-        wheretoPutMoney: wheretoPutMoney
+        let result = await cs.removeMoney({
+            user: interaction.options.getUser('user'),
+            guild: interaction.guild,
+            amount: money,
+            wheretoPutMoney: wheretoPutMoney
         });
-        if (result.error) return interaction.reply("You cant add negitive money");
-        else interaction.reply(`Successfully added ${money} ¥ to ${interaction.user.username}, ( in ${wheretoPutMoney} )`)
+        if (result.error) return interaction.reply("You cant Remove negitive money");
+        else interaction.reply(`Successfully Removed ${money} ¥ of ${interaction.user.username}, ( from ${wheretoPutMoney} )`)
                 
 	},
 };

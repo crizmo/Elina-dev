@@ -18,7 +18,7 @@ module.exports = {
         let money = args[0];
         if (isNaN(money)) return message.channel.send("Amount is not a number.");
 
-        let result = await cs.setBankSpace(user.id, null, money || 0);
+        let result = await cs.setBankSpace(user.id, message.guild.id, money || 0);
         if (result.error) {
             if (result.type === 'no-amount-provided') return message.channel.send('Please provide number to setBank Limit to.');
             else return message.channel.send(`Successfully set Bank Limit of ${user.tag} to ${money}`);

@@ -63,7 +63,7 @@ module.exports = {
             }, 1800);
 
             /* DEDUCT RESULTS */
-            if ($$ !== $ && $$ !== $$$) {
+            if ($$ !== $ && $$ !== $$$ && $ !== $$$) {
                 setTimeout(async () => {
                     const money = 5000;
                     let result = await cs.removeMoney({

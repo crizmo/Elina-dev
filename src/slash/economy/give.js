@@ -18,6 +18,7 @@ module.exports = {
 		if (interaction.options.getInteger('amount') < 1) return interaction.reply("You can't give money less than 1 ¥!");
         if (!user) return interaction.reply('Sorry, you forgot to mention somebody.');
         if (user.bot || user === client.user) return interaction.reply("This user is a bot.");
+        if (user === interaction.user) return interaction.reply("Bruh , give money to someone else , not yourself");
 
         let amount = interaction.options.getInteger('amount');
         if (!amount) return interaction.reply("Enter amount of yen to add.");

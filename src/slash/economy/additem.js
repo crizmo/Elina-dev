@@ -7,7 +7,7 @@ const { Permissions } = require('discord.js')
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('additem')
-		.setDescription('Additem to a user from the shop!')
+		.setDescription('Additem to the shop!')
 		.addStringOption(option => option.setName('name').setDescription('Enter a string').setRequired(true))
 		.addIntegerOption(option => option.setName('price').setDescription('Enter an integer').setRequired(true))
 		.addStringOption(option => option.setName('description').setDescription('Enter a string').setRequired(true)),

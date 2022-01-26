@@ -22,6 +22,7 @@ module.exports = {
 
         if (!user) return message.channel.send('Sorry, you forgot to mention somebody.');
         if (user.bot || user === client.user) return message.channel.send("This user is a bot.");
+        if (user === message.author) return message.channel.send("Bruh , give money to someone else , not yourself");
         // if (!client.users.cache.get(user.id) || !user) return message.channel.send('Sorry, you forgot to mention somebody.');
 
         let amount = args[1];
