@@ -206,16 +206,16 @@ module.exports = {
         // interaction.reply({ embeds: [charEmbed], components: [row, row2] })
         await interaction.reply({ embeds: [embed], components: [row, row2] })
 
-        const filter = i => i.customId === 'base' && i.user.id === interaction.user.username.id;
+        const filter = i => i.customId === 'base' && i.user.id === interaction.member.user.id;
 
-            const collectorMain = interaction.channel.createMessageComponentCollector({ filter, time: 50000 });
-            
-            collectorMain.on('collect', async i => {
+          const collectorHelp = interaction.channel.createMessageComponentCollector({ filter, time: 50000 });
+          
+          collectorHelp.on('collect', async i => {
             if (i.customId === 'base') {
-                await i.deferUpdate()
-                await i.editReply({ embeds: [embed], components: [row, row2] });
+              await i.deferUpdate()
+              await i.editReply({ embeds: [embed], components: [row, row2] });
             }
-            });
+          });
 
         const filter1 = i => i.customId === 'affection' && i.user.id === interaction.user.username.id;
 
