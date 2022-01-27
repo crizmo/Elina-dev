@@ -5,19 +5,9 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('hug')
 		.setDescription('Hug command usage and information!')
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("user")
-            .setDescription("Hug a member")
-            .addUserOption(option => option.setName("target").setDescription("The user mentioned")))
-
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("info")
-            .setDescription("Get hug command info")),
+        .addUserOption(option => option.setName("target").setDescription("The user mentioned")),
 
 	async execute(interaction, client) {
-		if (interaction.options.getSubcommand() === "user"){
 
             hugLinks = [ 'https://i.pinimg.com/originals/85/72/a1/8572a1d1ebaa45fae290e6760b59caac.gif',
                 'https://media1.tenor.com/images/b8a6eed08e17e94dad7eada8c63b69f5/tenor.gif?itemid=17363491',
@@ -52,25 +42,5 @@ module.exports = {
 
                 await interaction.reply({ embeds: [userEmbed1]})
             }
-        } else if (interaction.options.getSubcommand() === "info"){
-            const huginfo = new MessageEmbed()
-                .setTitle("Hug command")
-                .setDescription("Hug command usage and informaion")
-                .addFields(
-                    {name: `Usage`, value: "`\/hug\`", inline: true},
-                    {name: `\u200B`, value: `\u200B`, inline: true},
-                    {name: `Usage`, value: "`\/hug user @member\`", inline: true},
-                )
-                .setAuthor(`${interaction.guild.name}`, client.user.displayAvatarURL())
-                .setThumbnail(interaction.guild.iconURL())
-                .setImage("https://media.discordapp.net/attachments/912047994713550928/913488457110794260/unknown.png?width=490&height=376")
-                .setTimestamp()
-                .setColor("RANDOM")
-                .setFooter("For info of all command do /help");
-               
-            await interaction.reply({ embeds: [huginfo] })
-        } else {
-            await interaction.reply("No sub command was used");
-        }
 	},
 };

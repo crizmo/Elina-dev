@@ -5,19 +5,9 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('yaoi')
 		.setDescription('Match command usage and information!')
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("user")
-            .setDescription("Check how good yaoi match u make with a user !")
-            .addUserOption(option => option.setName("with").setDescription("The user mentioned")))
-
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("info")
-            .setDescription("Get yaoi command info")),
+        .addUserOption(option => option.setName("with").setDescription("The user mentioned")),
 
 	async execute(interaction, client) {
-		if (interaction.options.getSubcommand() === "user"){
 
             let rng = Math.floor(Math.random() * 101);
             const rngIndex = Math.floor(rng / 10);
@@ -95,24 +85,5 @@ module.exports = {
                     await interaction.reply({ embeds: [userEmbed]})
                 }
             }
-        } else if (interaction.options.getSubcommand() === "info"){
-            const yaoiinfo = new MessageEmbed()
-                .setTitle("Yaoi command")
-                .setDescription("Yaoi command usage and informaion")
-                .addFields(
-                    {name: `Usage`, value: "`\ /yaoi \`", inline: true},
-                    {name: `\u200B`, value: `\u200B`, inline: true},
-                    {name: `Usage`, value: "`\ /yaoi user @member \`", inline: true},
-                )
-                .setAuthor(`${interaction.guild.name}`, client.user.displayAvatarURL())
-                .setThumbnail(interaction.guild.iconURL())
-                .setTimestamp()
-                .setColor("RANDOM")
-                .setFooter("For info of all command do /help");
-               
-            await interaction.reply({ embeds: [yaoiinfo] })
-        } else {
-            await interaction.reply("No sub command was used");
-        }
 	},
 };

@@ -5,19 +5,10 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('boop')
 		.setDescription('Boop command usage and information!')
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("user")
-            .setDescription("Boop a member")
-            .addUserOption(option => option.setName("target").setDescription("The user mentioned")))
+        .addUserOption(option => option.setName("target").setDescription("The user mentioned")),
 
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("info")
-            .setDescription("Get boop command info")),
 
 	async execute(interaction, client) {
-		if (interaction.options.getSubcommand() === "user"){
 
             boopLinks = [ 'https://media.tenor.com/images/9945480efe5179c227558769613ee275/tenor.gif',
             'https://media1.tenor.com/images/cbf38a2e97a348a621207c967a77628a/tenor.gif?itemid=6287077',
@@ -29,8 +20,7 @@ module.exports = {
             const randomNum = Math.floor(Math.random() * Math.floor(boopLinks.length))
 
             const user = interaction.options.getUser("target")
-            const member = interaction.options.getMember("target") || interaction.member
-            let avatar = member.displayAvatarURL()
+
             if (user){
                 const userEmbed = new MessageEmbed()
                     .setTitle(`${interaction.user.username} booped ${user.username} !`)
@@ -50,24 +40,5 @@ module.exports = {
 
                 await interaction.reply({ embeds: [userEmbed1]})
             }
-        } else if (interaction.options.getSubcommand() === "info"){
-            const boopinfo = new MessageEmbed()
-                .setTitle("Boop command")
-                .setDescription("Boop command usage and informaion")
-                .addFields(
-                    {name: `Usage`, value: "`\/boop\`", inline: true},
-                    {name: `\u200B`, value: `\u200B`, inline: true},
-                    {name: `Usage`, value: "`\/boop user @member\`", inline: true},
-                )
-                .setAuthor(`${interaction.guild.name}`, client.user.displayAvatarURL())
-                .setThumbnail(interaction.guild.iconURL())
-                .setTimestamp()
-                .setColor("RANDOM")
-                .setFooter("For info of all command do /help");
-               
-            await interaction.reply({ embeds: [boopinfo] })
-        } else {
-            await interaction.reply("No sub command was used");
-        }
 	},
 };

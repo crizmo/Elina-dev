@@ -5,19 +5,9 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('slap')
 		.setDescription('Slap command usage and information!')
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("user")
-            .setDescription("slap a member")
-            .addUserOption(option => option.setName("target").setDescription("The user mentioned")))
-
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("info")
-            .setDescription("Get slap command info")),
+        .addUserOption(option => option.setName("target").setDescription("The user mentioned")),
 
 	async execute(interaction, client) {
-		if (interaction.options.getSubcommand() === "user"){
 
             slapLinks = [ 'https://media.tenor.com/images/9e7a8a7473f6535081805f0e85b7a09f/tenor.gif',
                 'https://i.pinimg.com/originals/4e/9e/a1/4e9ea150354ad3159339b202cbc6cad9.gif',
@@ -52,25 +42,5 @@ module.exports = {
 
                 await interaction.reply({ embeds: [userEmbed1]})
             }
-        } else if (interaction.options.getSubcommand() === "info"){
-            const slapinfo = new MessageEmbed()
-                .setTitle("Slap command")
-                .setDescription("Slap command usage and informaion")
-                .addFields(
-                    {name: `Usage`, value: "`\/slap\`", inline: true},
-                    {name: `\u200B`, value: `\u200B`, inline: true},
-                    {name: `Usage`, value: "`\/slap user @member\`", inline: true},
-                )
-                .setAuthor(`${interaction.guild.name}`, client.user.displayAvatarURL())
-                .setThumbnail(interaction.guild.iconURL())
-                .setImage("https://media.discordapp.net/attachments/912047994713550928/913712941331779604/unknown.png?width=490&height=403")
-                .setTimestamp()
-                .setColor("RANDOM")
-                .setFooter("For info of all command do /help");
-               
-            await interaction.reply({ embeds: [slapinfo] })
-        } else {
-            await interaction.reply("No sub command was used");
-        }
 	},
 };

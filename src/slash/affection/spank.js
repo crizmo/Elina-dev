@@ -5,19 +5,9 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('spank')
 		.setDescription('Spank command usage and information!')
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("user")
-            .setDescription("Spank a member")
-            .addUserOption(option => option.setName("target").setDescription("The user mentioned")))
-
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("info")
-            .setDescription("Get spank command info")),
+        .addUserOption(option => option.setName("target").setDescription("The user mentioned")),
 
 	async execute(interaction, client) {
-		if (interaction.options.getSubcommand() === "user"){
 
             spankLinks = [ 'http://i.imgur.com/7ns8h8Q.gif',
                     'https://c.tenor.com/WN-vExb3SlgAAAAC/anime-schoolgirl.gif',
@@ -50,25 +40,5 @@ module.exports = {
 
                 await interaction.reply({ embeds: [userEmbed1]})
             }
-        } else if (interaction.options.getSubcommand() === "info"){
-            const spankinfo = new MessageEmbed()
-                .setTitle("Spank command")
-                .setDescription("Spank command usage and informaion")
-                .addFields(
-                    {name: `Usage`, value: "`\/spank\`", inline: true},
-                    {name: `\u200B`, value: `\u200B`, inline: true},
-                    {name: `Usage`, value: "`\/spank user @member\`", inline: true},
-                )
-                .setAuthor(`${interaction.guild.name}`, client.user.displayAvatarURL())
-                .setThumbnail(interaction.guild.iconURL())
-                .setImage("https://media.discordapp.net/attachments/912047994713550928/913846215458816081/unknown.png?width=492&height=330")
-                .setTimestamp()
-                .setColor("RANDOM")
-                .setFooter("For info of all command do /help");
-               
-            await interaction.reply({ embeds: [spankinfo] })
-        } else {
-            await interaction.reply("No sub command was used");
-        }
 	},
 };

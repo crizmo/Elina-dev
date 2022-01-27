@@ -5,19 +5,9 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('kiss')
 		.setDescription('kiss command usage and information!')
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("user")
-            .setDescription("Kiss a member")
-            .addUserOption(option => option.setName("target").setDescription("The user mentioned")))
-
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("info")
-            .setDescription("Get kiss command info")),
+        .addUserOption(option => option.setName("target").setDescription("The user mentioned")),
 
 	async execute(interaction, client) {
-		if (interaction.options.getSubcommand() === "user"){
 
             kissLinks = [ 'https://media1.tenor.com/images/34ecc943dd11f0c55689e25f1bacddfb/tenor.gif?itemid=14816388',
             'https://i.pinimg.com/originals/5e/1e/8c/5e1e8c81c01a1e26db4c0e18ae8bafd5.gif',
@@ -29,8 +19,6 @@ module.exports = {
             const randomNum = Math.floor(Math.random() * Math.floor(kissLinks.length))
 
             const user = interaction.options.getUser("target")
-            const member = interaction.options.getMember("target") || interaction.member
-            let avatar = member.displayAvatarURL()
             if (user){
                 const userEmbed = new MessageEmbed()
                     .setTitle(`${interaction.user.username} kissed ${user.username} !`)
@@ -52,25 +40,5 @@ module.exports = {
 
                 await interaction.reply({ embeds: [userEmbed1]})
             }
-        } else if (interaction.options.getSubcommand() === "info"){
-            const kissinfo = new MessageEmbed()
-                .setTitle("Kiss command")
-                .setDescription("kiss command usage and informaion")
-                .addFields(
-                    {name: `Usage`, value: "`\/kiss\`", inline: true},
-                    {name: `\u200B`, value: `\u200B`, inline: true},
-                    {name: `Usage`, value: "`\/kiss user @member\`", inline: true},
-                )
-                .setAuthor(`${interaction.guild.name}`, client.user.displayAvatarURL())
-                .setThumbnail(interaction.guild.iconURL())
-                .setImage("https://cdn.discordapp.com/attachments/912047994713550928/913480122785472602/unknown.png")
-                .setTimestamp()
-                .setColor("RANDOM")
-                .setFooter("For info of all command do /help");
-               
-            await interaction.reply({ embeds: [kissinfo] })
-        } else {
-            await interaction.reply("No sub command was used");
-        }
 	},
 };

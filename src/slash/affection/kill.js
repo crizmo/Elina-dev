@@ -5,19 +5,9 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('kill')
 		.setDescription('Kill command usage and information!')
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("user")
-            .setDescription("kill a member")
-            .addUserOption(option => option.setName("target").setDescription("The user mentioned")))
-
-        .addSubcommand(subcommand => 
-            subcommand
-            .setName("info")
-            .setDescription("Get kill command info")),
+        .addUserOption(option => option.setName("target").setDescription("The user mentioned")),
 
 	async execute(interaction, client) {
-		if (interaction.options.getSubcommand() === "user"){
 
             killLinks = [ 'https://thumbs.gfycat.com/ScrawnyCourteousAssassinbug-max-1mb.gif',
                 'https://media.tenor.com/images/8ed0a4195855b6a7420feb9acb62bdc5/tenor.gif',
@@ -53,25 +43,5 @@ module.exports = {
 
                 await interaction.reply({ embeds: [userEmbed1]})
             }
-        } else if (interaction.options.getSubcommand() === "info"){
-            const killinfo = new MessageEmbed()
-                .setTitle("Kill command")
-                .setDescription("Kill command usage and informaion")
-                .addFields(
-                    {name: `Usage`, value: "`\/kill\`", inline: true},
-                    {name: `\u200B`, value: `\u200B`, inline: true},
-                    {name: `Usage`, value: "`\/kill user @member\`", inline: true},
-                )
-                .setAuthor(`${interaction.guild.name}`, client.user.displayAvatarURL())
-                .setThumbnail(interaction.guild.iconURL())
-                .setImage("https://media.discordapp.net/attachments/912047994713550928/913490551939154000/unknown.png?width=497&height=401")
-                .setTimestamp()
-                .setColor("RANDOM")
-                .setFooter("For info of all command do /help");
-               
-            await interaction.reply({ embeds: [killinfo] })
-        } else {
-            await interaction.reply("No sub command was used");
-        }
 	},
 };
