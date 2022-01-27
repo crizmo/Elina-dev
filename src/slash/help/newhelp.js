@@ -41,10 +41,10 @@ module.exports = {
 
         const affection = new MessageEmbed()
         .setTitle("Affection commands!")
-        .setDescription("To get info of commands `\ =help-affection \`")
+        .setDescription("To get info of commands `\ help-affection \`")
         .setAuthor(`${interaction.user.username}`, avatar)
         .addFields(
-          {name: `\u200B`, value: "`\ boop \` , `\ dance \` , `\ horny \` , `\ howgay \` , `\ hug \` \n `\ kill \` , `\ kiss \` , `\ match \` , `\ pet \` , `\ simp \` , `\ slap \` \n `\ spank \` , `\ spit \` , `\ yaoi \`", inline: true},
+          {name: `\u200B`, value: "`\ boop \` , `\ dance \` , `\ horny \` , `\ howgay \` , `\ hug \` \n `\ kill \` , `\ kiss \` , `\ match \` , `\ pet \` , `\ simp \` , `\ slap \` \n `\ spank \` , `\ yaoi \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -54,10 +54,10 @@ module.exports = {
 
         const bot = new MessageEmbed()
         .setTitle("Bot commands commands!")
-        .setDescription("To get info of commands `\ =help-bot \`")
+        .setDescription("To get info of commands `\ help-bot \`")
         .setAuthor(`${interaction.user.username}`, avatar)
         .addFields(
-          {name: `\u200B`, value: "`\ invite \` , `\ ping \` , `\ stats \` , `\ suggest \` , `\ bug \`", inline: true},
+          {name: `\u200B`, value: "`\ invite \` , `\ ping \` , `\ stats \` , `\ suggest \` \n `\ bugreport \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -67,7 +67,7 @@ module.exports = {
 
         const economy = new MessageEmbed()
         .setTitle("Economy commands!")
-        .setDescription("Elina economy commands \n To get more information about elina's economy commands do `\ =help-eco \` then click the respective buttons to get per command information")
+        .setDescription("Elina economy commands \n To get more information about elina's economy commands do `\ help-eco \` then click the respective buttons to get per command information")
         .setAuthor(`${interaction.user.username}`, avatar)
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -77,7 +77,7 @@ module.exports = {
 
         const fun = new MessageEmbed()
         .setTitle("Fun commands!")
-        .setDescription("To get info of commands `\ =help-fun \`")
+        .setDescription("To get info of commands `\ help-fun \`")
         .setAuthor(`${interaction.user.username}`, avatar)
         .addFields(
           {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \` , `\ qr \`", inline: true},
@@ -90,40 +90,10 @@ module.exports = {
 
         const info = new MessageEmbed()
         .setTitle("Info command!")
-        .setDescription("To get info of commands `\ =help-info \`")
+        .setDescription("To get info of commands `\ help-info \`")
         .setAuthor(`${interaction.user.tag}`, avatar )
         .addFields(
-          {name: `\u200B`, value: "`\ anime \` , `\ djs || docs \` , `\ chatbot \` , `\ covid \` \n `\ credits \` , `\ github \`, `\ math \`, `\ poll \` , `\ weather \` \n `\ whois \` , `\ worldclock \`", inline: true},
-        )
-        .setFooter(client.user.tag , client.user.displayAvatarURL())
-        .setTimestamp()
-        .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(client.user.displayAvatarURL({
-            dynamic: true,
-          }))
-        .setColor(color);
-
-        const moderation = new MessageEmbed()
-        .setTitle("Moderation command!")
-        .setDescription("To get info of commands `\ =help-mod \`")
-        .setAuthor(`${interaction.user.tag}`, avatar )
-        .addFields(
-          {name: `\u200B`, value: "`\ ban \` , `\ clear \` , `\ kick \` , `\ roles \`", inline: true},
-        )
-        .setFooter(client.user.tag , client.user.displayAvatarURL())
-        .setTimestamp()
-        .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(client.user.displayAvatarURL({
-            dynamic: true,
-          }))
-        .setColor(color);
-
-        const profile = new MessageEmbed()
-        .setTitle("Profile command!")
-        .setDescription("To get info of commands `\ =help-profile \`")
-        .setAuthor(`${interaction.user.tag}`, avatar )
-        .addFields(
-          {name: `\u200B`, value: "`\ avatar \` , `\ deepfry \` , `\ tweet \`", inline: true},
+          {name: `\u200B`, value: "`\ anime \` , `\ chatbot \` , `\ covid \` , `\ credits \` \n `\ github \` , `\ poll \` , `\ weather \` , `\ whois \` \n `\ worldclock \` , `\ avatar \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
@@ -137,11 +107,11 @@ module.exports = {
         .setTitle(`Genshin Impact - Commands`) 
         .setDescription("Genshin impact commands")
         .addFields(
-          { name: `Artifacts`, value: "`\ =gen-arti {artifact_name} \` || `\ =genshin-artifact \`"},
-          { name: `Characters`, value: "`\ =gen-char {character_name} \` || `\ =genshin-character \`"},
-          { name: `Elements`, value: "`\ =gen-el {element_name} \` || `\ =genshin-elements \`"}, 
-          { name: `Nations`, value: "`\ =gen-nat {nation_name} \` || `\ =genshin-nations \`"},
-          { name: `Weapons`, value: "`\ =gen-wp {weapon_name} \` || `\ =genshin-weapons \`"},
+          { name: `Artifacts`, value: "`\ gen-arti {artifact_name} \` || `\ genshin-artifact \`"},
+          { name: `Characters`, value: "`\ gen-char {character_name} \` || `\ genshin-character \`"},
+          { name: `Elements`, value: "`\ gen-el {element_name} \` || `\ genshin-elements \`"}, 
+          { name: `Nations`, value: "`\ gen-nat {nation_name} \` || `\ genshin-nations \`"},
+          { name: `Weapons`, value: "`\ gen-wp {weapon_name} \` || `\ genshin-weapons \`"},
         )
         .setThumbnail(client.user.displayAvatarURL({
           dynamic: true,
@@ -188,14 +158,6 @@ module.exports = {
             new MessageButton()
                 .setCustomId('info')
                 .setLabel('Info')
-                .setStyle('SECONDARY'),
-            new MessageButton()
-                .setCustomId('moderation')
-                .setLabel('Moderation')
-                .setStyle('SECONDARY'),
-            new MessageButton()
-                .setCustomId('profile')
-                .setLabel('Profile')
                 .setStyle('SECONDARY'),
             new MessageButton()
                 .setCustomId('genshin')
@@ -272,31 +234,9 @@ module.exports = {
             }
           });
 
-        const filter6 = i => i.customId === 'moderation' && i.user.id === interaction.user.username.id;
+          const filter6 = i => i.customId === 'genshin' && i.user.id === interaction.user.username.id;
 
-          const collectorMod = interaction.channel.createMessageComponentCollector({ filter6, time: 50000 });
-          
-          collectorMod.on('collect', async i => {
-            if (i.customId === 'moderation') {
-              await i.deferUpdate()
-              await i.editReply({ embeds: [moderation], components: [row, row2] });
-            }
-          });
-
-        const filter7 = i => i.customId === 'profile' && i.user.id === interaction.user.username.id;
-
-          const collectorPro = interaction.channel.createMessageComponentCollector({ filter7, time: 50000 });
-          
-          collectorPro.on('collect', async i => {
-            if (i.customId === 'profile') {
-              await i.deferUpdate()
-              await i.editReply({ embeds: [profile], components: [row, row2] });
-            }
-          });
-
-          const filter8 = i => i.customId === 'genshin' && i.user.id === interaction.user.username.id;
-
-          const collectorGen = interaction.channel.createMessageComponentCollector({ filter8, time: 50000 });
+          const collectorGen = interaction.channel.createMessageComponentCollector({ filter6, time: 50000 });
           
           collectorGen.on('collect', async i => {
             if (i.customId === 'genshin') {
@@ -314,8 +254,6 @@ module.exports = {
 
             row2.components[0].setDisabled(true);
             row2.components[1].setDisabled(true);
-            row2.components[2].setDisabled(true);
-            row2.components[3].setDisabled(true);
             interaction.editReply({ embeds: [embed], components: [row, row2] })
             }, 50000);
         
