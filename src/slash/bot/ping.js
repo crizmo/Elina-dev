@@ -9,8 +9,8 @@ module.exports = {
 	async execute(interaction, client) {
 			
 			const ping = new MessageEmbed()
-			.setTitle("Taiga's ping")
-			.setDescription(`Pong! Taiga has \`${client.ws.ping}\` ms ping 🏓`)
+			.setTitle("Elina's ping")
+			.setDescription(`Pong! Elina has \`${client.ws.ping}\` ms ping 🏓`)
 			.setFooter(client.user.tag , client.user.displayAvatarURL())
 			.setTimestamp()
 		
