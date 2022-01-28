@@ -1,3 +1,5 @@
+// Rename main.js to index.js
+
 const { Client, Intents, Collection} = require('discord.js');
 
 const Discord = require('discord.js');
@@ -11,6 +13,7 @@ const { MessageEmbed } = require("discord.js");
 
 const fs = require('fs');
 require('dotenv').config();
+// const keepAlive = require("./server");        // un-comment this line - for hosting
 
 const fetch = require('node-fetch')
 
@@ -41,6 +44,7 @@ cs.searchForNewUpdate(true)
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 const { Snake } = require('discord-gamecord');
+const { mainModule } = require('process');
 
 fs.readdirSync('./commands').forEach(dirs => {
     const commands = fs.readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
@@ -150,4 +154,5 @@ music.event.on('addList', async (channel, playlist, requester) => {
     });
 });
 
+// keepAlive();                                         // uncomment for hosting your bot
 client.login(process.env.DISCORD_TOKEN);
