@@ -157,7 +157,7 @@ module.exports = {
 			const embed = new MessageEmbed()
 			.setTitle("Our full help menu!")
 			.setDescription(
-			  `\`\`\`js\nPrefix: \nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://discord.com/oauth2/authorize?client_id=842397001954230303&permissions=1642828528711&scope=bot)\n\n> To check out a category, use \`help-[category-name]\``
+			  `\`\`\`js\nPrefix: \nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://discord.com/api/oauth2/authorize?client_id=842397001954230303&permissions=1515552374487&scope=bot%20applications.commands)\n\n> To check out a category, use \`help-[category-name]\``
 			)
 			.addFields(categories)
 			.setFooter(`Requested by ${interaction.user.tag}`,interaction.user.displayAvatarURL({dynamic: true,}))
