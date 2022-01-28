@@ -12,6 +12,8 @@ module.exports = {
         .map((roles) => roles.toString())
         .join(", ")
 
+        if(!userRoles) return message.reply("This user has no roles!")
+
         let embed = new MessageEmbed()
         .addField("Roles", userRoles)
         .setFooter(user.user.tag, user.user.displayAvatarURL({ dynamic: true}))
