@@ -9,7 +9,7 @@ let color = "#00ccff";
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('newhelp')
+		.setName('help')
 		.setDescription('Help command!'),
         
 	async execute(interaction, client) {
