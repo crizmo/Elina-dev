@@ -7,7 +7,7 @@ const emo = require("./emoji.json");
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('subhelp')
+		.setName('help')
 		.setDescription('Replies with subcmd!'),
 	async execute(interaction, client) {
 
