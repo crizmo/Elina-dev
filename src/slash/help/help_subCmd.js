@@ -6,7 +6,7 @@ let color = "#00ccff";
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('subhelp')
-		.setDescription('Replies with Pong!'),
+		.setDescription('Replies with subcmd!'),
 	async execute(interaction, client) {
 
 		const user = interaction.user
@@ -14,7 +14,7 @@ module.exports = {
 
 		const row = new MessageActionRow().addComponents(
 				new MessageSelectMenu()
-					.setCustomId('aff')
+					.setCustomId('main')
 					.setPlaceholder('Affection commands')
 					.addOptions([
 						{
@@ -22,11 +22,6 @@ module.exports = {
 							description: 'To get more info',
 							value: 'first_option',
 						},
-					]),
-				new MessageSelectMenu()
-					.setCustomId('bot')
-					.setPlaceholder('Bot commands')
-					.addOptions([
 						{
 							label: 'Bot commands',
 							description: 'To get more info',
@@ -63,26 +58,21 @@ module.exports = {
 		
 			await interaction.reply({ content: 'Sub help for all commands!', components: [row] });
 
-			const filter = interaction => interaction.customId === 'aff' && interaction.user.id === interaction.member.user.id;
+			const filter = inter=> inter.user.id === interaction.user.id;
+			const collector = interaction.channel.createMessageComponentCollector({ filter, time: 50000 });
+                
+                collector.on('collect', async interaction => {
+                    if (interaction.customId === 'main') {
+                       if(interaction.values[0] === 'first_option') {
+                           await interaction.deferUpdate();
+                           await interaction.editReply({components: [row] , embeds: [affection]})
+                       }
+                       if(interaction.values[0] === 'second_option') {
+                           await interaction.deferUpdate();
+                           await interaction.editReply({components: [row] , embeds: [bot]})
+                       }
 
-				const collectorAff = interaction.channel.createMessageComponentCollector({ filter, time: 50000 });
-				
-				collectorAff.on('collect', async interaction => {
-					if (interaction.customId === 'aff') {
-						await interaction.deferUpdate();
-						await interaction.editReply({ embeds: [affection], components: [row] });
-					}
-				});
-
-			const filter2 = interaction => interaction.customId === 'bot' && interaction.user.id === interaction.user.username.id;
-
-				const collectorBot = interaction.channel.createMessageComponentCollector({ filter2, time: 50000 });
-				
-				collectorBot.on('collect', async interaction => {
-					if (interaction.customId === 'bot') {
-						await interaction.deferUpdate();
-						await interaction.editReply({ embeds: [bot], components: [row] });
-					}
-				});
+                    }
+                });
 	},
 };
