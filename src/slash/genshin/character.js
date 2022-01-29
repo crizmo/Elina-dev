@@ -68,13 +68,11 @@ module.exports = {
                         passiveName1 : data.passiveTalents[0].name.toLocaleString(),
                         passiveUnlock1 : data.passiveTalents[0].unlock.toLocaleString(),
                         passiveDescription1 : data.passiveTalents[0].description.toLocaleString(),
-                        passiveLevel1 : data.passiveTalents[0].level.toLocaleString(),
                     // --------------------
                     //  passive 2
                         passiveName2 : data.passiveTalents[1].name.toLocaleString(),
                         passiveUnlock2 : data.passiveTalents[1].unlock.toLocaleString(),
                         passiveDescription2 : data.passiveTalents[1].description.toLocaleString(),
-                        passiveLevel2 : data.passiveTalents[1].level.toLocaleString(),
                     // --------------------
                     //  passive 3
                         passiveName3 : data.passiveTalents[2].name.toLocaleString(),
@@ -193,7 +191,7 @@ module.exports = {
                 { name: `\u200B`, value: `**Passive 1**`, inline: true},
                 { name: `\u200B`, value: `\u200B`, inline: true},
                 { name: `Name`, value: `${Chars_Data[0].passiveName1}`, inline: true},  
-                { name: `Level`, value: `${Chars_Data[0].passiveLevel1}`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
                 { name: `Unlock`, value: `${Chars_Data[0].passiveUnlock1}`, inline: true},
                 { name: `Info`, value: `${Chars_Data[0].passiveDescription1}`},
                 // Passive 2
@@ -201,7 +199,7 @@ module.exports = {
                 { name: `\u200B`, value: `**Passive 2**`, inline: true},
                 { name: `\u200B`, value: `\u200B`, inline: true},
                 { name: `Name`, value: `${Chars_Data[0].passiveName2}`, inline: true}, 
-                { name: `Level`, value: `${Chars_Data[0].passiveLevel2}`, inline: true},
+                { name: `\u200B`, value: `\u200B`, inline: true},
                 { name: `Unlock`, value: `${Chars_Data[0].passiveUnlock2}`, inline: true}, 
                 { name: `Info`, value: `${Chars_Data[0].passiveDescription2}`},
                 // Passive 3
