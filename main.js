@@ -62,21 +62,6 @@ fs.readdirSync('./direct_help').forEach(dirs => {
     };
 });
 
-const Topgg = require('@top-gg/sdk')
-
-client.on('ready', async (message)=>{
-    const channel = client.channels.cache.get('936824726591008778');
-    const member = message.member;
-    const topgg = new Topgg.Api(process.env.TOP_TOKEN)
-    const voted = await topgg.hasVoted(member.user.id)
-
-    if(!voted) {
-        return channel.send('no you havent voted')
-    }else {
-        return channel.send('you have voted')
-    }
-})
-
 client.on("messageCreate", async (message)=>{
     
     if(message.author.bot) return
