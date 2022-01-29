@@ -143,16 +143,16 @@ module.exports = {
 			.setTitle(`Genshin Impact - Commands`) 
 			.setDescription("Genshin impact commands")
 			.addFields(
-			  { name: `Artifacts`, value: "`\ gen-arti {artifact_name} \` || `\ genshin-artifact \`"},
-			  { name: `Characters`, value: "`\ gen-char {character_name} \` || `\ genshin-character \`"},
-			  { name: `Elements`, value: "`\ gen-el {element_name} \` || `\ genshin-elements \`"}, 
-			  { name: `Nations`, value: "`\ gen-nat {nation_name} \` || `\ genshin-nations \`"},
-			  { name: `Weapons`, value: "`\ gen-wp {weapon_name} \` || `\ genshin-weapons \`"},
+			  { name: `Artifacts`, value: "`\ gen-artifact \`"},
+			  { name: `Characters`, value: "`\ gen-character \`"},
+			  { name: `Elements`, value: "`\ gen-elements \`"}, 
+			  { name: `Nations`, value: "`\ gen-nations \`"},
+			  { name: `Weapons`, value: "`\ gen-weapons \`"},
 			)
 			.setThumbnail(client.user.displayAvatarURL({
 			  dynamic: true,
 			}))
-			.setFooter("For more info do =genshin || =help-genshin")
+			.setFooter("For any questions or suggestions, join our support server")
 
 			const embed = new MessageEmbed()
 			.setTitle("Our full help menu!")

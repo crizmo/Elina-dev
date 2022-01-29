@@ -1,9 +1,7 @@
 // Rename main.js to index.js
 
 const { Client, Intents, Collection} = require('discord.js');
-
 const Discord = require('discord.js');
-
 const client = new Client({ intents: 32767});
 
 require('dotenv').config();
@@ -14,10 +12,11 @@ const { MessageEmbed } = require("discord.js");
 const fs = require('fs');
 require('dotenv').config();
 // const keepAlive = require("./server");        // un-comment this line - for hosting
-
 const fetch = require('node-fetch')
 
 const music = require('@koenie06/discord.js-music');
+
+// Economy
 
 const CurrencySystem = require("currency-system");
 const cs = new CurrencySystem;
@@ -30,6 +29,7 @@ cs.setDefaultBankAmount('100')
 // cs.setMaxWalletAmount('10000')
 // cs.setMaxBankAmount('10000')
 cs.searchForNewUpdate(true)
+
 //    End    //
 
 // Teyvat start
