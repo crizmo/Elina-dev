@@ -222,7 +222,7 @@ module.exports = {
           collectorHelp.on('collect', async i => {
             if (i.customId === 'base') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [embed], components: [row, row2] });
+              await i.followUp({ embeds: [embed], components: [row, row2] });
             }
           });
 
@@ -233,7 +233,7 @@ module.exports = {
           collectorAff.on('collect', async i => {
             if (i.customId === 'affection') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [affection], components: [row, row2] });
+              await i.followUp({ embeds: [affection], components: [row, row2] });
             }
           });
 
@@ -244,7 +244,7 @@ module.exports = {
           collectorBot.on('collect', async i => {
             if (i.customId === 'bot') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [bot], components: [row, row2] });
+              await i.followUp({ embeds: [bot], components: [row, row2] });
             }
           });
 
@@ -255,7 +255,7 @@ module.exports = {
           collectorEco.on('collect', async i => {
             if (i.customId === 'economy') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [economy], components: [row, row2] });
+              await i.followUp({ embeds: [economy], components: [row, row2] });
             }
           });
 
@@ -266,7 +266,7 @@ module.exports = {
           collectorFun.on('collect', async i => {
             if (i.customId === 'fun') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [fun], components: [row, row2] });
+              await i.followUp({ embeds: [fun], components: [row, row2] });
             }
           });
 
@@ -277,7 +277,7 @@ module.exports = {
           collectorInfo.on('collect', async i => {
             if (i.customId === 'info') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [info], components: [row, row2] });
+              await i.followUp({ embeds: [info], components: [row, row2] });
             }
           });
 
@@ -288,7 +288,7 @@ module.exports = {
           collectorMod.on('collect', async i => {
             if (i.customId === 'moderation') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [moderation], components: [row, row2] });
+              await i.followUp({ embeds: [moderation], components: [row, row2] });
             }
           });
 
@@ -299,7 +299,7 @@ module.exports = {
           collectorPro.on('collect', async i => {
             if (i.customId === 'profile') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [profile], components: [row, row2] });
+              await i.followUp({ embeds: [profile], components: [row, row2] });
             }
           });
 
@@ -310,7 +310,7 @@ module.exports = {
           collectorGen.on('collect', async i => {
             if (i.customId === 'genshin') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [genEmbed], components: [row, row2] });
+              await i.followUp({ embeds: [genEmbed], components: [row, row2] });
             }
           });
 
