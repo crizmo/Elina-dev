@@ -51,8 +51,8 @@ module.exports = {
         
         collectorGen.on('collect', async i => {
           if (i.customId === 'main') {
-            await i.deferUpdate()
-            await i.editReply({ embeds: [genEmbed], components: [row] });
+            // await i.deferUpdate()
+            await i.reply({ embeds: [genEmbed], components: [row] });
           }
         });
 
@@ -62,8 +62,8 @@ module.exports = {
         
         collectorCmd.on('collect', async i => {
           if (i.customId === 'cmd') {
-            await i.deferUpdate()
-            await i.editReply({ embeds: [cmdEmbed], components: [row] });
+            // await i.deferUpdate()
+            await i.reply({ embeds: [cmdEmbed], components: [row] });
           }
         });
 

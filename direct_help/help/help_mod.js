@@ -10,7 +10,7 @@ module.exports = {
     cooldown: 5,
     description: "Help command for all moderation commands",
 
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
 
         const user = message.mentions.users.first() || message.member.user
         let avatar = user.displayAvatarURL()
@@ -95,7 +95,7 @@ module.exports = {
                 .setStyle('SECONDARY'),
             );
 
-        message.channel.send({embeds: [embed], components: [row]})
+        const sentMessage = await message.channel.send({embeds: [embed], components: [row]})
 
         const filter1 = i => i.customId === 'mod' && i.user.id === message.member.user.id;
 
@@ -104,7 +104,7 @@ module.exports = {
           collectorHelp.on('collect', async i => {
             if (i.customId === 'mod') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [embed], components: [row] });
+              await sentMessage.edit({ embeds: [embed], components: [row] });
             }
           });
 
@@ -115,7 +115,7 @@ module.exports = {
           collectorBan.on('collect', async i => {
             if (i.customId === 'ban') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [banEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [banEmbed], components: [row] });
             }
           });
 
@@ -126,7 +126,7 @@ module.exports = {
           collectorKick.on('collect', async i => {
             if (i.customId === 'kick') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [kickEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [kickEmbed], components: [row] });
             }
           });
 
@@ -137,7 +137,7 @@ module.exports = {
           collectorClear.on('collect', async i => {
             if (i.customId === 'clear') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [clearEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [clearEmbed], components: [row] });
             }
           });
 
@@ -148,7 +148,7 @@ module.exports = {
           collectorRoles.on('collect', async i => {
             if (i.customId === 'roles') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [rolesEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [rolesEmbed], components: [row] });
             }
           });
 }

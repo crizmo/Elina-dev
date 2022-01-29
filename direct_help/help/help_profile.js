@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 5,
     description: "Help command for all bot commands",
 
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
 
         const user = message.mentions.users.first() || message.member.user
         let avatar = user.displayAvatarURL()
@@ -77,7 +77,7 @@ module.exports = {
                 .setStyle('SECONDARY'),
             );
 
-        message.channel.send({embeds: [embed], components: [row]})
+        const sentMessage = await message.channel.send({embeds: [embed], components: [row]})
 
         const filter1 = i => i.customId === 'profile' && i.user.id === message.member.user.id;
 
@@ -86,7 +86,7 @@ module.exports = {
           collectorHelp.on('collect', async i => {
             if (i.customId === 'profile') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [embed], components: [row] });
+              await sentMessage.edit({ embeds: [embed], components: [row] });
             }
           });
 
@@ -97,7 +97,7 @@ module.exports = {
           collectorAvatar.on('collect', async i => {
             if (i.customId === 'avatar') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [avatarEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [avatarEmbed], components: [row] });
             }
           });
 
@@ -108,7 +108,7 @@ module.exports = {
           collectorDeepfry.on('collect', async i => {
             if (i.customId === 'deepfry') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [deepfryEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [deepfryEmbed], components: [row] });
             }
           });
 
@@ -119,7 +119,7 @@ module.exports = {
           collectorTweet.on('collect', async i => {
             if (i.customId === 'tweet') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [tweetEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [tweetEmbed], components: [row] });
             }
           });
 }

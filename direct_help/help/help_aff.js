@@ -10,7 +10,7 @@ module.exports = {
     cooldown: 5,
     description: "Help command for all affection commands",
 
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
 
         const user = message.mentions.users.first() || message.member.user
         let avatar = user.displayAvatarURL()
@@ -249,7 +249,7 @@ module.exports = {
                   .setStyle('SECONDARY')
               );
 
-        message.channel.send({embeds: [embed], components: [row , row2 , row3]})
+        const sentMessage = await message.channel.send({embeds: [embed], components: [row , row2 , row3]})
 
         const filter = i => i.customId === 'affection' && i.user.id === message.member.user.id;
 
@@ -258,7 +258,7 @@ module.exports = {
           collectorHelp.on('collect', async i => {
             if (i.customId === 'affection') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [embed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [embed], components: [row, row2 , row3] });
             }
           });
 
@@ -269,7 +269,7 @@ module.exports = {
           collectorBoop.on('collect', async i => {
             if (i.customId === 'boop') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [boopEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [boopEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -280,7 +280,7 @@ module.exports = {
           collectorDance.on('collect', async i => {
             if (i.customId === 'dance') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [danceEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [danceEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -291,7 +291,7 @@ module.exports = {
           collectorHug.on('collect', async i => {
             if (i.customId === 'hug') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [hugEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [hugEmbed], components: [row, row2 , row3] });
             }
           });
         const filter4 = i => i.customId === 'kill' && i.user.id === message.member.user.id;
@@ -301,7 +301,7 @@ module.exports = {
           collectorKill.on('collect', async i => {
             if (i.customId === 'kill') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [killEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [killEmbed], components: [row, row2 , row3] });
             }
           });
         const filter5 = i => i.customId === 'kiss' && i.user.id === message.member.user.id;
@@ -311,7 +311,7 @@ module.exports = {
           collectorKiss.on('collect', async i => {
             if (i.customId === 'kiss') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [kissEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [kissEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -322,7 +322,7 @@ module.exports = {
           collectorMatch.on('collect', async i => {
             if (i.customId === 'match') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [matchEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [matchEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -333,7 +333,7 @@ module.exports = {
           collectorPet.on('collect', async i => {
             if (i.customId === 'pet') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [petEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [petEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -344,7 +344,7 @@ module.exports = {
           collectorSimp.on('collect', async i => {
             if (i.customId === 'simp') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [simpEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [simpEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -355,7 +355,7 @@ module.exports = {
           collectorSlap.on('collect', async i => {
             if (i.customId === 'slap') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [slapEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [slapEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -366,7 +366,7 @@ module.exports = {
           collectorSpank.on('collect', async i => {
             if (i.customId === 'spank') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [spankEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [spankEmbed], components: [row, row2 , row3] });
             }
           });
           
@@ -377,7 +377,7 @@ module.exports = {
           collectorSpit.on('collect', async i => {
             if (i.customId === 'spit') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [spitEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [spitEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -388,7 +388,7 @@ module.exports = {
           collectorHorny.on('collect', async i => {
             if (i.customId === 'horny') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [hornyEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [hornyEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -399,7 +399,7 @@ module.exports = {
           collectorHowgay.on('collect', async i => {
             if (i.customId === 'howgay') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [howgayEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [howgayEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -410,7 +410,7 @@ module.exports = {
           collectorYaoi.on('collect', async i => {
             if (i.customId === 'yaoi') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [yaoiEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [yaoiEmbed], components: [row, row2 , row3] });
             }
           });
 }

@@ -221,8 +221,8 @@ module.exports = {
           
           collectorHelp.on('collect', async i => {
             if (i.customId === 'base') {
-              await i.deferUpdate()
-              await i.followUp({ embeds: [embed], components: [row, row2] });
+              await i.deferUpdate();
+              await sentMessage.edit({ embeds: [embed], components: [row, row2] });
             }
           });
 
@@ -232,8 +232,8 @@ module.exports = {
           
           collectorAff.on('collect', async i => {
             if (i.customId === 'affection') {
-              await i.deferUpdate()
-              await i.followUp({ embeds: [affection], components: [row, row2] });
+              await i.deferUpdate();
+              await sentMessage.edit({ embeds: [affection], components: [row, row2] });
             }
           });
 
@@ -243,8 +243,8 @@ module.exports = {
           
           collectorBot.on('collect', async i => {
             if (i.customId === 'bot') {
-              await i.deferUpdate()
-              await i.followUp({ embeds: [bot], components: [row, row2] });
+              await i.deferUpdate();
+              await sentMessage.edit({ embeds: [bot], components: [row, row2] });
             }
           });
 
@@ -254,8 +254,8 @@ module.exports = {
           
           collectorEco.on('collect', async i => {
             if (i.customId === 'economy') {
-              await i.deferUpdate()
-              await i.followUp({ embeds: [economy], components: [row, row2] });
+              await i.deferUpdate();
+              await sentMessage.edit({ embeds: [economy], components: [row, row2] });
             }
           });
 
@@ -265,8 +265,8 @@ module.exports = {
           
           collectorFun.on('collect', async i => {
             if (i.customId === 'fun') {
-              await i.deferUpdate()
-              await i.followUp({ embeds: [fun], components: [row, row2] });
+              await i.deferUpdate();
+              await sentMessage.edit({ embeds: [fun], components: [row, row2] });
             }
           });
 
@@ -276,8 +276,8 @@ module.exports = {
           
           collectorInfo.on('collect', async i => {
             if (i.customId === 'info') {
-              await i.deferUpdate()
-              await i.followUp({ embeds: [info], components: [row, row2] });
+              await i.deferUpdate();
+              await sentMessage.edit({ embeds: [info], components: [row, row2] });
             }
           });
 
@@ -287,8 +287,8 @@ module.exports = {
           
           collectorMod.on('collect', async i => {
             if (i.customId === 'moderation') {
-              await i.deferUpdate()
-              await i.followUp({ embeds: [moderation], components: [row, row2] });
+              await i.deferUpdate();
+              await sentMessage.edit({ embeds: [moderation], components: [row, row2] });
             }
           });
 
@@ -298,8 +298,8 @@ module.exports = {
           
           collectorPro.on('collect', async i => {
             if (i.customId === 'profile') {
-              await i.deferUpdate()
-              await i.followUp({ embeds: [profile], components: [row, row2] });
+              await i.deferUpdate();
+              await sentMessage.edit({ embeds: [profile], components: [row, row2] });
             }
           });
 
@@ -309,8 +309,8 @@ module.exports = {
           
           collectorGen.on('collect', async i => {
             if (i.customId === 'genshin') {
-              await i.deferUpdate()
-              await i.followUp({ embeds: [genEmbed], components: [row, row2] });
+              await i.deferUpdate();
+              await sentMessage.edit({ embeds: [genEmbed], components: [row, row2] });
             }
           });
 
@@ -326,7 +326,7 @@ module.exports = {
             row2.components[2].setDisabled(true);
             row2.components[3].setDisabled(true);
             sentMessage.edit({ embeds: [embed], components: [row, row2] })
-          }, 20000);
+          }, 40000);
 
     }
 }

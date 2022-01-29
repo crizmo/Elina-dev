@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 5,
     description: "Help command for all fun commands",
 
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
 
         const user = message.mentions.users.first() || message.member.user
         let avatar = user.displayAvatarURL()
@@ -247,7 +247,7 @@ module.exports = {
                 .setStyle('SECONDARY'),
               );
 
-        message.channel.send({embeds: [embed], components: [row , row2 , row3]})
+        const sentMessage = await message.channel.send({embeds: [embed], components: [row , row2 , row3]})
 
         const filter = i => i.customId === 'fun' && i.user.id === message.member.user.id;
 
@@ -256,7 +256,7 @@ module.exports = {
           collectorHelp.on('collect', async i => {
             if (i.customId === 'fun') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [embed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [embed], components: [row, row2 , row3] });
             }
           });
 
@@ -267,7 +267,7 @@ module.exports = {
           collectorCoin.on('collect', async i => {
             if (i.customId === 'coinflip') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [coinflipEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [coinflipEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -278,7 +278,7 @@ module.exports = {
           collectorC4.on('collect', async i => {
             if (i.customId === 'c4') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [c4Embed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [c4Embed], components: [row, row2 , row3] });
             }
           });
 
@@ -289,7 +289,7 @@ module.exports = {
           collectorDice.on('collect', async i => {
             if (i.customId === 'roll') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [diceEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [diceEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -300,7 +300,7 @@ module.exports = {
           collectorEject.on('collect', async i => {
             if (i.customId === 'eject') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [ejectEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [ejectEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -311,7 +311,7 @@ module.exports = {
           collectorPokemon.on('collect', async i => {
             if (i.customId === 'gtp') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [pokemonEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [pokemonEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -322,7 +322,7 @@ module.exports = {
           collectorRps.on('collect', async i => {
             if (i.customId === 'rps') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [rpsEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [rpsEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -333,7 +333,7 @@ module.exports = {
           collectorSnake.on('collect', async i => {
             if (i.customId === 'snake') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [snakeEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [snakeEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -344,7 +344,7 @@ module.exports = {
           collectorTrivia.on('collect', async i => {
             if (i.customId === 'trivia') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [triviaEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [triviaEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -355,7 +355,7 @@ module.exports = {
           collectorTtt.on('collect', async i => {
             if (i.customId === 'ttt') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [tttEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [tttEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -366,7 +366,7 @@ module.exports = {
           collectorWyr.on('collect', async i => {
             if (i.customId === 'wyr') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [wyrEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [wyrEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -377,7 +377,7 @@ module.exports = {
           collectorBall.on('collect', async i => {
             if (i.customId === 'ball') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [ballEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [ballEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -388,7 +388,7 @@ module.exports = {
           collectorSlots.on('collect', async i => {
             if (i.customId === 'slots') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [slotsEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [slotsEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -399,7 +399,7 @@ module.exports = {
           collectorAki.on('collect', async i => {
             if (i.customId === 'aki') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [akiEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [akiEmbed], components: [row, row2 , row3] });
             }
           });
 
@@ -410,7 +410,7 @@ module.exports = {
           collectorQr.on('collect', async i => {
             if (i.customId === 'qr') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [qrEmbed], components: [row, row2 , row3] });
+              await sentMessage.edit({ embeds: [qrEmbed], components: [row, row2 , row3] });
             }
           });
 }

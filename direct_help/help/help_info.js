@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 5,
     description: "Help command for all information commands",
 
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
 
         const user = message.mentions.users.first() || message.member.user
         let avatar = user.displayAvatarURL()
@@ -171,7 +171,7 @@ module.exports = {
                 .setStyle('SECONDARY'),
             );
 
-        message.channel.send({embeds: [embed], components: [row , row2]})
+        const sentMessage = await message.channel.send({embeds: [embed], components: [row , row2]})
 
         const filter1 = i => i.customId === 'info' && i.user.id === message.member.user.id;
 
@@ -180,7 +180,7 @@ module.exports = {
           collectorHelp.on('collect', async i => {
             if (i.customId === 'info') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [embed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [embed], components: [row, row2] });
             }
           });
 
@@ -191,7 +191,7 @@ module.exports = {
           collectorAnime.on('collect', async i => {
             if (i.customId === 'anime') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [animeEmbed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [animeEmbed], components: [row, row2] });
             }
           });
 
@@ -202,7 +202,7 @@ module.exports = {
           collectorCovid.on('collect', async i => {
             if (i.customId === 'covid') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [covidEmbed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [covidEmbed], components: [row, row2] });
             }
           });
 
@@ -213,7 +213,7 @@ module.exports = {
           collectorGithub.on('collect', async i => {
             if (i.customId === 'github') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [githubEmbed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [githubEmbed], components: [row, row2] });
             }
           });
 
@@ -224,7 +224,7 @@ module.exports = {
           collectorMaths.on('collect', async i => {
             if (i.customId === 'math') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [mathEmbed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [mathEmbed], components: [row, row2] });
             }
           });
 
@@ -235,7 +235,7 @@ module.exports = {
           collectorPoll.on('collect', async i => {
             if (i.customId === 'poll') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [pollEmbed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [pollEmbed], components: [row, row2] });
             }
           });
 
@@ -246,7 +246,7 @@ module.exports = {
           collectorWeather.on('collect', async i => {
             if (i.customId === 'weather') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [weatherEmbed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [weatherEmbed], components: [row, row2] });
             }
           });
 
@@ -257,7 +257,7 @@ module.exports = {
           collectorWc.on('collect', async i => {
             if (i.customId === 'wc') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [worldclockEmbed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [worldclockEmbed], components: [row, row2] });
             }
           });
 
@@ -268,7 +268,7 @@ module.exports = {
           collectorDocs.on('collect', async i => {
             if (i.customId === 'docs') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [docsEmbed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [docsEmbed], components: [row, row2] });
             }
           });
 
@@ -279,7 +279,7 @@ module.exports = {
           collectorWhois.on('collect', async i => {
             if (i.customId === 'whois') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [whoisEmbed], components: [row, row2] });
+              await sentMessage.edit({ embeds: [whoisEmbed], components: [row, row2] });
             }
           });
 }

@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 5,
     description: "Help command for all bot commands",
 
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
 
         const user = message.mentions.users.first() || message.member.user
         let avatar = user.displayAvatarURL()
@@ -93,7 +93,7 @@ module.exports = {
                 .setStyle('SECONDARY'),
             );
 
-        message.channel.send({embeds: [embed], components: [row]})
+        const sentMessage = await message.channel.send({embeds: [embed], components: [row]})
 
         const filter1 = i => i.customId === 'bot' && i.user.id === message.member.user.id;
 
@@ -102,7 +102,7 @@ module.exports = {
           collectorHelp.on('collect', async i => {
             if (i.customId === 'bot') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [embed], components: [row] });
+              await sentMessage.edit({ embeds: [embed], components: [row] });
             }
           });
 
@@ -113,7 +113,7 @@ module.exports = {
           collectorStats.on('collect', async i => {
             if (i.customId === 'stats') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [statsEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [statsEmbed], components: [row] });
             }
           });
 
@@ -124,7 +124,7 @@ module.exports = {
           collectorInvite.on('collect', async i => {
             if (i.customId === 'invite') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [inviteEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [inviteEmbed], components: [row] });
             }
           });
 
@@ -135,7 +135,7 @@ module.exports = {
           collectorSuggest.on('collect', async i => {
             if (i.customId === 'suggest') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [suggestEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [suggestEmbed], components: [row] });
             }
           });
 
@@ -146,7 +146,7 @@ module.exports = {
           collectorBug.on('collect', async i => {
             if (i.customId === 'bug') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [bugEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [bugEmbed], components: [row] });
             }
           });
 }

@@ -10,7 +10,7 @@ module.exports = {
     cooldown: 5,
     description: "Help command for all bot commands",
 
-    execute(client, message, args, Discord){
+    async execute(client, message, args, Discord){
 
         const user = message.mentions.users.first() || message.member.user
         let avatar = user.displayAvatarURL()
@@ -93,7 +93,7 @@ module.exports = {
                 .setStyle('SECONDARY')
             );
 
-        message.channel.send({embeds: [embed], components: [row]})
+        const sentMessage = await message.channel.send({embeds: [embed], components: [row]})
 
         const filter1 = i => i.customId === 'eco' && i.user.id === message.member.user.id;
 
@@ -102,7 +102,7 @@ module.exports = {
           collectorHelp.on('collect', async i => {
             if (i.customId === 'eco') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [embed], components: [row] });
+              await sentMessage.edit({ embeds: [embed], components: [row] });
             }
           });
 
@@ -113,7 +113,7 @@ module.exports = {
           collectorEar.on('collect', async i => {
             if (i.customId === 'earning') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [earningsEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [earningsEmbed], components: [row] });
             }
           });
 
@@ -124,7 +124,7 @@ module.exports = {
           collectorShop.on('collect', async i => {
             if (i.customId === 'shop') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [shopEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [shopEmbed], components: [row] });
             }
           });
 
@@ -135,7 +135,7 @@ module.exports = {
           collectorBalance.on('collect', async i => {
             if (i.customId === 'balance') {
               await i.deferUpdate()
-              await i.editReply({ embeds: [balanceEmbed], components: [row] });
+              await sentMessage.edit({ embeds: [balanceEmbed], components: [row] });
             }
           });
 }
