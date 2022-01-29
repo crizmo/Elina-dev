@@ -18,7 +18,7 @@ module.exports = {
 
         const rlname = name.toLowerCase()
 
-        const errorEmbed = new Discord.MessageEmbed()
+        const errorEmbed = new MessageEmbed()
         .setColor('#00FFFF')
         .setTitle('Incorrect Usage <:paimon:927534293515911178>')
         .setURL('https://crizmo.github.io/elina/')
