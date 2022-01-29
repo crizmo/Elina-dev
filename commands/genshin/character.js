@@ -41,7 +41,6 @@ module.exports = {
 
         Chars_Data.push({
             charname : data.name.toLocaleString(),
-            title : data.title.toLocaleString(),
             vision : data.vision.toLocaleString(),
             nation : data.nation.toLocaleString(),
             weapon : data.weapon.toLocaleString(),
