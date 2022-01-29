@@ -335,7 +335,7 @@ module.exports = {
                 );
 
             // interaction.reply({ embeds: [charEmbed], components: [row, row2] })
-            await interaction.reply({ embeds: [charEmbed], components: [row, row2] })
+            const sentMessage = await interaction.reply({ embeds: [charEmbed], components: [row, row2] })
 
             const filter1 = i => i.customId === 'main' && i.user.id === interaction.user.username.id;
 
@@ -343,7 +343,7 @@ module.exports = {
                 
                 collectorMain.on('collect', async i => {
                 if (i.customId === 'main') {
-                    await i.deferUpdate()
+                    await i.deferUpdate();
                     await i.editReply({ embeds: [charEmbed], components: [row, row2] });
                 }
                 });
@@ -356,7 +356,7 @@ module.exports = {
                 
                 collectorSkill1.on('collect', async i => {
                 if (i.customId === 'skill1') {
-                    await i.deferUpdate()
+                    await i.deferUpdate();
                     await i.editReply({ embeds: [skill1Embed], components: [row, row2] });
                 }
                 });
@@ -367,7 +367,7 @@ module.exports = {
                 
                 collectorSkill2.on('collect', async i => {
                 if (i.customId === 'skill2') {
-                    await i.deferUpdate()
+                    await i.deferUpdate();
                     await i.editReply({ embeds: [skill2Embed], components: [row, row2] });
                 }
                 });
@@ -378,7 +378,7 @@ module.exports = {
                 
                 collectorSkill3.on('collect', async i => {
                 if (i.customId === 'skill3') {
-                    await i.deferUpdate()
+                    await i.deferUpdate();
                     await i.editReply({ embeds: [skill3Embed], components: [row, row2] });
                 }
                 });
@@ -391,7 +391,7 @@ module.exports = {
                 
                 collectorPassive.on('collect', async i => {
                 if (i.customId === 'passive') {
-                    await i.deferUpdate()
+                    await i.deferUpdate();
                     await i.editReply({ embeds: [passiveEmbed], components: [row, row2] });
                 }
                 });
@@ -404,7 +404,7 @@ module.exports = {
                 
                 collectorCon12.on('collect', async i => {
                 if (i.customId === 'con12') {
-                    await i.deferUpdate()
+                    await i.deferUpdate();
                     await i.editReply({ embeds: [con12Embed], components: [row, row2] });
                 }
                 });
@@ -415,7 +415,7 @@ module.exports = {
                 
                 collectorCon34.on('collect', async i => {
                 if (i.customId === 'con34') {
-                    await i.deferUpdate()
+                    await i.deferUpdate();
                     await i.editReply({ embeds: [con34Embed], components: [row, row2] });
                 }
                 });
@@ -426,7 +426,7 @@ module.exports = {
                 
                 collectorCon56.on('collect', async i => {
                 if (i.customId === 'con56') {
-                    await i.deferUpdate()
+                    await i.deferUpdate();
                     await i.editReply({ embeds: [con56Embed], components: [row, row2] });
                 }
                 });
