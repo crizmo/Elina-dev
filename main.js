@@ -14,8 +14,6 @@ require('dotenv').config();
 // const keepAlive = require("./server");        // un-comment this line - for hosting
 const fetch = require('node-fetch')
 
-const music = require('@koenie06/discord.js-music');
-
 // Economy
 
 const CurrencySystem = require("currency-system");
