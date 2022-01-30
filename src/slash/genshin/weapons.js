@@ -7,7 +7,8 @@ module.exports = {
 		.setName('gen-weapon')
 		.setDescription('Genshin weapon command usage and information!')
         .addStringOption(option => option.setName('name').setDescription('Weapon name').setRequired(true)),
-        
+     
+    cooldown: 1 * 10,    
 	async execute(interaction, client) {
 
         const name = interaction.options.getString('name');

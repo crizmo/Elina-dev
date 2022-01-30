@@ -17,16 +17,14 @@ module.exports = {
         if(channel && query){
 
         const embed = new MessageEmbed()
-        .setTitle('New Poll!')
-        .addField('Author',`${interaction.user.username}`, true)
-        .addField('Guild', interaction.guild.name, true)
+        .setTitle(`New Poll by ${interaction.user.username} !`)
         .addField('Poll', query)
         .setThumbnail(client.user.displayAvatarURL())
         .setTimestamp()
 
         let msgEmbed = await channel.send({embeds: [embed]});
-        await msgEmbed.react('✔')
-        await msgEmbed.react('❌')
+        await msgEmbed.react('✅')
+        await msgEmbed.react('❎')
 
         await interaction.reply("**Poll has been sent!**")
         } else {

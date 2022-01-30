@@ -7,7 +7,8 @@ module.exports = {
 		.setName('gen-nation')
 		.setDescription('Genshin nation command usage and information!')
         .addStringOption(option => option.setName('name').setDescription('Nation name').setRequired(true)),
-        
+    
+    cooldown: 1 * 10,    
 	async execute(interaction, client) {
 
         const name = interaction.options.getString('name');

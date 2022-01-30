@@ -82,7 +82,7 @@ module.exports = {
 			.addFields(
 			  {name: `\u200B`, value: "`\ boop \` , `\ dance \` , `\ horny \` , `\ howgay \` , `\ hug \` \n `\ kill \` , `\ kiss \` , `\ match \` , `\ pet \` , `\ simp \` , `\ slap \` \n `\ spank \` , `\ yaoi \`", inline: true},
 			)
-			.setFooter(client.user.tag , client.user.displayAvatarURL())
+			.setFooter(client.user.username , client.user.displayAvatarURL())
 			.setTimestamp()
 			.setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
 			.setThumbnail(avatar)
@@ -95,7 +95,7 @@ module.exports = {
 			.addFields(
 			  {name: `\u200B`, value: "`\ invite \` , `\ ping \` , `\ stats \` , `\ suggest \` \n `\ bugreport \`", inline: true},
 			)
-			.setFooter(client.user.tag , client.user.displayAvatarURL())
+			.setFooter(client.user.username , client.user.displayAvatarURL())
 			.setTimestamp()
 			.setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
 			.setThumbnail(avatar)
@@ -105,7 +105,7 @@ module.exports = {
 			.setTitle("Economy commands!")
 			.setDescription("Elina economy commands \n To get more information about elina's economy commands do `\ /help-eco \` then click the respective buttons to get per command information")
 			.setAuthor(`${interaction.user.username}`, avatar)
-			.setFooter(client.user.tag , client.user.displayAvatarURL())
+			.setFooter(client.user.username , client.user.displayAvatarURL())
 			.setTimestamp()
 			.setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
 			.setThumbnail(avatar)
@@ -118,7 +118,7 @@ module.exports = {
 			.addFields(
 			  {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \` , `\ qr \`", inline: true},
 			)
-			.setFooter(client.user.tag , client.user.displayAvatarURL())
+			.setFooter(client.user.username , client.user.displayAvatarURL())
 			.setTimestamp()
 			.setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
 			.setThumbnail(avatar)
@@ -131,7 +131,7 @@ module.exports = {
 			.addFields(
 			  {name: `\u200B`, value: "`\ anime \` , `\ chatbot \` , `\ covid \` , `\ credits \` \n `\ github \` , `\ poll \` , `\ weather \` , `\ whois \` \n `\ worldclock \` , `\ avatar \` , `\ urban \`", inline: true},
 			)
-			.setFooter(client.user.tag , client.user.displayAvatarURL())
+			.setFooter(client.user.username , client.user.displayAvatarURL())
 			.setTimestamp()
 			.setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
 			.setThumbnail(client.user.displayAvatarURL({

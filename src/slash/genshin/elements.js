@@ -7,7 +7,8 @@ module.exports = {
 		.setName('gen-element')
 		.setDescription('Genshin element command usage and information!')
         .addStringOption(option => option.setName('name').setDescription('Element name').setRequired(true)),
-        
+    
+    cooldown: 1 * 10,    
 	async execute(interaction, client) {
 
         const name = interaction.options.getString('name');

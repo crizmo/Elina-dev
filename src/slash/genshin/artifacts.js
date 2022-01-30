@@ -7,7 +7,8 @@ module.exports = {
 		.setName('gen-artifact')
 		.setDescription('Genshin artifact command usage and information!')
         .addStringOption(option => option.setName('name').setDescription('Artifact name').setRequired(true)),
-        
+    
+    cooldown: 1 * 10,
 	async execute(interaction, client) {
 
         const name = interaction.options.getString('name');

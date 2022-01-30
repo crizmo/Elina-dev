@@ -35,7 +35,7 @@ module.exports = {
 					const timeLeft = (expTime - currentTime) / 1000
 	
 					const tmotEmbed = new Discord.MessageEmbed()
-						.setColor("RED")
+						.setColor("#F886F6")
 						.setDescription(`❌ - Please wait \`${timeLeft.toFixed(1)}\` more seconds before using \`${interaction.commandName}\`!`)
 	
 					return interaction.reply({ embeds: [tmotEmbed] })
