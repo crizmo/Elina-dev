@@ -129,7 +129,7 @@ module.exports = {
 			.setDescription("Info commands to get information about different stuff !")
 			.setAuthor(`${interaction.user.tag}`, avatar )
 			.addFields(
-			  {name: `\u200B`, value: "`\ anime \` , `\ chatbot \` , `\ covid \` , `\ credits \` \n `\ github \` , `\ poll \` , `\ weather \` , `\ whois \` \n `\ worldclock \` , `\ avatar \`", inline: true},
+			  {name: `\u200B`, value: "`\ anime \` , `\ chatbot \` , `\ covid \` , `\ credits \` \n `\ github \` , `\ poll \` , `\ weather \` , `\ whois \` \n `\ worldclock \` , `\ avatar \` , `\ urban \`", inline: true},
 			)
 			.setFooter(client.user.tag , client.user.displayAvatarURL())
 			.setTimestamp()
