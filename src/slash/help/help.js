@@ -77,7 +77,7 @@ module.exports = {
 			
 			const affection = new MessageEmbed()
 			.setTitle("Affection commands!")
-			.setDescription("To get info of commands `\ help-affection \`")
+			.setDescription("Cool way to show your love")
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.addFields(
 			  {name: `\u200B`, value: "`\ boop \` , `\ dance \` , `\ horny \` , `\ howgay \` , `\ hug \` \n `\ kill \` , `\ kiss \` , `\ match \` , `\ pet \` , `\ simp \` , `\ slap \` \n `\ spank \` , `\ yaoi \`", inline: true},
@@ -90,7 +90,7 @@ module.exports = {
 
 			const bot = new MessageEmbed()
 			.setTitle("Bot commands commands!")
-			.setDescription("To get info of commands `\ help-bot \`")
+			.setDescription("Basic bot related commands")
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.addFields(
 			  {name: `\u200B`, value: "`\ invite \` , `\ ping \` , `\ stats \` , `\ suggest \` \n `\ bugreport \`", inline: true},
@@ -103,7 +103,7 @@ module.exports = {
 
 			const economy = new MessageEmbed()
 			.setTitle("Economy commands!")
-			.setDescription("Elina economy commands \n To get more information about elina's economy commands do `\ help-eco \` then click the respective buttons to get per command information")
+			.setDescription("Elina economy commands \n To get more information about elina's economy commands do `\ /help-eco \` then click the respective buttons to get per command information")
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.setFooter(client.user.tag , client.user.displayAvatarURL())
 			.setTimestamp()
@@ -113,7 +113,7 @@ module.exports = {
 
 			const fun = new MessageEmbed()
 			.setTitle("Fun commands!")
-			.setDescription("To get info of commands `\ help-fun \`")
+			.setDescription("Fun commands to add new twist to your server")
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.addFields(
 			  {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \` , `\ qr \`", inline: true},
@@ -126,7 +126,7 @@ module.exports = {
 	
 			const info = new MessageEmbed()
 			.setTitle("Info command!")
-			.setDescription("To get info of commands `\ help-info \`")
+			.setDescription("Info commands to get information about different stuff !")
 			.setAuthor(`${interaction.user.tag}`, avatar )
 			.addFields(
 			  {name: `\u200B`, value: "`\ anime \` , `\ chatbot \` , `\ covid \` , `\ credits \` \n `\ github \` , `\ poll \` , `\ weather \` , `\ whois \` \n `\ worldclock \` , `\ avatar \`", inline: true},
@@ -141,7 +141,7 @@ module.exports = {
 	
 			const genEmbed = new MessageEmbed()
 			.setTitle(`Genshin Impact - Commands`) 
-			.setDescription("Genshin impact commands")
+			.setDescription("Genshin impact game stats related commands")
 			.addFields(
 			  { name: `Artifacts`, value: "`\ gen-artifact \`"},
 			  { name: `Characters`, value: "`\ gen-character \`"},
@@ -157,7 +157,7 @@ module.exports = {
 			const embed = new MessageEmbed()
 			.setTitle("Our full help menu!")
 			.setDescription(
-			  `\`\`\`js\nPrefix: \nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://discord.com/api/oauth2/authorize?client_id=842397001954230303&permissions=1515552374487&scope=bot%20applications.commands)\n\n> To check out a category, use \`help-[category-name]\``
+			  `\`\`\`js\nPrefix: Slash command \nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://discord.com/api/oauth2/authorize?client_id=842397001954230303&permissions=1515552374487&scope=bot%20applications.commands)\n\n> To check out a category, use \` /help \``
 			)
 			.addFields(categories)
 			.setFooter(`Requested by ${interaction.user.tag}`,interaction.user.displayAvatarURL({dynamic: true,}))
