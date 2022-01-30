@@ -5,7 +5,7 @@ const { GuessThePokemon } = require('discord-gamecord')
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('gtp')
+		.setName('pokemon')
 		.setDescription('Guess the pokemon command usage and information!'),
         
 	async execute(interaction, client) {
