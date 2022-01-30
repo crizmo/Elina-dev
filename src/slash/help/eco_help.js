@@ -100,7 +100,7 @@ module.exports = {
           collectorHelp.on('collect', async i => {
             if (i.customId === 'main') {
               await i.deferUpdate()
-              await sentMessage.edit({ embeds: [embed], components: [row] });
+              await i.editReply({ embeds: [embed], components: [row] });
             }
           });
 
@@ -111,7 +111,7 @@ module.exports = {
           collectorAff.on('collect', async i => {
             if (i.customId === 'cmd') {
               await i.deferUpdate()
-              await sentMessage.edit({ embeds: [earningsEmbed], components: [row] });
+              await i.editReply({ embeds: [earningsEmbed], components: [row] });
             }
           });
 
@@ -122,7 +122,7 @@ module.exports = {
           collectorBot.on('collect', async i => {
             if (i.customId === 'shop') {
               await i.deferUpdate()
-              await sentMessage.edit({ embeds: [shopEmbed], components: [row] });
+              await i.editReply({ embeds: [shopEmbed], components: [row] });
             }
           });
 
@@ -133,7 +133,7 @@ module.exports = {
           collectorEco.on('collect', async i => {
             if (i.customId === 'balance') {
               await i.deferUpdate()
-              await sentMessage.edit({ embeds: [balanceEmbed], components: [row] });
+              await i.editReply({ embeds: [balanceEmbed], components: [row] });
             }
           });
 
