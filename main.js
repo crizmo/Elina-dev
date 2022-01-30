@@ -138,21 +138,5 @@ module.exports.client = client;
     client.handleCommands(slashcommandFolder, "./src/slash");
 })();
 
-/* This will run when a song started playing from a playlist */
-music.event.on('playList', async (channel, playlist, songInfo, requester) => {
-    channel.send({
-        content: `Started playing the song [${songInfo.title}](${songInfo.url}) by \`${songInfo.author}\` of the playlist ${playlist.title}.
-        This was requested by ${requester.tag} (${requester.id})`
-    });
-});
-
-/* This will run when a new playlist has been added to the queue */
-music.event.on('addList', async (channel, playlist, requester) => {
-    channel.send({
-        content: `Added the playlist [${playlist.title}](${playlist.url}) with ${playlist.videos.length} amount of videos to the queue.
-        Added by ${requester.tag} (${requester.id})`
-    });
-});
-
 // keepAlive();                                         // uncomment for hosting your bot
 client.login(process.env.DISCORD_TOKEN);
