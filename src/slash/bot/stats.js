@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed , MessageAttachment } = require('discord.js');
+const { MessageEmbed , MessageAttachment, MessageActionRow,  MessageButton } = require('discord.js');
 const { version } = require('discord.js');
 
 module.exports = {
@@ -46,6 +46,17 @@ module.exports = {
         .addField('\`   Statistics   \`', `Guilds: \t\`${client.guilds.cache.size}\`\nUsers: \t\`${client.guilds.cache.map(c => c.memberCount).reduce((a, b) => a + b)}\`\nChannels: \`${client.channels.cache.size}\`\nDiscord.JS version: \`${version}\``)
         .setFooter(client.user.username, client.user.displayAvatarURL())
 
-        await interaction.reply({embeds: [stats]});
+        const row = new MessageActionRow().addComponents(
+          new MessageButton()
+              .setURL(`https://top.gg/bot/842397001954230303`)
+              .setLabel('Top.gg')
+              .setStyle('LINK'),
+          new MessageButton()
+                .setURL('https://crizmo.github.io/elina/')
+                .setLabel("Elina's Website")
+                .setStyle('LINK'),
+              );
+
+        await interaction.reply({embeds: [stats], components: [row]});
 	},
 };

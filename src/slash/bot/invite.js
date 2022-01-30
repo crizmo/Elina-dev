@@ -19,6 +19,10 @@ module.exports = {
             new MessageButton()
                 .setURL('https://crizmo.github.io/elina/')
                 .setLabel("Elina's Website")
+                .setStyle('LINK'),
+            new MessageButton()
+                .setURL(`https://top.gg/bot/842397001954230303`)
+                .setLabel('Top.gg')
                 .setStyle('LINK')
                 );
 
