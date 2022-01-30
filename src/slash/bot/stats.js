@@ -5,7 +5,7 @@ const { version } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('stats')
-		.setDescription('Get taiga bot stats'),
+		.setDescription('Get elina bot stats'),
 	async execute(interaction, client) {
 
         let days = 0;

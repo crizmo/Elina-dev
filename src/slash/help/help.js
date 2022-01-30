@@ -141,7 +141,7 @@ module.exports = {
 	
 			const genEmbed = new MessageEmbed()
 			.setTitle(`Genshin Impact - Commands`) 
-			.setDescription("Genshin impact game stats related commands")
+			.setDescription("Genshin impact game stats related commands\nFor names having a space in them replace it with `\ - \` \nEg: `\ pale-flame \`")
 			.addFields(
 			  { name: `Artifacts`, value: "`\ gen-artifact \`"},
 			  { name: `Characters`, value: "`\ gen-character \`"},
