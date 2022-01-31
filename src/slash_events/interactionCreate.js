@@ -1,5 +1,5 @@
 const cooldowns = new Map()
-const Discord = require('discord.js')
+const Discord = require('discord.js');
 
 module.exports = {
 	name: 'interactionCreate',
@@ -50,8 +50,21 @@ module.exports = {
 
 			await slashcommand.execute(interaction, client);
 		} catch (error) {
-			console.error(error);
-			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+			// console.error(error);
+			const client = interaction.client;
+				const err1embed = new Discord.MessageEmbed()
+				.setTitle('Error Occured')
+				.setColor('RANDOM')
+				.setDescription('```js\n' + error.stack + '```');
+				client.channels.cache.get('917389482532159528').send({embeds: [err1embed]})
+			  
+				const err2embed = new Discord.MessageEmbed()
+				.setTitle('Error Occured')
+				.setColor('RANDOM')
+				.setDescription('```js\n' + error.stack + '```');
+				client.channels.cache.get('917389482532159528').send({embeds: [err2embed]})
+
+			await interaction.reply({ content: 'There was an error while executing this command! \nOr Missing Channel/Server Permissions to send reply!', ephemeral: true });
 		}
 	},
 };
