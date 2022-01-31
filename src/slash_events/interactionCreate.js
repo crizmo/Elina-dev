@@ -66,7 +66,7 @@ module.exports = {
 			.setDescription('```js\n' + error.stack + '```');
 			client.channels.cache.get('917399374806536252').send({embeds: [err2embed]})
 
-			await interaction.reply({ content: 'There was an error while executing this command! \nOr Missing Channel/Server Permissions to send reply!', ephemeral: true });
+			await interaction.reply({ content: 'There was an error while executing this command! \n|| Missing Channel/Server Permissions to send reply!', ephemeral: true });
 		}
 	},
 };
