@@ -57,7 +57,7 @@ module.exports = {
                 const userEmbed = new MessageEmbed()
                     .setTitle(`${username}'s Github profile!`)
                     .setAuthor(`${message.guild.name}`, client.user.displayAvatarURL())
-                    .setDescription(`${name}'s github profile info and starts'`)
+                    .setDescription(`${name}'s github profile info and stats`)
                     .addFields(
                         { name: `Username`, value: `${username}`, inline: true },
                         { name: `\u200B`, value: `\u200B`, inline: true },
