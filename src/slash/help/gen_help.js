@@ -20,32 +20,32 @@ module.exports = {
 						{
 							label: 'Artifacts stats',
 							description: 'To get more info of artifacts',
-							value: 'first_option',
+							value: 'arti',
 						},
 						{
 							label: 'Character stats',
 							description: 'To get more info of characters',
-							value: 'second_option',
+							value: 'char',
 						},
 						{
 							label: 'Elements stats',
 							description: 'To get more info of elements',
-							value: 'third_option',
+							value: 'element',
 						},
 						{
 							label: 'Nations stats',
 							description: 'To get more info of nations',
-							value: 'fourth_option',
+							value: 'nation',
 						},
 						{
 							label: 'Weapons commands',
 							description: 'To get more info of weapons',
-							value: 'fifth_option',
+							value: 'weapon',
 						},
 						{
 							label: 'Genshin commands',
 							description: 'To get more info of genshin commands',
-							value: 'sixth_option',
+							value: 'gen',
 						}
 					]),
 			)
@@ -139,27 +139,27 @@ module.exports = {
                 
 			collector.on('collect', async interaction => {
 				if (interaction.customId === 'main') {
-					if(interaction.values[0] === 'first_option') {
+					if(interaction.values[0] === 'arti') {
 						await interaction.deferUpdate();
 						await interaction.editReply({components: [row] , embeds: [artifacts]})
 					}
-					if(interaction.values[0] === 'second_option') {
+					if(interaction.values[0] === 'char') {
 						await interaction.deferUpdate();
 						await interaction.editReply({components: [row] , embeds: [character]})
 					}
-					if(interaction.values[0] === 'third_option') {
+					if(interaction.values[0] === 'element') {
 						await interaction.deferUpdate();
 						await interaction.editReply({components: [row] , embeds: [element]})
 					}
-					if(interaction.values[0] === 'fourth_option') {
+					if(interaction.values[0] === 'nat') {
 						await interaction.deferUpdate();
 						await interaction.editReply({components: [row] , embeds: [nation]})
 					}
-					if(interaction.values[0] === 'fifth_option') {
+					if(interaction.values[0] === 'weapon') {
 						await interaction.deferUpdate();
 						await interaction.editReply({components: [row] , embeds: [weapons]})
 					}
-					if(interaction.values[0] === 'sixth_option') {
+					if(interaction.values[0] === 'gen') {
 						await interaction.deferUpdate();
 						await interaction.editReply({components: [row] , embeds: [genmain]})
 					}
