@@ -8,7 +8,7 @@ const emo = require("./emoji.json");
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('help')
-		.setDescription('Replies with subcmd!'),
+		.setDescription('Elina commands showcase!'),
 	async execute(interaction, client) {
 
 		const user = interaction.user
@@ -152,7 +152,7 @@ module.exports = {
 			.setThumbnail(client.user.displayAvatarURL({
 			  dynamic: true,
 			}))
-			.setFooter("For any questions or suggestions, join our support server")
+			.setFooter("For more info of genshin commands do /genshin")
 
 			const embed = new MessageEmbed()
 			.setTitle("Our full help menu!")
