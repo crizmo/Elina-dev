@@ -42,7 +42,7 @@ module.exports = {
         const errorEmbed = new MessageEmbed()
         .setTitle("Chill mate!")
         .setDescription(`You have begged recently Try again in ${result.time} `)
-        .setFooter("For more economy commands do =help")
+        .setFooter("For more economy commands do /help-eco")
         
         const begEmbed = new MessageEmbed()
         .setTitle("Imagine begging")

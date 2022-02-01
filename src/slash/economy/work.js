@@ -23,7 +23,7 @@ module.exports = {
         .setTitle("Woah chill!")
         .setDescription(`You have already worked recently Try again in ${result.time} `)
         .setColor("#00FFFF")
-        .setFooter("For more economy commands do =help-economy")
+        .setFooter("For more economy commands do /help-eco")
         
 
         const workEmbed = new MessageEmbed()
