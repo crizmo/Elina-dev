@@ -16,7 +16,7 @@ module.exports = {
         });
         let inv = result.inventory.slice(0, 10)
         const embed = new MessageEmbed()
-            .setTitle('Your Inventory in Empty!')
+            .setTitle('Your Inventory is Empty!')
         for (key of inv) {
             embed.addField(`**${key.name}:**`, `Amount: ${key.amount}`);
             embed.setTitle('Your Inventory!')
