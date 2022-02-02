@@ -1,7 +1,7 @@
 <p align="center">
             <h1>Elina</h1> </center>
 <a href="https://top.gg/bot/842397001954230303">
-<img src="https://img.shields.io/uptimerobot/ratio/m790268525-a6294aaefe1fcd18b726574e?style=flat-square"
+<img src="https://img.shields.io/uptimerobot/ratio/m790532111-26cf9d5a87d8473f564a8a02?style=flat-square"
             alt="Uptime">
 </a>            
             
