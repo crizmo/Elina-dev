@@ -50,7 +50,7 @@ module.exports = {
 
 			await slashcommand.execute(interaction, client);
 		} catch (error) {
-			// console.error(error);
+			console.error(error);
 			const client = interaction.client;
 			async (reason , p , origin) => {
 			const err1embed = new Discord.MessageEmbed()
