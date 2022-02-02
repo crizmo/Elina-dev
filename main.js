@@ -26,6 +26,7 @@ cs.setDefaultWalletAmount('100')
 cs.setDefaultBankAmount('100')
 // cs.setMaxWalletAmount('10000')
 // cs.setMaxBankAmount('10000')
+//cs.setDefaultBankLimitForUser('10000')
 cs.searchForNewUpdate(true)
 
 //    End    //
