@@ -16,6 +16,7 @@ module.exports = {
 
         let artiimage = "https://cdn.gamerstopia.com/wp-content/uploads/Genshin-Impact-Artifact-Guide-Featured-Image.jpg"
         let charimage = "https://www.pcinvasion.com/wp-content/uploads/2020/10/Genshin-Impact-tier-list-september-2021-anniversary-best-characters-in-Genshin-Impact-.jpg"
+        let wpimage = "https://static1.srcdn.com/wordpress/wp-content/uploads/2020/10/Genshin-Impact-Weapons.jpg"
 
         const genEmbed = new MessageEmbed()
         .setTitle(`Genshin Impact`) 
@@ -66,6 +67,7 @@ module.exports = {
         const wp = new MessageEmbed()
         .setTitle(`Weapon names`)
         .setDescription("For weapon names , please visit the link: [Weapons](https://github.com/genshindev/api/tree/mistress/assets/data/weapons)")
+        .setImage(`${wpimage}`)
         .setTimestamp()
 
         const row = new MessageActionRow().addComponents(
