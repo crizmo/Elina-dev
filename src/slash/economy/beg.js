@@ -30,7 +30,7 @@ module.exports = {
             "DaBaby",
             "Taiga",
             "Lelouch Lamperouge",
-            "Levi Ackerma",
+            "Levi Ackerman",
             "Light Yagami",
             "Hinata Hyuga",
             "Pakunoda",
