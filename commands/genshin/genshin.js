@@ -41,27 +41,23 @@ module.exports = {
         const arti = new MessageEmbed()
         .setTitle(`Artifact names`) 
         .setDescription("For artifacts names , please visit the link: [Artifacts](https://github.com/genshindev/api/tree/mistress/assets/data/artifacts)")
-        .setThumbnail(`${thumb}`)
         .setImage(`${artiimage}`)
         .setTimestamp()
 
         const char = new MessageEmbed()
         .setTitle(`Character names`) 
         .setDescription("For character names , please visit the link: [Characters](https://github.com/genshindev/api/tree/mistress/assets/data/characters)")
-        .setThumbnail(`${thumb}`)
         .setImage(`${charimage}`)
         .setTimestamp()
 
         const elem = new MessageEmbed()
         .setTitle(`Element names`) 
         .setDescription(`${elements}`)
-        .setThumbnail(`${thumb}`)
         .setTimestamp()
 
         const nat = new MessageEmbed()
         .setTitle(`Nation names`) 
         .setDescription(`${nations}`)
-        .setThumbnail(`${thumb}`)
         .setTimestamp()
 
         const wp = new MessageEmbed()
