@@ -35,7 +35,7 @@ module.exports = {
 						{
 							label: 'Nations stats',
 							description: 'To get more info of nations',
-							value: 'nation',
+							value: 'nat',
 						},
 						{
 							label: 'Weapons commands',
@@ -51,13 +51,16 @@ module.exports = {
 			)
 
             const artiInfo = "Artifacts affect a lot of character stats including healing bonuses, damage output. HP, and critical hits so you want to select which artifact you equip wisely. There are also five different types of artifacts that fall into sets, giving you even better perks from equipping artifacts in the same set."
-			
+			const elements = "`\ anemo \` `\ cryo \` `\ dendro \` `\ electro \` `\ geo \` `\ hydro \` \n`\ pyro \`"
+        	const natname = "`\ inazuma \` `\ liyue \` `\ mondstadt \`"
+
 			const artifacts = new MessageEmbed()
 			.setTitle("Artifacts Stats!")
 			.setDescription(`${artiInfo}`)
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.addFields(
 			    {name: `Usage`, value: "`\ /gen-artifact {artifact_name} \`"},
+				{name: `> Artifacts`, value: "For artifacts names , please visit the link: [Artifacts](https://github.com/genshindev/api/tree/mistress/assets/data/artifacts)"},
                 {name: `> Remember`, value: "If a artifact name has `\ space \` in them replace it with `\ - \`"},
 			)
 			.setTimestamp()
@@ -71,6 +74,7 @@ module.exports = {
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.addFields(
 			    {name: `Usage`, value: "`\ /gen-character {character_name} \`"},
+				{name: `> Characters`, value: "For character names , please visit the link: [Characters](https://github.com/genshindev/api/tree/mistress/assets/data/characters)"},
                 {name: `> Remember`, value: "If a character name has `\ space \` in them replace it with `\ - \` \nFor e.g : yun-jin"},
 			)
 			.setTimestamp()
@@ -85,6 +89,7 @@ module.exports = {
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.addFields(
 			    {name: `Usage`, value: "`\ /gen-element {Element_name} \`"},
+				{name: `> Elements`, value: `${elements}`},
 			)
 			.setTimestamp()
             .setImage("https://res.cloudinary.com/lmn/image/upload/e_sharpen:100/f_auto,fl_lossy,q_auto/v1/gameskinnyc/g/e/n/genshin-elemental-e9c79.jpg")
@@ -99,6 +104,7 @@ module.exports = {
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.addFields(
 			    {name: `Usage`, value: "`\ /gen-nation {Nation_name} \`"},
+				{name: `> Nations`, value: `${natname}`},
 			)
 			.setTimestamp()
             .setImage("https://media.discordapp.net/attachments/928964810761191474/937909307633176626/unknown.png?width=363&height=228")
@@ -113,6 +119,7 @@ module.exports = {
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.addFields(
 			    {name: `Usage`, value: "`\ /gen-weapon {weapon_name} \`"},
+				{name: `> Weapons`, value: "For character names , please visit the link: [Weapons](https://github.com/genshindev/api/tree/mistress/assets/data/weapons)"},
                 {name: `> Remember`, value: "If a weapon name has `\ space \` in them replace it with `\ - \` \nFor e.g : alley-hunter"},
 			)
 			.setTimestamp()
