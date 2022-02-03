@@ -25,7 +25,7 @@ module.exports = {
             "Criz",
             "Elon musk",
             "Donald trump",
-            "Cristiano Ronaldo",
+            "SIUUUUUUU !! Cristiano Ronaldo",
             "Elina",
             "DaBaby",
             "Taiga",
