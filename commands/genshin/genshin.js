@@ -12,11 +12,13 @@ module.exports = {
         let image = "https://thumbs.gfycat.com/AltruisticAggressiveAddax-size_restricted.gif"
         let thumb = "https://media.discordapp.net/attachments/928257362106654720/929376683956510790/artworks-w6XYmsnp5PGKGQtL-tDQZAQ-t500x500.png?width=495&height=495"
         let elements = "`\ anemo \` `\ cryo \` `\ dendro \` `\ electro \` `\ geo \` `\ hydro \` `\ pyro \`"
-        let nations = "`\ inazuma \` `\ liyue \` `\ mondstadt \`"
+        let nations = "`\ mondstadt \` `\ liyue \` `\ inazuma \`"
 
         let artiimage = "https://cdn.gamerstopia.com/wp-content/uploads/Genshin-Impact-Artifact-Guide-Featured-Image.jpg"
-        let charimage = "https://www.pcinvasion.com/wp-content/uploads/2020/10/Genshin-Impact-tier-list-september-2021-anniversary-best-characters-in-Genshin-Impact-.jpg"
+        let charimage = "https://cdn.discordapp.com/attachments/936853603434520577/938660196459372574/wallpaperflare.com_wallpaper.jpg"
         let wpimage = "https://static1.srcdn.com/wordpress/wp-content/uploads/2020/10/Genshin-Impact-Weapons.jpg"
+        let natimage = "https://cdn.discordapp.com/attachments/936853603434520577/938662204000043058/7fb6b6d032fdea09fc1b5dfab3e42863_2343336213336885966.jpg"
+        let elimage = "https://cdn.discordapp.com/attachments/936853603434520577/938660196115447818/genshin-impact-elements.jpg"
 
         const genEmbed = new MessageEmbed()
         .setTitle(`Genshin Impact`) 
@@ -53,11 +55,13 @@ module.exports = {
         const elem = new MessageEmbed()
         .setTitle(`Element names`) 
         .setDescription(`${elements}`)
+        .setImage(`${elimage}`)
         .setTimestamp()
 
         const nat = new MessageEmbed()
         .setTitle(`Nation names`) 
         .setDescription(`${nations}`)
+        .setImage(`${natimage}`)
         .setTimestamp()
 
         const wp = new MessageEmbed()
