@@ -1,4 +1,4 @@
-# For hosting on replit
+# For hosting on replit un comment the below part
 
 # { pkgs }: {
 #   deps = [
