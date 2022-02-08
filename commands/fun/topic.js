@@ -7,6 +7,7 @@ module.exports = {
     description: "Start a new topic",
 
     async execute(client, message, args, Discord, cmd){
+        
         const choices = [ 
 
             "Which makes a better pet? Cats or dogs?",
@@ -23,7 +24,21 @@ module.exports = {
             "Whats more important? Being good looking or being smart?",
             "Clowns are scary. Agree or disagree?",
             "Math is an important subject to learn. Agree or disagree?",
-            "Would you rather be good at sports or good at exams?"]
+            "Would you rather be good at sports or good at exams?",
+            "What makes a person beautiful to you?",
+            "Where is the most beautiful place you have been?",
+            "What is the best thing about you?",
+            "What is the worst thing about you?",
+            "What is your favorite food?",
+            "What is your favorite drink?",
+            "What is your favorite color?",
+            "What makes a piece of art beautiful to you?",
+            "What is the most challenging job you can think of?",
+            "What is the most important thing you have ever done?",
+            "What is the most important thing you have ever wanted?",
+            "What do you think of homemade gifts?",
+            "What is the most expensive thing you have ever bought?",
+            "Do you prefer to receive money or a gift? Why?"]
 
 
         const choice = choices[Math.floor(Math.random() * choices.length)];
