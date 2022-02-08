@@ -116,7 +116,7 @@ module.exports = {
 			.setDescription("Fun commands to add new twist to your server")
 			.setAuthor(`${interaction.user.username}`, avatar)
 			.addFields(
-			  {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \` , `\ qr \`", inline: true},
+			  {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \` , `\ qr \` \n `\ topic \`", inline: true},
 			)
 			.setFooter(client.user.username , client.user.displayAvatarURL())
 			.setTimestamp()

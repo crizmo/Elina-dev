@@ -83,7 +83,7 @@ module.exports = {
         .setDescription("To get info of commands `\ =help-fun \`")
         .setAuthor(`${user.username}`, avatar)
         .addFields(
-          {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \` , `\ qr \`", inline: true},
+          {name: `\u200B`, value: "`\ 8ball \` , `\ coinflip \` , `\ connectfour \` , `\ eject \` \n `\ pokemon \` , `\ rps \` , `\ slots \` , `\ snake \` , `\ trivia \` \n `\ tic-tac-toe \` , `\ aki \` , `\ wyr \` , `\ qr \` \n `\ topic \`", inline: true},
         )
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
