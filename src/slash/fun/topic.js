@@ -39,7 +39,15 @@ module.exports = {
             "What is the most important thing you have ever wanted?",
             "What do you think of homemade gifts?",
             "What is the most expensive thing you have ever bought?",
-            "Do you prefer to receive money or a gift? Why?"]
+            "Do you prefer to receive money or a gift? Why?",
+            "What part of your culture are you most/least proud of?",
+            "What would you do if you were invisible for a day?",
+            "What is that myth that you grew up knowing but found out recently that is a lie?",
+            "What was the strangest punishment your parents ever gave you?",
+            "If you had the opportunity to invent a new ice-cream flavor, what would it be?",
+            "What music genre makes you happy?",
+            "Do you like your cereal crunchy or soggy?",
+            "Complete the sentence “I wish everyone could…”" ]
 
         const choice = choices[Math.floor(Math.random() * choices.length)];
 
