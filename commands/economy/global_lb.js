@@ -18,7 +18,8 @@ module.exports = {
         data.slice(0, 10).map(e => {
             pos++
             if (!client.users.cache.get(e.userID)) return;
-            msg.addField(`${pos} - **${client.users.cache.get(e.userID).username}**`, `Wallet: **${e.wallet}** - Bank: **${e.bank}**`, true);
+            const total = e.wallet + e.bank;
+            msg.addField(`${pos} - **${client.users.cache.get(e.userID).username}**`, `Wallet: **${e.wallet}** \n Bank: **${e.bank}** \n Total: **${total}**`, true);
         });
 
         message.channel.send({embeds: [msg]}).catch();
