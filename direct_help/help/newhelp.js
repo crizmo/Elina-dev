@@ -52,7 +52,7 @@ module.exports = {
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(avatar)
+        .setThumbnail("https://stickershop.line-scdn.net/stickershop/v1/sticker/432759391/android/sticker.png")
         .setColor(color);
 
         const bot = new MessageEmbed()
@@ -65,7 +65,7 @@ module.exports = {
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(avatar)
+        .setThumbnail("https://stickershop.line-scdn.net/stickershop/v1/sticker/432759375/android/sticker.png")
         .setColor(color);
 
         const economy = new MessageEmbed()
@@ -75,7 +75,7 @@ module.exports = {
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(avatar)
+        .setThumbnail("https://stickershop.line-scdn.net/stickershop/v1/sticker/98093817/android/sticker.png")
         .setColor(color);
 
         const fun = new MessageEmbed()
@@ -88,7 +88,7 @@ module.exports = {
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(avatar)
+        .setThumbnail("https://stickershop.line-scdn.net/stickershop/v1/sticker/432759403/android/sticker.png")
         .setColor(color);
 
         const info = new MessageEmbed()
@@ -101,9 +101,7 @@ module.exports = {
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(client.user.displayAvatarURL({
-            dynamic: true,
-          }))
+        .setThumbnail("https://stickershop.line-scdn.net/stickershop/v1/sticker/432759396/android/sticker.png")
         .setColor(color);
 
         const moderation = new MessageEmbed()
@@ -116,9 +114,7 @@ module.exports = {
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(client.user.displayAvatarURL({
-            dynamic: true,
-          }))
+        .setThumbnail("https://stickershop.line-scdn.net/stickershop/v1/sticker/432759406/android/sticker.png")
         .setColor(color);
 
         const profile = new MessageEmbed()
@@ -131,9 +127,7 @@ module.exports = {
         .setFooter(client.user.tag , client.user.displayAvatarURL())
         .setTimestamp()
         .setImage("https://media.discordapp.net/attachments/912537423160942593/912537520150020156/elina_info.jpg?width=1188&height=389")
-        .setThumbnail(client.user.displayAvatarURL({
-            dynamic: true,
-          }))
+        .setThumbnail("https://stickershop.line-scdn.net/stickershop/v1/sticker/432759410/android/sticker.png")
         .setColor(color);
 
         const genEmbed = new MessageEmbed()
