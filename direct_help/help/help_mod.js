@@ -67,8 +67,8 @@ module.exports = {
         .setDescription("To check roles of a user")
         .setURL('https://crizmo.github.io/elina/')
         .addFields(
-            {name: 'Aliases: ', value: "`\ clear \`"},
-            {name: 'Usage: ', value: "`\ =clear {number_of_messages} \`"},
+            {name: 'Aliases: ', value: "`\ roles \`"},
+            {name: 'Usage: ', value: "`\ =roles @user \`"},
         )
         .setThumbnail("https://media.discordapp.net/attachments/912047994713550928/926044429763096608/elina.jpg?width=700&height=700")
 
