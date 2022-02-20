@@ -14,10 +14,10 @@ require('dotenv').config();
 // const keepAlive = require("./server");        // un-comment this line - for hosting
 const fetch = require('node-fetch')
 
-// Economy
-
+// Economy setup
 const CurrencySystem = require("currency-system");
 const cs = new CurrencySystem;
+
 // Method:
 cs.setMongoURL(process.env.MONGODB_SRV);
 
@@ -28,8 +28,6 @@ cs.setDefaultBankAmount('100')
 cs.setMaxBankAmount('10000')
 //cs.setDefaultBankLimitForUser('10000')
 cs.searchForNewUpdate(true)
-
-//    End    //
 
 // Teyvat start
 
