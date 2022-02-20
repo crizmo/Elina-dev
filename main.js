@@ -94,7 +94,6 @@ client.on('ready', () => {
         index++;
     }, 5000);
 })
-//If you are hosting your bot anywhere just remove code from line 53 -> 70 
 
 require(`./handlers/command_handler.js`)(client, Discord);
 require(`./handlers/event_handler.js`)(client, Discord);
