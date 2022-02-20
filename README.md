@@ -38,6 +38,13 @@ Elina Discord Bot offers:
 
 ##### ⚠Embed links needed for bot embed messages
 
+### Env structure
+- DISCORD_TOKEN - for token
+- PREFIX - for prefix
+- ownerID - for id of the bot owner
+- MONGODB_SRV - for mongo db srv
+- GUILD_ID - for slash commands (  put the id of the server u want as the dev server )
+
 To get started - First invite the bot in your server with the required basic perms , then once that is done do `=help` or `/help`. Done ~~
 **Thank you** !
 
