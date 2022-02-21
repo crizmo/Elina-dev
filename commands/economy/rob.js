@@ -67,6 +67,5 @@ module.exports = {
         } else {
             if (result.type === 'success') return message.channel.send({ embeds: [successEmbed] })
         }
-
     }
 }
