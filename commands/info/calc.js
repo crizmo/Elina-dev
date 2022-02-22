@@ -19,7 +19,7 @@ module.exports = {
                 footer: '© Elina',
                 timestamp: true
             },
-            disabledQuery: 'Calculator is disabled!',
+            disabledQuery: 'Elina stopped the calculator!',
             invalidQuery: 'The provided equation is invalid!',
             othersMessage: 'Only <@{{author}}> can use the buttons!'
         });
