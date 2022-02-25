@@ -18,11 +18,11 @@ module.exports = {
             shop: [{
                 name: 'banknote',
                 price: 5000,
-                description: 'Banknote'
+                description: 'Banknote to increase bank limit'
             }, {
-                name: 'mora',
+                name: 'primogems',
                 price: 2500,
-                description: 'Mora'
+                description: 'Primogems ps- genshin impact currency'
             }]
         });
         return message.channel.send('Elina shop items set.');
