@@ -8,9 +8,7 @@ module.exports = {
 
         if (message.author.id !== '784141856426033233') return message.channel.send("Only Criz can use this command");
 
-        const guilds = client.guilds.cache.array();
-
-        for (const guild of guilds) {
+        client.guilds.cache.map(guild => {
             cs.setItems({
                 guild: guild,
                 shop: [{
@@ -23,7 +21,8 @@ module.exports = {
                     description: 'Primogems ps- genshin impact currency'
                 }]
             });
-        }
+        });
+
         return message.channel.send('Elina shop items set.');
     }
 }
