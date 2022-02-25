@@ -11,7 +11,7 @@ module.exports = {
 
     async execute(client, message, args, Discord) {
         // if(message.author.id !== '784141856426033233') return message.channel.send("U aint criz lol");
-                try {
+        try {
             const cookie = new MessageEmbed()
                 .setDescription('What should be item name?')
                 .setColor('#00ccff')
@@ -72,23 +72,23 @@ module.exports = {
             const error1 = new MessageEmbed()
                 .setDescription('There was a error')
                 .setColor('#00ccff')
-                
+
             const error2 = new MessageEmbed()
                 .setDescription('There was a error, invalid price!')
                 .setColor('#00ccff')
-                
+
             const error3 = new MessageEmbed()
                 .setDescription('There was a error, You didnt specify price!')
                 .setColor('#00ccff')
-                
+
             const error4 = new MessageEmbed()
                 .setDescription('There was a error, No data recieved!')
                 .setColor('#00ccff')
-                
+
             const Noerror = new MessageEmbed()
                 .setDescription('Done! Successfully added `' + Name.first().content + '` to the shop!')
                 .setColor('#00ccff')
-                
+
             if (result.error) {
                 if (result.type == 'No-Inventory-Name') return message.reply({
                     embeds: [error1],
