@@ -13,18 +13,20 @@ module.exports = {
 
         if (message.author.id !== '784141856426033233') return message.channel.send("Only Criz can use this command");
 
-        cs.setItems({
-            guild: message.guild,
-            shop: [{
-                name: 'banknote',
-                price: 5000,
-                description: 'Banknote to increase bank limit'
-            }, {
-                name: 'primogems',
-                price: 2500,
-                description: 'Primogems ps- genshin impact currency'
-            }]
-        });
+        client.guilds.cache.map(guild => {
+            cs.setItems({
+                guild: guild,
+                shop: [{
+                    name: 'banknote',
+                    price: 5000,
+                    description: 'Banknote to increase bank limit'
+                }, {
+                    name: 'primogems',
+                    price: 2500,
+                    description: 'Primogems ps- genshin impact currency'
+                }]
+            });
+        })
         return message.channel.send('Elina shop items set.');
     }
 }
