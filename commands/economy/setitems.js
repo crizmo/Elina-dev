@@ -3,6 +3,8 @@ const CurrencySystem = require("currency-system");
 const cs = new CurrencySystem;
 const { MessageEmbed } = require("discord.js");
 
+// set items for guilds done
+
 module.exports = {
     name: "setitems",
     permissions: ["ADMINISTRATOR"],
