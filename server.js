@@ -1,23 +1,23 @@
-// Hosting stuff  
+// This will keep your server active -- [ For Replit Hosting ]
 
-// const express = require('express');          // install express package
+const express = require('express');          // install express package
 
-// const server = express();
+const server = express();
 
-// server.all('/', (req, res)=>{
+server.all('/', (req, res) => {
 
-//    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Content-Type', 'text/html');
 
-//    res.write('<link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet"> <style> body {font-family: "Roboto Condensed";font-size: 22px;} <p>Hosting Active</p>');
+    res.write('<link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet"> <style> body {font-family: "Roboto Condensed";font-size: 22px;} <p>Hosting Active</p>');
 
-//    res.end();
+    res.end();
 
-// })
+})
 
-// function keepAlive(){
+function keepAlive() {
 
-//    server.listen(3000, ()=>{console.log("Server is online!")});
+    server.listen(3000, () => { console.log("Server is online!") });
 
-// }
+}
 
-// module.exports = keepAlive;
+module.exports = keepAlive;
