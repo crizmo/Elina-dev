@@ -3,7 +3,7 @@
 - Added slash commands
 - Proper code for hosting on replit - [ follow codes - replit , .replit.nix , server.js ]
 
-# Changes in Elina Website
+# Changes in Elina's Website
 
 - For site changes visit [Elina website](https://github.com/crizmo/elina)
 
