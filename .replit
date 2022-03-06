@@ -1,4 +1,5 @@
-For Hosting on replit
+ -- For Hosting on replit --
+ -- There can be minor changes in the code --
 
 entrypoint = "index.js"
 run="npm start" 
