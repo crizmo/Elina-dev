@@ -5,6 +5,6 @@
 
 # Changes in Elina's Website
 
-- For site changes visit [Elina website](https://github.com/crizmo/elina)
+- For site changes visit [Elina website](https://elina-bot.netlify.app)
 
 [![Elina](https://media.discordapp.net/attachments/785374983094403092/949990176325779486/IMG_8478.jpg?width=1274&height=469)](https://elina-bot.netlify.app)
