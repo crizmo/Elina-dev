@@ -5,7 +5,7 @@ module.exports = {
     name: "anyanime",
     cooldown: 2,
     permissions: ["SEND_MESSAGES"],
-    description: "flips a coin!",
+    description: "Get random anime image / pfp",
     execute(client, message, args, Discord, cmd) {
         // const anime = anyanime.anime();         // Returns a random anime image
         // message.channel.send(anime);
