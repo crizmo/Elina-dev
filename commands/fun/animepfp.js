@@ -7,7 +7,11 @@ module.exports = {
     permissions: ["SEND_MESSAGES"],
     description: "flips a coin!",
     execute(client, message, args, Discord, cmd) {
+        // const anime = anyanime.anime();         // Returns a random anime image
+        // message.channel.send(anime);
+
         const anime = anyanime.anime();
-        message.channel.send(anime)
+        const embed = new Discord.MessageEmbed().setImage(anime);      // Returns a random anime image but inside an embed
+        message.channel.send({ embeds: [embed] });
     }
 }
