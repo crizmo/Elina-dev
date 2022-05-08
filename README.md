@@ -26,8 +26,6 @@ If you wish to use add/copy any command from the ones in the repo be sure to atl
 
 ## Elina Bot Features:
 
-Elina Discord Bot offers:
-
 - 24/7 Full Uptime with high stability
 - Easy to use
 - Fast command responses
@@ -39,6 +37,9 @@ Elina Discord Bot offers:
 ##### ⚠Admin Permission needed for Moderation commands
 
 ##### ⚠Embed links needed for bot embed messages
+
+### Elina's website 
+To check elina bot's website go to :- https://elina-bot.netlify.app
 
 ### Env structure
 
