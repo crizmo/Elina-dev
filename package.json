@@ -20,6 +20,7 @@
     "discord.js": "^13.3.1",
     "discord.js-akinator": "^3.3.1",
     "dotenv": "^9.0.2",
+    "express": "^4.18.1",
     "fs": "0.0.1-security",
     "google-it": "^1.6.2",
     "images-scraper": "^6.4.0",
