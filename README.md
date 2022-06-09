@@ -21,6 +21,7 @@
 
 If you wish to use add/copy any command from the ones in the repo be sure to atleast leave a star ~
 
+- Remember to change the id in src/functions/handleCommands.js for both the bot and the guild ( for guild command )
 - If you are facing any issues while development join our support server or pull an issue or a comment on the repo/specific command.
 - If you wish to contribute / help with the bot development contact me via discord tag - Criz#1270
 
