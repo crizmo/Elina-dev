@@ -3,7 +3,7 @@ const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 
 const clientId = '919629566186770482';    // change client id with your own bot id
-const guildId = '912028400154206288';
+const guildId = '939799133177384990';     // change guild id with your own guild id
 
 module.exports = (client) => {
     client.handleCommands = async (slashcommandFolders, path) => {
