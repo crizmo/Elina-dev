@@ -31,7 +31,7 @@ If you wish to use add/copy any command from the ones in the repo be sure to atl
 - Easy to use
 - Fast command responses
 - Moderation Commands
-- Anime base commands
+- Anime commands
 - Multipurpose Bot
 - Slash commands
 
