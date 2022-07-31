@@ -83,7 +83,7 @@ module.exports = {
                 .addFields(
                     {name: `Usage`, value: "`\/covid\`", inline: true},
                     {name: `\u200B`, value: `\u200B`, inline: true},
-                    {name: `Usage`, value: "`\/github country {country_name}\`", inline: true},
+                    {name: `Usage`, value: "`\/covid country {country_name}\`", inline: true},
                 )
                 .setAuthor(`${interaction.guild.name}`, client.user.displayAvatarURL())
                 .setThumbnail(interaction.guild.iconURL())
