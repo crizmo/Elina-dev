@@ -13,8 +13,8 @@
 ## Elina bot src codes
 
 - This is a open-source discord bot for everyone to use! Dont forget to star and fork :D
-- Elina is a discord bot , made using discord.js .
-- Its currently on discord.js v13. Changing a lot of stuff !!!
+- Elina is a multipurpose discord bot , made using discord.js .
+- Its currently on discord.js v13.
 - For changes in the future , check the changelog.md file
 
 ## For developers
