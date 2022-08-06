@@ -14,7 +14,7 @@ module.exports = {
 
         const row = new MessageActionRow().addComponents(
             new MessageButton()
-                .setURL('https://discord.com/api/oauth2/authorize?client_id=842397001954230303&permissions=1515552374487&scope=bot%20applications.commands')
+                .setURL('https://top.gg/bot/842397001954230303')
                 .setLabel('Invite')
                 .setStyle('LINK'),
             new MessageButton()

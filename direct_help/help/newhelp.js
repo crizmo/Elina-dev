@@ -148,7 +148,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
         .setTitle("Our full help menu!")
         .setDescription(
-          `\`\`\`js\nPrefix: ${prefix}\nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://discord.com/api/oauth2/authorize?client_id=842397001954230303&permissions=1515552374487&scope=bot%20applications.commands)\n\n> To check out a category, use \`${prefix}help-[category-name]\``
+          `\`\`\`js\nPrefix: ${prefix}\nExtra information: <> If you see any error or any kind of bug please report to us!\`\`\`\n> To invite me : [Invite me](https://top.gg/bot/842397001954230303)\n\n> To check out a category, use \`${prefix}help-[category-name]\``
         )
         .addFields(categories)
         .setFooter(
