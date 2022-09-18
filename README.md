@@ -17,6 +17,12 @@
 - Its currently on discord.js v13.
 - For changes in the future , check the changelog.md file
 
+## Updates
+As of now i have stopped working on elina , If you want to continue building it or want to help me update it , feel free to fork it and make a pull request.
+Elina is yet to be updated to discord.js v14.
+
+Thank you !
+
 ## For developers
 
 If you wish to use add/copy any command from the ones in the repo be sure to atleast leave a star ~
