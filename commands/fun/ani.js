@@ -9,7 +9,7 @@ module.exports = {
     async execute(client, message, args, Discord) {
 
         let Anyanime = []
-        let ani = await fetch(`https://anyanime-api.herokuapp.com/anime`)
+        let ani = await fetch(`https://anyanime-api.kurizu.repl.co/anime`)
         let data = await ani.json();
 
         Anyanime.push({
