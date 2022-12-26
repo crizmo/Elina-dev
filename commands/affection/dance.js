@@ -24,9 +24,10 @@ module.exports = {
         const randomAloneNum = Math.floor(Math.random() * Math.floor(danceAloneLinks.length))
 
         let member = message.mentions.members.first();
+        let firstEmbed
 
         if(member){
-            var firstEmbed = new Discord.MessageEmbed()
+             firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setTitle(`${message.author.username} danced with ${member.displayName} !`)
                 .setTimestamp()
@@ -34,7 +35,7 @@ module.exports = {
                 .setFooter("Nice !!");
             message.channel.send({embeds: [firstEmbed]})
         }else{
-            var firstEmbed = new Discord.MessageEmbed()
+             firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setTitle(`${message.author.username} is dancing alone?! !`)
                 .setTimestamp()

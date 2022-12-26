@@ -16,16 +16,17 @@ module.exports = {
         
         const randomNum = Math.floor(Math.random() * Math.floor(killLinks.length))
         let member = message.mentions.members.first();
+        let firstEmbed
 
         if(member){
-            var firstEmbed = new Discord.MessageEmbed()
+             firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setTitle(`${message.author.username} killed ${member.displayName} !`)
                 .setTimestamp()
                 .setImage(killLinks[randomNum])
             message.channel.send({embeds: [firstEmbed]})
         }else{
-            var firstEmbed = new Discord.MessageEmbed()
+             firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setTimestamp()
                 .setImage(killLinks[randomNum])

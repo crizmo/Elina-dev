@@ -15,16 +15,17 @@ module.exports = {
 
         const randomNum = Math.floor(Math.random() * Math.floor(slapLinks.length))
         let member = message.mentions.members.first();
+        let firstEmbed
 
         if(member){
-            var firstEmbed = new Discord.MessageEmbed()
+             firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setTitle(`${message.author.username} slaped ${member.displayName} !`)
                 .setTimestamp()
                 .setImage(slapLinks[randomNum])
             message.channel.send({embeds: [firstEmbed]})
         }else{
-            var firstEmbed = new Discord.MessageEmbed()
+             firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setTimestamp()
                 .setImage(slapLinks[randomNum])

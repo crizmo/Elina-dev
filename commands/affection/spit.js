@@ -11,9 +11,10 @@ module.exports = {
 
         const randomNum = Math.floor(Math.random() * Math.floor(spitLinks.length))
         let member = message.mentions.members.first();
+        let firstEmbed
 
         if(member){
-            var firstEmbed = new Discord.MessageEmbed()
+             firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setTitle(`${message.author.username} spat on ${member.displayName}`)
                 .setTimestamp()
@@ -21,7 +22,7 @@ module.exports = {
                 .setDescription('Ew why !!')
             message.channel.send({embeds: [firstEmbed]})
         }else{
-            var firstEmbed = new Discord.MessageEmbed()
+             firstEmbed = new Discord.MessageEmbed()
 	            .setColor("RANDOM")
                 .setTimestamp()
                 .setImage(spitLinks[randomNum])
