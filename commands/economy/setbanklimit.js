@@ -11,7 +11,7 @@ module.exports = {
 
     async execute(client, message, args, Discord) {
 
-        if(message.author.id !== '784141856426033233') return message.channel.send("U aint criz lol");
+        if(message.author.id !== '784141856426033233') return message.channel.send("U aint Kurizu lol");
 
         let user = message.mentions.users.first() || message.author;
 

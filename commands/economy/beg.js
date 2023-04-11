@@ -19,7 +19,7 @@ module.exports = {
         });
 
         const people = [
-            "Criz",
+            "Kurizu",
             "Elon musk",
             "Donald trump",
             "SIUUUUUUU !! Cristiano Ronaldo",

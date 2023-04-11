@@ -6,7 +6,7 @@ module.exports = {
 
     async execute(client, message, args, Discord) {
 
-        if (message.author.id !== '784141856426033233') return message.channel.send("Only Criz can use this command");
+        if (message.author.id !== '784141856426033233') return message.channel.send("Only Kurizu can use this command");
 
         client.guilds.cache.map(guild => {
             cs.setItems({

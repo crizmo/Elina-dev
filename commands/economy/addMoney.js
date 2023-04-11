@@ -7,7 +7,7 @@ module.exports = {
   cooldown: 5,
   description: "Add items command",
   async execute(client, message, args, Discord) {
-    if(message.author.id !== '784141856426033233') return message.channel.send("U aint criz lol");
+    if(message.author.id !== '784141856426033233') return message.channel.send("U aint Kurizu lol");
     let user;
         if (message.mentions.users.first()) {
             user = message.mentions.users.first();

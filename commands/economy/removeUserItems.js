@@ -10,7 +10,7 @@ module.exports = {
     description: "Remove user item command",
 
     async execute(client, message, args, Discord) {
-      if(message.author.id !== '784141856426033233') return message.channel.send("U aint criz lol");
+      if(message.author.id !== '784141856426033233') return message.channel.send("U aint Kurizu lol");
       
         if (!args[0]) return message.reply('Which item to remove?')
         let result = await cs.removeUserItem({

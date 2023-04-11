@@ -14,7 +14,7 @@ module.exports = {
     permissions: [ Permissions.FLAGS.ADMINISTRATOR ],
 	async execute(interaction, client) {
 
-        if(interaction.user.id !== '784141856426033233') return interaction.reply("U aint criz lol");
+        if(interaction.user.id !== '784141856426033233') return interaction.reply("U aint Kurizu lol");
 
         let user = interaction.options.getUser('user');
         let money = interaction.options.getInteger('amount');

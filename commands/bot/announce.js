@@ -8,7 +8,7 @@ module.exports = {
     description: 'Elina bot updates !',
     async execute(client, message, args, Discord, profileData) {
 
-        if (message.author.id !== '784141856426033233') return message.channel.send("U aint criz ");
+        if (message.author.id !== '784141856426033233') return message.channel.send("U aint Kurizu ");
 
         let channel = message.mentions.channels.first();
         if (!channel) return message.channel.send("Please mention a channel name and then the description")
