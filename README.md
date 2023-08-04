@@ -18,9 +18,9 @@
 - For changes in the future , check the changelog.md file
 
 ## Updates
-As of now i have stopped working on elina , If you want to continue building it or want to help me update it to that latest versions, feel free to fork it and make a pull request.
-Elina is yet to be updated to discord.js v14.
+As of now i have stopped working on Elina , If you want to continue building it or want to help me update it to the latest version then feel free to fork it and make a pull request. 
 
+Currently Elina is on v13 and is yet to be updated to discord.js v14.
 Thank you !
 
 ## For developers
