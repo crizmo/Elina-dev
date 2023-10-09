@@ -58,7 +58,6 @@ To check elina bot's website go to :- https://elina-bot.netlify.app
 
 To get started - First invite the bot in your server with the required basic perms , then once that is done do `=help` or `/help`. Done ~~
 **Thank you** !
-
 <a href="https://discord.com/oauth2/authorize?client_id=842397001954230303&permissions=1635610131575&scope=bot%20applications.commands">Invite Elina <3</a>
 
 [![Elina](https://images-ext-1.discordapp.net/external/cwWJ910yqrjJyBCDl80ND0lLH3vlxIqAvBbbKLq_04A/%3Fwidth%3D1200%26height%3D393/https/media.discordapp.net/attachments/862619247897477121/862925351851130900/image0.jpg)](https://elina-bot.netlify.app)
